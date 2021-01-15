@@ -1,0 +1,32 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.breadcrumbs__item {
+  display: inline-block;
+  overflow: hidden;
+  max-width: 100%;
+  text-overflow: ellipsis;
+}
+
+.breadcrumbs__item:not(:last-child) {
+  flex: none;
+}
+
+.breadcrumbs__item:not(:last-child)::after {
+  content: "/";
+  margin: 0 8px;
+}
+
+.breadcrumbs__link {
+  text-decoration: none;
+  color: var(--color-link);
+}
+
+.breadcrumbs__link:hover {
+  text-decoration: underline;
+}
