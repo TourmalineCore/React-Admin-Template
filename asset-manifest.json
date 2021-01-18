@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e74ed1fe.chunk.css",
+    "main.js": "/static/js/main.a70e4d9f.chunk.js",
+    "main.js.map": "/static/js/main.a70e4d9f.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.fab6e60e.js",
+    "runtime-main.js.map": "/static/js/runtime-main.fab6e60e.js.map",
+    "static/js/2.d459afd9.chunk.js": "/static/js/2.d459afd9.chunk.js",
+    "static/js/2.d459afd9.chunk.js.map": "/static/js/2.d459afd9.chunk.js.map",
+    "static/js/3.a69733bf.chunk.js": "/static/js/3.a69733bf.chunk.js",
+    "static/js/3.a69733bf.chunk.js.map": "/static/js/3.a69733bf.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.e74ed1fe.chunk.css.map": "/static/css/main.e74ed1fe.chunk.css.map",
+    "static/js/2.d459afd9.chunk.js.LICENSE.txt": "/static/js/2.d459afd9.chunk.js.LICENSE.txt",
+    "static/media/auth-bg-left.7656f6a5.svg": "/static/media/auth-bg-left.7656f6a5.svg",
+    "static/media/auth-bg-right.99dfb65d.svg": "/static/media/auth-bg-right.99dfb65d.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fab6e60e.js",
+    "static/js/2.d459afd9.chunk.js",
+    "static/css/main.e74ed1fe.chunk.css",
+    "static/js/main.a70e4d9f.chunk.js"
+  ]
+}
