@@ -1,0 +1,10 @@
+.git
+.vscode
+.idea
+node_modules
+build
+.dockerignore
+Dockerfile
+.config-dev
+.config-local
+local-config-builder.js

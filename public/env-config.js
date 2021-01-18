@@ -1,0 +1,1 @@
+window._env_ = { API_ROOT: '//localhost:3000/',RECAPTCHA_KEY: '',ENABLE_CAPTCHA: false, }
