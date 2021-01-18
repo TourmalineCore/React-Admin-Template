@@ -19,7 +19,7 @@ export const useStickyHeader = (topSentinelRef, bottomSentinelRef) => {
           setIsHeaderStuck(false);
         }
       }
-    }, { threshold: [0], root: document.body });
+    }, { threshold: [0], root: null });
 
     const bottomObserver = new IntersectionObserver((records) => {
       for (const record of records) {
@@ -37,10 +37,15 @@ export const useStickyHeader = (topSentinelRef, bottomSentinelRef) => {
           setIsHeaderStuck(false);
         }
       }
-    }, { threshold: [1], root: document.body });
+    }, { threshold: [1], root: null });
 
     topObserver.observe(topSentinelRef.current);
     bottomObserver.observe(bottomSentinelRef.current);
+
+    return () => {
+      topObserver.disconnect();
+      bottomObserver.disconnect();
+    };
   }, []);
 
   return isHeaderStuck;
