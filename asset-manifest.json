@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/React-Admin-Template/static/css/main.e74ed1fe.chunk.css",
-    "main.js": "/React-Admin-Template/static/js/main.e4cace5d.chunk.js",
-    "main.js.map": "/React-Admin-Template/static/js/main.e4cace5d.chunk.js.map",
+    "main.js": "/React-Admin-Template/static/js/main.a70e4d9f.chunk.js",
+    "main.js.map": "/React-Admin-Template/static/js/main.a70e4d9f.chunk.js.map",
     "runtime-main.js": "/React-Admin-Template/static/js/runtime-main.4a83db27.js",
     "runtime-main.js.map": "/React-Admin-Template/static/js/runtime-main.4a83db27.js.map",
     "static/js/2.d459afd9.chunk.js": "/React-Admin-Template/static/js/2.d459afd9.chunk.js",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.4a83db27.js",
     "static/js/2.d459afd9.chunk.js",
     "static/css/main.e74ed1fe.chunk.css",
-    "static/js/main.e4cace5d.chunk.js"
+    "static/js/main.a70e4d9f.chunk.js"
   ]
 }
