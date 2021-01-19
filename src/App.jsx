@@ -7,7 +7,7 @@ import Template from './template/Template';
 
 import withPrivateRoute from './routes/authStateProvider/withPrivateRoute';
 
-const history = createBrowserHistory({ basename: 'React-Admin-Template/' });
+const history = createBrowserHistory({ basename: '/' });
 
 export default function App() {
   return (
