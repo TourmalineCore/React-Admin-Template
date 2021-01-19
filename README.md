@@ -1,5 +1,8 @@
 # React-Admin-Template
 
+## Demo
+[React Admin Template](https://tourmalinecore.github.io/React-Admin-Template/)
+
 ## Getting Started
 ```
 npm ci
