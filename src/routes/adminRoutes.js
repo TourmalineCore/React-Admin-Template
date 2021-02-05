@@ -4,9 +4,9 @@ import calendarRoutes from '../features/calendar/routes';
 import analyticsRoutes from '../features/analytics/routes';
 import usersRoutes from '../features/users/routes';
 import systemPreferencesRoutes from '../features/systemPreferences/routes';
-import ulkitExampleRoutes from '../features/ulkitExample/routes';
-import tableExampleRoutes from '../features/tableExample/routes';
-import modalExampleRoutes from '../features/modalExample/routes';
+import uikitRoutes from '../features/uikit/routes';
+import tableRoutes from '../features/table/routes';
+import modalExampleRoutes from '../features/modal/routes';
 
 export const adminRoutes = [
   ...homeRoutes,
@@ -15,7 +15,7 @@ export const adminRoutes = [
   ...analyticsRoutes,
   ...usersRoutes,
   ...systemPreferencesRoutes,
-  ...ulkitExampleRoutes,
-  ...tableExampleRoutes,
+  ...uikitRoutes,
+  ...tableRoutes,
   ...modalExampleRoutes,
 ];

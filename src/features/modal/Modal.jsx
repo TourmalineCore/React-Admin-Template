@@ -1,37 +1,35 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Modal } from '@tourmalinecore/react-tc-modal';
 import { Button } from '@tourmalinecore/react-tc-ui-kit';
+import ContentCard from '../../components/ContentCard/ContentCard';
 
-export default function modalExample() {
-  const [IsModalVisible, setIsModalVisible] = useState(false);
+export default function ModalExample() {
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   return (
-    <div>
+    <ContentCard>
+
+      <h2>Modal:</h2>
 
       <Button
-        type="button"
-        className=""
-        disabled={false}
         onClick={() => setIsModalVisible(true)}
       >
         Открыть
       </Button>
 
-      {IsModalVisible && (
+      {isModalVisible && (
         <Modal
           title="Modal title"
           content="Modal content text"
           overlay
-          maxWidth={600}
           onClose={() => setIsModalVisible(false)}
           showApply
           onApply={() => setIsModalVisible(false)}
           applyText="text for apply btn"
           showCancel
           onCancel={() => setIsModalVisible(false)}
-          language="ru"
         />
       )}
-    </div>
+    </ContentCard>
   );
 }

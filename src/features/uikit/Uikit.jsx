@@ -1,41 +1,29 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   Button, Input, NativeSelect, CheckField,
 } from '@tourmalinecore/react-tc-ui-kit';
+import ContentCard from '../../components/ContentCard/ContentCard';
 
-export default function ulkitExample() {
-  const [inputValue, setInputValue] = useState('');
+const checkFieldsData = {
+  1: 'label-1',
+  2: 'label-2',
+};
+
+export default function Uikit() {
   const [selectedValue, setSelectedValue] = useState();
   const [selectedCheckboxes, setSelectedCheckboxes] = useState(new Set());
   const [selectedRadio, setSelectedRadio] = useState();
-  const checkFieldsData = {
-    1: 'label-1',
-    2: 'label-2',
-  };
   return (
-    <div>
-
+    <ContentCard>
       <h2>Buttons:</h2>
 
-      <Button
-        type="button"
-        className=""
-        disabled={false}
-        onClick={() => { }}
-      >
+      <Button>
         text or jsx
       </Button>
 
       <h2>Inputs:</h2>
-      <Input
-        id="input_id"
-        className=""
-        type="text"
-        value={inputValue}
-        placeholder=""
-        disabled={false}
-        onChange={(event) => setInputValue(event.target.value)}
-      />
+
+      <Input />
 
       <h2>NativeSelect:</h2>
 
@@ -54,7 +42,6 @@ export default function ulkitExample() {
           style={{
             marginBottom: 16,
           }}
-          disabled={false}
           label={label}
           checked={selectedCheckboxes.has(value)}
           onChange={() => {
@@ -85,6 +72,6 @@ export default function ulkitExample() {
           }}
         />
       ))}
-    </div>
+    </ContentCard>
   );
 }

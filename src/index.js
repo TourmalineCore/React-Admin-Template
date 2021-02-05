@@ -1,10 +1,11 @@
 /** @jsxRuntime classic */
 import 'react-app-polyfill/ie11';
 import 'react-app-polyfill/stable';
+// above code required for ie11 support
+
 import '@tourmalinecore/react-table-responsive/es/index.css';
 import '@tourmalinecore/react-tc-modal/es/index.css';
 import '@tourmalinecore/react-tc-ui-kit/es/index.css';
-// above code required for ie11 support
 
 import React from 'react';
 import ReactDOM from 'react-dom';
