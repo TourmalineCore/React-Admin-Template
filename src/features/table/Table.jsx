@@ -1,13 +1,38 @@
 import { ClientTable } from '@tourmalinecore/react-table-responsive';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBook } from '@fortawesome/free-solid-svg-icons';
+
 import ContentCard from '../../components/ContentCard/ContentCard';
 
 import {
-  all, someTypesOptions, data, actions, someTypesStrings, renderBonusObject,
-} from './ConstTablet';
+  all, someTypesOptions, data, someTypesStrings,
+} from './tableData';
+
+function renderBonusObject(row) {
+  return (
+    <b>
+      {row.original.bonusObject}
+    </b>
+  );
+}
 
 export default function Table() {
+  const actions = [
+    {
+      name: 'open-dictionaries-action',
+      show: () => true,
+      renderIcon: () => <FontAwesomeIcon icon={faBook} />,
+      renderText: () => 'Open Dictionaries',
+    },
+  ];
   return (
-    <ContentCard>
+    <ContentCard
+      isStickyHead
+      headerContent={(
+        <div className="calendar-heading">Пример пакета Tablet</div>
+    )}
+    >
       <ClientTable
         tableId="tc-story-bonus-table"
         data={data}

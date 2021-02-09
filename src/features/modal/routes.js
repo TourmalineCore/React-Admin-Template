@@ -4,7 +4,7 @@ import Modal from './Modal';
 
 const modalRoutes = [
   {
-    path: '/Modal',
+    path: '/modal',
     label: 'Modal',
     icon: faWindowMaximize,
     component: Modal,

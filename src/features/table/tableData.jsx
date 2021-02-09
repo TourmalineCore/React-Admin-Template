@@ -1,6 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBook } from '@fortawesome/free-solid-svg-icons';
-
 const someTypes = {
   firstType: 'firstType',
   secondType: 'secondType',
@@ -68,20 +65,3 @@ export const data = [
     someType: someTypes.secondType,
   },
 ];
-
-export const actions = [
-  {
-    name: 'open-dictionaries-action',
-    show: () => true,
-    renderIcon: () => <FontAwesomeIcon icon={faBook} />,
-    renderText: () => 'Open Dictionaries',
-  },
-];
-
-export function renderBonusObject(row) {
-  return (
-    <b>
-      {row.original.bonusObject}
-    </b>
-  );
-}

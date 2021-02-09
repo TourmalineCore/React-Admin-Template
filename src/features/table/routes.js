@@ -4,7 +4,7 @@ import Table from './Table';
 
 const tableRoutes = [
   {
-    path: '/Table',
+    path: '/table',
     label: 'Table',
     icon: faTable,
     component: Table,

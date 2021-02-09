@@ -3,6 +3,7 @@ import {
   Button, Input, NativeSelect, CheckField,
 } from '@tourmalinecore/react-tc-ui-kit';
 import ContentCard from '../../components/ContentCard/ContentCard';
+import '../calendar/Calendar.css';
 
 const checkFieldsData = {
   1: 'label-1',
@@ -10,22 +11,55 @@ const checkFieldsData = {
 };
 
 export default function Uikit() {
+  const [inputValue, setInputValue] = useState('');
   const [selectedValue, setSelectedValue] = useState();
   const [selectedCheckboxes, setSelectedCheckboxes] = useState(new Set());
   const [selectedRadio, setSelectedRadio] = useState();
   return (
-    <ContentCard>
-      <h2>Buttons:</h2>
+    <ContentCard
+      isStickyHead
+      headerContent={(
+        <div className="calendar-heading">Пример пакета Ui-kit</div>
+      )}
+    >
+      <h4>Buttons:</h4>
 
-      <Button>
-        text or jsx
+      <Button
+        style={{
+          marginRight: 16,
+        }}
+      >
+        Обычная
       </Button>
 
-      <h2>Inputs:</h2>
+      <Button
+        style={{
+          marginRight: 16,
+        }}
+        simple
+      >
+        Простая
+      </Button>
 
-      <Input />
+      <Button
+        style={{
+          marginRight: 16,
+        }}
+        cancel
+      >
+        Отмена
+      </Button>
 
-      <h2>NativeSelect:</h2>
+      <h4>Inputs:</h4>
+
+      <Input
+        value={inputValue}
+        onChange={(e) => {
+          setInputValue(e.target.value);
+        }}
+      />
+
+      <h4>NativeSelect:</h4>
 
       <NativeSelect
         value={selectedValue}
@@ -35,7 +69,7 @@ export default function Uikit() {
         }}
       />
 
-      <h2>CheckField:</h2>
+      <h4>CheckField:</h4>
       {Object.entries(checkFieldsData).map(([value, label]) => (
         <CheckField
           key={value}
@@ -56,7 +90,7 @@ export default function Uikit() {
         />
       ))}
 
-      <h2>As radiobuttons:</h2>
+      <h4>As radiobuttons:</h4>
 
       {Object.entries(checkFieldsData).map(([value, label]) => (
         <CheckField
