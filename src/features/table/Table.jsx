@@ -26,11 +26,12 @@ export default function Table() {
       renderText: () => 'Open Dictionaries',
     },
   ];
+
   return (
     <ContentCard
       isStickyHead
       headerContent={(
-        <div className="calendar-heading">Пример пакета Tablet</div>
+        <div className="calendar-heading">Sample package Tablet</div>
     )}
     >
       <ClientTable

@@ -3,7 +3,6 @@ import {
   Button, Input, NativeSelect, CheckField,
 } from '@tourmalinecore/react-tc-ui-kit';
 import ContentCard from '../../components/ContentCard/ContentCard';
-import '../calendar/Calendar.css';
 
 const checkFieldsData = {
   1: 'label-1',
@@ -15,11 +14,12 @@ export default function Uikit() {
   const [selectedValue, setSelectedValue] = useState();
   const [selectedCheckboxes, setSelectedCheckboxes] = useState(new Set());
   const [selectedRadio, setSelectedRadio] = useState();
+
   return (
     <ContentCard
       isStickyHead
       headerContent={(
-        <div className="calendar-heading">Пример пакета Ui-kit</div>
+        <div className="calendar-heading">Sample package Ui-kit</div>
       )}
     >
       <h4>Buttons:</h4>
@@ -29,7 +29,7 @@ export default function Uikit() {
           marginRight: 16,
         }}
       >
-        Обычная
+        Usual
       </Button>
 
       <Button
@@ -38,7 +38,7 @@ export default function Uikit() {
         }}
         simple
       >
-        Простая
+        Simple
       </Button>
 
       <Button
@@ -47,7 +47,7 @@ export default function Uikit() {
         }}
         cancel
       >
-        Отмена
+        Сancel
       </Button>
 
       <h4>Inputs:</h4>
