@@ -35,10 +35,10 @@ export default function AuthPage() {
           inputId="auth-email"
           icon={faEnvelope}
           type="text"
-          placeholder="Почта"
+          placeholder="Email"
           value={formData.email}
           isInvalid={!formData.email && triedToSubmit}
-          validationMessage="Пожалуйста, введите почту"
+          validationMessage="Email should be filled"
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
         />
 
@@ -46,10 +46,10 @@ export default function AuthPage() {
           inputId="auth-password"
           icon={faKey}
           type="password"
-          placeholder="Пароль"
+          placeholder="Password"
           value={formData.password}
           isInvalid={!formData.password && triedToSubmit}
-          validationMessage="Пожалуйста, введите пароль"
+          validationMessage="Password should be filled"
           onChange={(e) => setFormData({ ...formData, password: e.target.value })}
         />
       </AuthForm>
