@@ -2,14 +2,16 @@ import { useState } from 'react';
 import {
   Button, Input, NativeSelect, CheckField,
 } from '@tourmalinecore/react-tc-ui-kit';
+
 import ContentCard from '../../components/ContentCard/ContentCard';
+import DefaultCardHeader from '../../components/DefaultCardHeader/DefaultCardHeader';
 
 const checkFieldsData = {
   1: 'label-1',
   2: 'label-2',
 };
 
-export default function Uikit() {
+export default function Inputs() {
   const [inputValue, setInputValue] = useState('');
   const [selectedValue, setSelectedValue] = useState();
   const [selectedCheckboxes, setSelectedCheckboxes] = useState(new Set());
@@ -19,7 +21,7 @@ export default function Uikit() {
     <ContentCard
       isStickyHead
       headerContent={(
-        <div className="calendar-heading">UI-Kit</div>
+        <DefaultCardHeader>Form Controls Demo</DefaultCardHeader>
       )}
     >
       <h4>Buttons:</h4>

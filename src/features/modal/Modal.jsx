@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFlag } from '@fortawesome/free-solid-svg-icons';
 
 import ContentCard from '../../components/ContentCard/ContentCard';
+import DefaultCardHeader from '../../components/DefaultCardHeader/DefaultCardHeader';
 
 export default function ModalExample() {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -15,7 +16,7 @@ export default function ModalExample() {
     <ContentCard
       isStickyHead
       headerContent={(
-        <div className="calendar-heading">Modal</div>
+        <DefaultCardHeader>Modal Demo</DefaultCardHeader>
       )}
     >
 

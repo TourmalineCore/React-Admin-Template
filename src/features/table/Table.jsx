@@ -4,18 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBook } from '@fortawesome/free-solid-svg-icons';
 
 import ContentCard from '../../components/ContentCard/ContentCard';
+import DefaultCardHeader from '../../components/DefaultCardHeader/DefaultCardHeader';
 
 import {
   all, someTypesOptions, data, someTypesStrings,
 } from './tableData';
-
-function renderBonusObject(row) {
-  return (
-    <b>
-      {row.original.bonusObject}
-    </b>
-  );
-}
 
 export default function Table() {
   const actions = [
@@ -31,8 +24,8 @@ export default function Table() {
     <ContentCard
       isStickyHead
       headerContent={(
-        <div className="calendar-heading">Table</div>
-    )}
+        <DefaultCardHeader>Responsive Table Demo</DefaultCardHeader>
+      )}
     >
       <ClientTable
         tableId="tc-story-bonus-table"
@@ -121,5 +114,13 @@ export default function Table() {
         ]}
       />
     </ContentCard>
+  );
+}
+
+function renderBonusObject(row) {
+  return (
+    <b>
+      {row.original.bonusObject}
+    </b>
   );
 }

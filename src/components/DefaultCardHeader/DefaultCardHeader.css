@@ -1,13 +1,14 @@
-.calendar-heading {
+.default-card-header {
   padding: 16px 10px;
+  font-weight: 500;
 }
 
-.content-card__header--sticky-stuck .calendar-heading {
+.content-card__header--sticky-stuck .default-card-header {
   box-shadow: 1px 2px 10px rgba(34, 49, 59, 0.1);
 }
 
 @media (min-width: 768px) {
-  .calendar-heading {
+  .default-card-header {
     padding: 30px 20px 22px;
   }
 }
