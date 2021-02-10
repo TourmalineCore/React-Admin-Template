@@ -31,7 +31,7 @@ export default function Table() {
     <ContentCard
       isStickyHead
       headerContent={(
-        <div className="calendar-heading">Sample package Tablet</div>
+        <div className="calendar-heading">Table</div>
     )}
     >
       <ClientTable

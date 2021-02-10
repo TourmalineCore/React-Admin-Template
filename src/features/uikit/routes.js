@@ -5,7 +5,7 @@ import Uikit from './Uikit';
 const uikitRoutes = [
   {
     path: '/ui-kit',
-    label: 'Ui-Kit',
+    label: 'UI-Kit',
     icon: faUserCog,
     component: Uikit,
   },

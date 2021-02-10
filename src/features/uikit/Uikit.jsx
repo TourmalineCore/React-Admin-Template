@@ -19,18 +19,10 @@ export default function Uikit() {
     <ContentCard
       isStickyHead
       headerContent={(
-        <div className="calendar-heading">Sample package Ui-kit</div>
+        <div className="calendar-heading">UI-Kit</div>
       )}
     >
       <h4>Buttons:</h4>
-
-      <Button
-        style={{
-          marginRight: 16,
-        }}
-      >
-        Usual
-      </Button>
 
       <Button
         style={{
@@ -45,12 +37,20 @@ export default function Uikit() {
         style={{
           marginRight: 16,
         }}
-        cancel
       >
-        Сancel
+        Apply
       </Button>
 
-      <h4>Inputs:</h4>
+      <Button
+        style={{
+          marginRight: 16,
+        }}
+        cancel
+      >
+        Cancel
+      </Button>
+
+      <h4>Input:</h4>
 
       <Input
         value={inputValue}
@@ -59,7 +59,7 @@ export default function Uikit() {
         }}
       />
 
-      <h4>NativeSelect:</h4>
+      <h4>Native Select:</h4>
 
       <NativeSelect
         value={selectedValue}
@@ -69,7 +69,7 @@ export default function Uikit() {
         }}
       />
 
-      <h4>CheckField:</h4>
+      <h4>Checkboxes:</h4>
       {Object.entries(checkFieldsData).map(([value, label]) => (
         <CheckField
           key={value}
@@ -90,7 +90,7 @@ export default function Uikit() {
         />
       ))}
 
-      <h4>As radiobuttons:</h4>
+      <h4>Radiobuttons:</h4>
 
       {Object.entries(checkFieldsData).map(([value, label]) => (
         <CheckField

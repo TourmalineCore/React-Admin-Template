@@ -15,7 +15,7 @@ export default function ModalExample() {
     <ContentCard
       isStickyHead
       headerContent={(
-        <div className="calendar-heading">Sample package Modal</div>
+        <div className="calendar-heading">Modal</div>
       )}
     >
 
@@ -28,6 +28,7 @@ export default function ModalExample() {
       {isModalVisible && (
         <Modal
           title="Modal title"
+          subtitle="Modal subtitle"
           icon={<FontAwesomeIcon icon={faFlag} />}
           content="Modal content text"
           overlay
