@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export const useStickyHeader = (topSentinelRef, bottomSentinelRef) => {
+export const useStickyHeader = (topSentinelRef) => {
   const [isHeaderStuck, setIsHeaderStuck] = useState(false);
 
   useEffect(() => {
@@ -8,6 +8,10 @@ export const useStickyHeader = (topSentinelRef, bottomSentinelRef) => {
       for (const record of records) {
         const targetInfo = record.boundingClientRect;
         const rootBoundsInfo = record.rootBounds;
+
+        if (!rootBoundsInfo || !targetInfo) {
+          return;
+        }
 
         // Started sticking.
         if (targetInfo.bottom < rootBoundsInfo.top) {
@@ -21,30 +25,10 @@ export const useStickyHeader = (topSentinelRef, bottomSentinelRef) => {
       }
     }, { threshold: [0], root: null });
 
-    const bottomObserver = new IntersectionObserver((records) => {
-      for (const record of records) {
-        const targetInfo = record.boundingClientRect;
-        const rootBoundsInfo = record.rootBounds;
-        const ratio = record.intersectionRatio;
-
-        // Started sticking.
-        if (targetInfo.bottom > rootBoundsInfo.top && ratio === 1) {
-          setIsHeaderStuck(true);
-        }
-
-        // Stopped sticking.
-        if (targetInfo.top < rootBoundsInfo.top && targetInfo.bottom < rootBoundsInfo.bottom) {
-          setIsHeaderStuck(false);
-        }
-      }
-    }, { threshold: [1], root: null });
-
     topObserver.observe(topSentinelRef.current);
-    bottomObserver.observe(bottomSentinelRef.current);
 
     return () => {
       topObserver.disconnect();
-      bottomObserver.disconnect();
     };
   }, []);
 

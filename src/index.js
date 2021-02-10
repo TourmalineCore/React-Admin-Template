@@ -10,6 +10,9 @@ import reportWebVitals from './reportWebVitals';
 import App from './App';
 import { AuthProvider } from './routes/authStateProvider/authContext';
 
+import '@tourmalinecore/react-table-responsive/es/index.css';
+import '@tourmalinecore/react-tc-modal/es/index.css';
+import '@tourmalinecore/react-tc-ui-kit/es/index.css';
 import './index.css';
 
 ReactDOM.render(

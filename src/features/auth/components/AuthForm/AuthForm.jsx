@@ -23,7 +23,7 @@ export default function AuthForm({
         {children}
 
         <div className="auth-form__controls">
-          <button className="auth-form__button" type="submit">Войти</button>
+          <button className="auth-form__button" type="submit">Log In</button>
         </div>
       </form>
     </div>

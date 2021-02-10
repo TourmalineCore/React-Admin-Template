@@ -1,13 +1,13 @@
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 
-import Home from './Home';
+import HomePage from './HomePage';
 
 const homeRoutes = [
   {
     path: '/',
     label: 'Home',
     icon: faHome,
-    component: Home,
+    component: HomePage,
   },
 ];
 

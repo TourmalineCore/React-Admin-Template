@@ -2,7 +2,7 @@ import './SidebarInfoBox.css';
 
 export default function SidebarInfoBox({
   photoUrl,
-  name = 'Undefined User',
+  name = 'Nameless User',
   email = 'email@email.com',
 }) {
   return (
