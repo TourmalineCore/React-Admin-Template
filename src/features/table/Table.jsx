@@ -1,7 +1,7 @@
 import { ClientTable, SelectColumnFilter } from '@tourmalinecore/react-table-responsive';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBook } from '@fortawesome/free-solid-svg-icons';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
 import ContentCard from '../../components/ContentCard/ContentCard';
 import DefaultCardHeader from '../../components/DefaultCardHeader/DefaultCardHeader';
@@ -13,10 +13,10 @@ import {
 export default function Table() {
   const actions = [
     {
-      name: 'open-dictionaries-action',
+      name: 'edit-row-action',
       show: () => true,
-      renderIcon: () => <FontAwesomeIcon icon={faBook} />,
-      renderText: () => 'Open Dictionaries',
+      renderIcon: () => <FontAwesomeIcon icon={faEdit} />,
+      renderText: () => 'Edit Row',
     },
   ];
 
@@ -83,18 +83,6 @@ export default function Table() {
             Footer: () => '97,25',
           },
           {
-            Header: 'Forecasting',
-            accessor: 'targetAchivementPercent',
-            id: 'newSlider',
-            width: 260,
-            minWidth: 140,
-            disableFilters: true,
-            disableSortBy: true,
-            twoRowsMobileLayout: true,
-            noFooterColumn: true,
-            Cell: () => (<input type="range" min={0} max={100} value={79} readOnly />),
-          },
-          {
             Header: 'Bonus (₽)',
             id: 'calculatedBonus',
             noFooterColumn: true,
@@ -119,8 +107,8 @@ export default function Table() {
 
 function renderBonusObject(row) {
   return (
-    <b>
+    <i>
       {row.original.bonusObject}
-    </b>
+    </i>
   );
 }

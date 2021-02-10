@@ -1,6 +1,7 @@
 .default-card-header {
   padding: 16px 10px;
   font-weight: 500;
+  font-size: 18px;
 }
 
 .content-card__header--sticky-stuck .default-card-header {
@@ -9,6 +10,7 @@
 
 @media (min-width: 768px) {
   .default-card-header {
-    padding: 30px 20px 22px;
+    padding: 29px 20px 20px;
+    font-size: 20px;
   }
 }

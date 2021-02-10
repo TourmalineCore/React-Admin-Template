@@ -5,6 +5,7 @@ import {
 
 import ContentCard from '../../components/ContentCard/ContentCard';
 import DefaultCardHeader from '../../components/DefaultCardHeader/DefaultCardHeader';
+import CustomHeading from '../../components/CustomHeading/CustomHeading';
 
 const checkFieldsData = {
   1: 'label-1',
@@ -24,11 +25,12 @@ export default function Inputs() {
         <DefaultCardHeader>Form Controls Demo</DefaultCardHeader>
       )}
     >
-      <h4>Buttons:</h4>
+      <CustomHeading>Buttons:</CustomHeading>
 
       <Button
         style={{
           marginRight: 16,
+          marginBottom: 16,
         }}
         simple
       >
@@ -38,6 +40,7 @@ export default function Inputs() {
       <Button
         style={{
           marginRight: 16,
+          marginBottom: 16,
         }}
       >
         Apply
@@ -46,13 +49,14 @@ export default function Inputs() {
       <Button
         style={{
           marginRight: 16,
+          marginBottom: 16,
         }}
         cancel
       >
         Cancel
       </Button>
 
-      <h4>Input:</h4>
+      <CustomHeading>Input:</CustomHeading>
 
       <Input
         value={inputValue}
@@ -61,7 +65,7 @@ export default function Inputs() {
         }}
       />
 
-      <h4>Native Select:</h4>
+      <CustomHeading>Native Select:</CustomHeading>
 
       <NativeSelect
         value={selectedValue}
@@ -71,7 +75,7 @@ export default function Inputs() {
         }}
       />
 
-      <h4>Checkboxes:</h4>
+      <CustomHeading>Checkboxes:</CustomHeading>
       {Object.entries(checkFieldsData).map(([value, label]) => (
         <CheckField
           key={value}
@@ -92,7 +96,7 @@ export default function Inputs() {
         />
       ))}
 
-      <h4>Radiobuttons:</h4>
+      <CustomHeading>Radiobuttons:</CustomHeading>
 
       {Object.entries(checkFieldsData).map(([value, label]) => (
         <CheckField
