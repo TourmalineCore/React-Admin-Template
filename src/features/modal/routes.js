@@ -1,13 +1,13 @@
 import { faWindowMaximize } from '@fortawesome/free-solid-svg-icons';
 
-import Modal from './Modal';
+import ModalPage from './ModalPage';
 
 const modalRoutes = [
   {
     path: '/modal',
     label: 'Modal',
     icon: faWindowMaximize,
-    component: Modal,
+    component: ModalPage,
   },
 ];
 

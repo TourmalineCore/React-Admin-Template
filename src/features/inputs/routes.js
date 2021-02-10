@@ -1,13 +1,13 @@
 import { faKeyboard } from '@fortawesome/free-solid-svg-icons';
 
-import Inputs from './Inputs';
+import InputsPage from './InputsPage';
 
 const inputsRoutes = [
   {
     path: '/inputs',
     label: 'Inputs',
     icon: faKeyboard,
-    component: Inputs,
+    component: InputsPage,
   },
 ];
 

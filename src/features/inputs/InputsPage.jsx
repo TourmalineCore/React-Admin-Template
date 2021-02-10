@@ -12,7 +12,7 @@ const checkFieldsData = {
   2: 'label-2',
 };
 
-export default function Inputs() {
+export default function InputsPage() {
   const [inputValue, setInputValue] = useState('');
   const [selectedValue, setSelectedValue] = useState();
   const [selectedCheckboxes, setSelectedCheckboxes] = useState(new Set());

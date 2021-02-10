@@ -10,7 +10,7 @@ import {
   all, someTypesOptions, data, someTypesStrings,
 } from './tableData';
 
-export default function Table() {
+export default function TablePage() {
   const actions = [
     {
       name: 'edit-row-action',
@@ -36,6 +36,7 @@ export default function Table() {
         }}
         renderMobileTitle={(row) => renderBonusObject(row)}
         enableTableStatePersistance
+        maxStillMobileBreakpoint={1200}
         actions={actions}
         columns={[
           {

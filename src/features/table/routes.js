@@ -1,13 +1,13 @@
 import { faTable } from '@fortawesome/free-solid-svg-icons';
 
-import Table from './Table';
+import TablePage from './TablePage';
 
 const tableRoutes = [
   {
     path: '/table',
     label: 'Table',
     icon: faTable,
-    component: Table,
+    component: TablePage,
   },
 ];
 
