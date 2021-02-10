@@ -1,4 +1,4 @@
-import { ClientTable } from '@tourmalinecore/react-table-responsive';
+import { ClientTable, SelectColumnFilter } from '@tourmalinecore/react-table-responsive';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBook } from '@fortawesome/free-solid-svg-icons';
@@ -49,6 +49,8 @@ export default function Table() {
             Header: 'Bonus Object',
             accessor: 'bonusObject',
             filter: 'fuzzyText',
+            nonMobileColumn: true,
+            principalFilterableColumn: true,
             Cell: ({ row }) => renderBonusObject(row),
             Footer: () => <strong>Total</strong>,
           },
@@ -56,54 +58,65 @@ export default function Table() {
             Header: 'Weight (%)',
             accessor: 'weightForSorting',
             width: 80,
+            disableFilters: true,
             Footer: () => 100,
           },
           {
             Header: 'Planned (₽)',
             accessor: 'plannedSales',
+            disableFilters: true,
             Footer: () => '48 529 957,27 ₽',
           },
           {
             Header: 'Previous (₽)',
             accessor: 'previousSales',
+            disableSortBy: true,
+            disableFilters: true,
             Footer: () => '42 238 542,94 ₽',
           },
           {
             Header: 'Actual (₽)',
             accessor: 'actualSales',
+            disableSortBy: true,
+            disableFilters: true,
             Footer: () => '47 193 196,2 ₽',
           },
           {
             Header: 'Target (%)',
             accessor: 'targetAchivementPercent',
             width: 80,
+            disableSortBy: true,
+            disableFilters: true,
             Footer: () => '97,25',
           },
           {
             Header: 'Forecasting',
+            accessor: 'targetAchivementPercent',
+            id: 'newSlider',
             width: 260,
             minWidth: 140,
-            id: 'newSlider',
-            accessor: 'targetAchivementPercent',
-            Cell: () => (<input type="range" min={0} max={100} value={79} readOnly />),
+            disableFilters: true,
+            disableSortBy: true,
             twoRowsMobileLayout: true,
             noFooterColumn: true,
+            Cell: () => (<input type="range" min={0} max={100} value={79} readOnly />),
           },
           {
             Header: 'Bonus (₽)',
             id: 'calculatedBonus',
+            noFooterColumn: true,
             accessor: (row) => row.forcastedBonus || row.calculatedBonus,
             Cell: (row) => `${row.value} ₽`,
-            noFooterColumn: true,
           },
           {
             Header: 'Type',
             accessor: 'someType',
             minWidth: 200,
             maxWidth: 400,
-            Cell: (cell) => someTypesStrings[cell.value],
-            selectFilterOptions: [all, ...someTypesOptions],
             noFooterColumn: true,
+            Cell: (cell) => someTypesStrings[cell.value],
+            Filter: SelectColumnFilter,
+            selectFilterOptions: [all, ...someTypesOptions],
           },
         ]}
       />
