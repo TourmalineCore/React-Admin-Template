@@ -59,6 +59,7 @@ export default function Inputs() {
       <CustomHeading>Input:</CustomHeading>
 
       <Input
+        style={{ maxWidth: 300 }}
         value={inputValue}
         onChange={(e) => {
           setInputValue(e.target.value);
@@ -68,6 +69,7 @@ export default function Inputs() {
       <CustomHeading>Native Select:</CustomHeading>
 
       <NativeSelect
+        style={{ maxWidth: 300 }}
         value={selectedValue}
         options={[{ label: 'option1', value: 1 }, { label: 'option2', value: 2 }]}
         onChange={(option) => {
