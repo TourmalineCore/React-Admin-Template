@@ -6,7 +6,7 @@ import './AuthForm.css';
 export default function AuthForm({
   children,
   errorMessages = [],
-  onSubmit = () => {},
+  onSubmit = () => { },
 }) {
   return (
     <div className="auth-form">
@@ -16,7 +16,9 @@ export default function AuthForm({
       <form className="auth-form__form" onSubmit={onSubmit}>
         <div className="auth-form__messages-box">
           {errorMessages.map((errorMessage) => (
-            <div className="auth-form__message">{errorMessage}</div>
+            <div className="auth-form__message">
+              {errorMessage}
+            </div>
           ))}
         </div>
 

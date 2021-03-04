@@ -8,6 +8,10 @@
   background: linear-gradient(180deg, #fff0fc 0%, #eceaff 51.56%, #e1f1ff 100%);
 }
 
+.auth-page__input {
+  margin-bottom: 30px;
+}
+
 @media (min-width: 768px) {
   .auth-page {
     background: #fff;
