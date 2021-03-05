@@ -35,9 +35,7 @@ export default function AuthPage() {
           type="text"
           label="Login"
           value={formData.email}
-          disabled={false}
-          isValid={false}
-          isInvalid={true && triedToSubmit}
+          isInvalid={!formData.email && triedToSubmit}
           validationMessages={['Email should be filled']}
           isMessagesAbsolute
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -49,9 +47,7 @@ export default function AuthPage() {
           type="password"
           label="Password"
           value={formData.password}
-          disabled={false}
-          isValid={false}
-          isInvalid={true && triedToSubmit}
+          isInvalid={!formData.password && triedToSubmit}
           validationMessages={['Password should be filled']}
           isMessagesAbsolute
           onChange={(e) => setFormData({ ...formData, password: e.target.value })}

@@ -6,6 +6,9 @@
   --color-accent-last: #f53893;
   --color-link: var(--color-accent-first);
   --color-copyright-link: var(--color-accent-last);
+  --accent-gradient-color-1: #fff0fc;
+  --accent-gradient-color-2: #eceaff;
+  --accent-gradient-color-3: #e1f1ff;
 }
 
 *,

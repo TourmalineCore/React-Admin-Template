@@ -1,12 +1,14 @@
 import { ReactComponent as BgLeft } from '../../../../assets/img/auth-bg-left.svg';
 import { ReactComponent as BgRight } from '../../../../assets/img/auth-bg-right.svg';
+import AuthButton from '../AuthButton/AuthButton';
 
 import './AuthForm.css';
+import '../AuthButton/AuthButton.css';
 
 export default function AuthForm({
   children,
   errorMessages = [],
-  onSubmit = () => { },
+  onSubmit = () => {},
 }) {
   return (
     <div className="auth-form">
@@ -25,7 +27,11 @@ export default function AuthForm({
         {children}
 
         <div className="auth-form__controls">
-          <button className="auth-form__button" type="submit">Log In</button>
+          <AuthButton
+            type="submit"
+          >
+            Login In
+          </AuthButton>
         </div>
       </form>
     </div>
