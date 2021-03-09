@@ -6,6 +6,10 @@
   max-width: 424px;
 }
 
+.auth-form__bg-image {
+  color: var(--color-text);
+}
+
 .auth-form__bg-image--left {
   display: none;
 }

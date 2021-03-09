@@ -30,7 +30,7 @@ export default function AuthForm({
           <AuthButton
             type="submit"
           >
-            Login In
+            Log In
           </AuthButton>
         </div>
       </form>

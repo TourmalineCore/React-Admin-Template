@@ -13,11 +13,19 @@
 }
 
 .svg-fill-accent-first {
-  fill: #ffc1ee;
+  fill: var(--auth-bg-accent-color-first);
+}
+
+.svg-stroke-accent-first {
+  stroke: var(--auth-bg-accent-color-first);
 }
 
 .svg-fill-accent-last {
-  fill: #9cceff;
+  fill: var(--auth-bg-accent-color-last);
+}
+
+.svg-stroke-accent-last {
+  stroke: var(--auth-bg-accent-color-last);
 }
 
 @media (min-width: 768px) {

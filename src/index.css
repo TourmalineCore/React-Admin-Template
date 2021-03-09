@@ -1,7 +1,7 @@
 :root {
   --sidebar-width: 320px;
   --sidebar-collapsed-width: 86px;
-  --color-text: #263f4d;
+  --color-text: #172f3d;
   --color-accent-first: #0c8bb4;
   --color-accent-last: #f53893;
   --color-link: var(--color-accent-first);
@@ -9,6 +9,8 @@
   --accent-gradient-color-1: #fff0fc;
   --accent-gradient-color-2: #eceaff;
   --accent-gradient-color-3: #e1f1ff;
+  --auth-bg-accent-color-first: #81b4ff;
+  --auth-bg-accent-color-last: #ffc1ee;
 }
 
 *,
@@ -26,6 +28,7 @@ body {
   padding: 0;
   font-family: "Rubik", sans-serif;
   font-weight: 300;
+  color: var(--color-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
