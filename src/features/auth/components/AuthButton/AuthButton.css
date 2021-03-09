@@ -1,20 +1,22 @@
-.auth-button__button {
+.auth-button {
   position: relative;
   margin: 0 auto;
   outline: none;
   border: none;
   border-radius: 15px;
-  padding: 10px 42px;
+  padding: 11px 42px;
   min-width: 137px;
+  min-height: 42px;
   box-shadow: none;
   font-size: 18px;
   line-height: 1.15;
+  text-align: center;
   color: inherit;
-  background: transparent;
+  background-color: transparent;
   cursor: pointer;
 }
 
-.auth-button__button::before {
+.auth-button::before {
   content: "";
   position: absolute;
   left: 0;
@@ -27,7 +29,7 @@
   pointer-events: none;
 }
 
-.auth-button__button:hover::before,
-.auth-button__button:focus::before {
+.auth-button:hover::before,
+.auth-button:focus::before {
   border-width: 2px;
 }

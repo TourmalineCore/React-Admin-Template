@@ -9,16 +9,14 @@ export default function AuthButton({
   onClick = () => {},
 }) {
   return (
-    <div>
-      <button
-        style={style}
+    <button
+      style={style}
         type={type} // eslint-disable-line
-        className={`auth-button__button ${className}}`}
-        disabled={disabled}
-        onClick={onClick}
-      >
-        {children}
-      </button>
-    </div>
+      className={`auth-button ${className}`}
+      disabled={disabled}
+      onClick={onClick}
+    >
+      {children}
+    </button>
   );
 }
