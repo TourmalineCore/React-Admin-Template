@@ -52,7 +52,6 @@ export default function AuthPage() {
           isMessagesAbsolute
           onChange={(e) => setFormData({ ...formData, password: e.target.value })}
         />
-
       </AuthForm>
     </div>
   );
