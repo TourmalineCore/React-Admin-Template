@@ -32,9 +32,8 @@ export default function InputsPage() {
           marginRight: 16,
           marginBottom: 16,
         }}
-        simple
       >
-        Simple
+        Default
       </Button>
 
       <Button
@@ -42,6 +41,7 @@ export default function InputsPage() {
           marginRight: 16,
           marginBottom: 16,
         }}
+        color="primary"
       >
         Apply
       </Button>
@@ -51,15 +51,26 @@ export default function InputsPage() {
           marginRight: 16,
           marginBottom: 16,
         }}
-        cancel
+        color="danger"
       >
         Cancel
+      </Button>
+
+      <Button
+        style={{
+          marginRight: 16,
+          marginBottom: 16,
+        }}
+        color="secondary"
+      >
+        Secondary
       </Button>
 
       <CustomHeading>Input:</CustomHeading>
 
       <Input
         style={{ maxWidth: 300 }}
+        label="Input label"
         value={inputValue}
         onChange={(e) => {
           setInputValue(e.target.value);

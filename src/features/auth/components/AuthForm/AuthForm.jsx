@@ -1,9 +1,9 @@
+import { Button } from '@tourmalinecore/react-tc-ui-kit';
+
 import { ReactComponent as BgLeft } from '../../../../assets/img/auth-bg-left.svg';
 import { ReactComponent as BgRight } from '../../../../assets/img/auth-bg-right.svg';
-import AuthButton from '../AuthButton/AuthButton';
 
 import './AuthForm.css';
-import '../AuthButton/AuthButton.css';
 
 export default function AuthForm({
   children,
@@ -27,11 +27,11 @@ export default function AuthForm({
         {children}
 
         <div className="auth-form__controls">
-          <AuthButton
+          <Button
             type="submit"
           >
             Log In
-          </AuthButton>
+          </Button>
         </div>
       </form>
     </div>
