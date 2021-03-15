@@ -1,9 +1,7 @@
 import { useContext, useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { faKey, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-
-import AuthField from './components/AuthField/AuthField';
+import { Input } from '@tourmalinecore/react-tc-ui-kit';
 import AuthForm from './components/AuthForm/AuthForm';
 
 import { AuthContext } from '../../routes/authStateProvider/authContext';
@@ -31,25 +29,27 @@ export default function AuthPage() {
       <AuthForm
         onSubmit={handleFormSubmit}
       >
-        <AuthField
-          inputId="auth-email"
-          icon={faEnvelope}
+        <Input
+          id="login"
+          className="auth-page__input"
           type="text"
-          placeholder="Email"
+          label="Login"
           value={formData.email}
           isInvalid={!formData.email && triedToSubmit}
-          validationMessage="Email should be filled"
+          validationMessages={['Email should be filled']}
+          isMessagesAbsolute
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
         />
 
-        <AuthField
-          inputId="auth-password"
-          icon={faKey}
+        <Input
+          id="password"
+          className="auth-page__input"
           type="password"
-          placeholder="Password"
+          label="Password"
           value={formData.password}
           isInvalid={!formData.password && triedToSubmit}
-          validationMessage="Password should be filled"
+          validationMessages={['Password should be filled']}
+          isMessagesAbsolute
           onChange={(e) => setFormData({ ...formData, password: e.target.value })}
         />
       </AuthForm>

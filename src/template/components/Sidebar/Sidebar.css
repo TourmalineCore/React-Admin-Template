@@ -56,7 +56,13 @@ html.is-sidebar-mobile-opened {
   overflow: hidden;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(180deg, #fff0f4 0%, #fbf0fb 25%, #f2f2ff 50%, #e8f5ff 75%, #e8f9ff 100%);
+  background-image:
+    linear-gradient(
+      180deg,
+      var(--accent-gradient-color-1) 0%,
+      var(--accent-gradient-color-2) 52%,
+      var(--accent-gradient-color-3) 100%
+    );
   background-color: #fff;
 }
 
