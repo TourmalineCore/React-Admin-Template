@@ -34,82 +34,92 @@ export default function TablePage() {
           id: 'weightForSorting',
           desc: true,
         }}
-        renderMobileTitle={(row) => renderBonusObject(row)}
+        renderMobileTitle={(row) => row.original.employee}
         enableTableStatePersistance
         maxStillMobileBreakpoint={1200}
         actions={actions}
         columns={[
           {
-            Header: 'Bonus Object',
-            accessor: 'bonusObject',
+            Header: 'Employee',
+            accessor: 'employee',
+            // Use our custom `fuzzyText` filter on this column
             filter: 'fuzzyText',
+            Cell: ({ row }) => row.original.employee,
+            Footer: () => 'Total',
             nonMobileColumn: true,
             principalFilterableColumn: true,
-            Cell: ({ row }) => renderBonusObject(row),
-            Footer: () => <strong>Total</strong>,
           },
           {
             Header: 'Weight (%)',
-            accessor: 'weightForSorting',
-            width: 80,
+            accessor: 'weight',
+            width: 140,
             disableFilters: true,
             Footer: () => 100,
           },
           {
-            Header: 'Planned (₽)',
+            Header: 'Planned',
             accessor: 'plannedSales',
+            width: 200,
             disableFilters: true,
-            Footer: () => '48 529 957,27 ₽',
+            Footer: () => '48 529 957,27',
           },
           {
-            Header: 'Previous (₽)',
+            Header: 'Previous',
             accessor: 'previousSales',
+            width: 200,
             disableSortBy: true,
             disableFilters: true,
-            Footer: () => '42 238 542,94 ₽',
+            Footer: () => '42 238 542,94',
           },
           {
-            Header: 'Actual (₽)',
+            Header: 'Actual',
             accessor: 'actualSales',
+            width: 200,
             disableSortBy: true,
             disableFilters: true,
-            Footer: () => '47 193 196,2 ₽',
+            Footer: () => '47 193 196,2',
           },
           {
-            Header: 'Target (%)',
+            Header: 'Target',
             accessor: 'targetAchivementPercent',
-            width: 80,
+            width: 100,
             disableSortBy: true,
             disableFilters: true,
             Footer: () => '97,25',
           },
           {
-            Header: 'Bonus (₽)',
-            id: 'calculatedBonus',
+            Header: 'Forecasting',
+            disableFilters: true,
+            disableSortBy: true,
+            width: 220,
+            minWidth: 140,
+            id: 'newSlider',
+            accessor: 'targetAchivementPercent',
+            Cell: () => (<input type="range" min={0} max={100} defaultValue={79} />),
+            twoRowsMobileLayout: true,
             noFooterColumn: true,
+          },
+          {
+            Header: 'Bonus',
+            id: 'calculatedBonus',
+            disableSortBy: true,
+            disableFilters: true,
             accessor: (row) => row.forcastedBonus || row.calculatedBonus,
-            Cell: (row) => `${row.value} ₽`,
+            Cell: (row) => row.value,
+            noFooterColumn: true,
           },
           {
             Header: 'Type',
             accessor: 'someType',
             minWidth: 200,
             maxWidth: 400,
-            noFooterColumn: true,
             Cell: (cell) => someTypesStrings[cell.value],
             Filter: SelectColumnFilter,
             selectFilterOptions: [all, ...someTypesOptions],
+            noFooterColumn: true,
           },
         ]}
       />
     </ContentCard>
-  );
-}
-
-function renderBonusObject(row) {
-  return (
-    <i>
-      {row.original.bonusObject}
-    </i>
   );
 }
