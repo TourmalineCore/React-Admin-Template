@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.3](https://github.com/TourmalineCore/React-Admin-Template/compare/v0.2.2...v0.2.3) (2021-03-16)
+
+
+### Bug Fixes
+
+* update tc-packages with new colors ([cea0d55](https://github.com/TourmalineCore/React-Admin-Template/commit/cea0d55950b0e83f6f71ef26ad17fc17ce2d798f))
+
 ### [0.2.2](https://github.com/TourmalineCore/React-Admin-Template/compare/v0.2.1...v0.2.2) (2021-03-16)
 
 
