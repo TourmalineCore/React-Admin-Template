@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.2](https://github.com/TourmalineCore/React-Admin-Template/compare/v0.2.1...v0.2.2) (2021-03-16)
+
+
+### Bug Fixes
+
+* fix login validation message ([57e1f63](https://github.com/TourmalineCore/React-Admin-Template/commit/57e1f638261e7cddd41d7c6180a8a05b9a9d3098))
+* fix styles import order ([3659385](https://github.com/TourmalineCore/React-Admin-Template/commit/3659385a57f7e48d09f94e8f80fab24ffcca1169))
+
 ### [0.2.1](https://github.com/TourmalineCore/React-Admin-Template/compare/v0.2.0...v0.2.1) (2021-03-15)
 
 
