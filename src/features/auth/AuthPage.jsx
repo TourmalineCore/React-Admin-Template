@@ -36,7 +36,7 @@ export default function AuthPage() {
           label="Login"
           value={formData.email}
           isInvalid={!formData.email && triedToSubmit}
-          validationMessages={['Email should be filled']}
+          validationMessages={['Login should be filled']}
           isMessagesAbsolute
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
         />
