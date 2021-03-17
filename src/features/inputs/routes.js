@@ -2,7 +2,15 @@ import { faKeyboard } from '@fortawesome/free-solid-svg-icons';
 
 import InputsPage from './InputsPage';
 
-const inputsRoutes = [
+export const inputsRoutes = [
+  {
+    path: '/inputs',
+    breadcrumb: 'Inputs',
+    component: InputsPage,
+  },
+];
+
+export const inputsSidebarRoutes = [
   {
     path: '/inputs',
     label: 'Inputs',
@@ -10,5 +18,3 @@ const inputsRoutes = [
     component: InputsPage,
   },
 ];
-
-export default inputsRoutes;

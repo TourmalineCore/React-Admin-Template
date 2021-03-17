@@ -16,14 +16,14 @@ export default function SidebarItem({
   path,
   isActive,
   counter,
-  nestedItems = [],
-  isNestedItemsCollapsed = true,
+  routes = [],
+  isNestedRoutesCollapsed = true,
   onItemClick = () => {},
   onNestedBlockCollapseToggle = () => {},
 }) {
-  const hasNestedElements = nestedItems && !!nestedItems.length;
+  const hasNestedElements = routes && !!routes.length;
 
-  const [nestedBlockCollapsed, setNestedBlockCollapsed] = useState(isNestedItemsCollapsed);
+  const [nestedBlockCollapsed, setNestedBlockCollapsed] = useState(isNestedRoutesCollapsed);
 
   const TagName = getProperTagName();
   const linkProps = {
@@ -72,10 +72,11 @@ export default function SidebarItem({
 
       {hasNestedElements && !nestedBlockCollapsed && (
         <div className="sidebar-item__nested">
-          {nestedItems.map((nestedItemProps) => (
+          {routes.map((nestedRouteProps) => (
             <SidebarItem
-              key={nestedItemProps.id || nestedItemProps.path}
-              {...nestedItemProps}
+              {...nestedRouteProps}
+              key={nestedRouteProps.id || nestedRouteProps.path}
+              onItemClick={onItemClick}
             />
           ))}
         </div>

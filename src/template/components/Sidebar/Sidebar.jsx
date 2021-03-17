@@ -21,6 +21,7 @@ export default function BexSidebar({
   renderTopComponent,
   onCollapseToggle = () => {},
   onOverlayClick = () => {},
+  onMenuLinkClick = () => {},
 }) {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(defaultIsCollapsed);
   const sidebarNodeRef = useRef(null);
@@ -97,7 +98,7 @@ export default function BexSidebar({
   function renderMenuItem(item) {
     return (
       <li key={item.id || item.path} className="sidebar__navitem">
-        <SidebarItem {...item} />
+        <SidebarItem {...item} onItemClick={onMenuLinkClick} />
       </li>
     );
   }
