@@ -26,7 +26,9 @@ export default function Template({
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const [isMobileSidebarOpened, setIsMobileSidebarOpened] = useState(false);
 
-  const prevBreadcrumbPath = breadcrumbs.length > 1 ? breadcrumbs[breadcrumbs.length - 2].path : null;
+  const prevBreadcrumbPath = breadcrumbs.length > 1
+    ? breadcrumbs[breadcrumbs.length - 2].breadcrumb.key
+    : null;
 
   return (
     <>
