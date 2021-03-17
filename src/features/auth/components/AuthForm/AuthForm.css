@@ -63,10 +63,8 @@
   }
 
   .auth-form__bg-image--right {
-    left: 50%;
     width: 340px;
     height: 173px;
-    transform: translateX(-50%);
   }
 
   .auth-form__form {
@@ -98,9 +96,8 @@
 @media (min-width: 1024px) {
   .auth-form__bg-image--left {
     position: absolute;
-    left: auto;
-    right: calc(100% - 20px);
-    bottom: 30%;
+    right: 100%;
+    top: 128px;
     display: block;
     width: 319px;
     height: 162px;
@@ -108,8 +105,8 @@
 
   .auth-form__bg-image--right {
     position: absolute;
-    left: calc(100% - 20px);
-    bottom: 30%;
+    left: 100%;
+    top: 128px;
     display: block;
     width: 319px;
     height: 162px;
@@ -117,30 +114,14 @@
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1200px) {
   .auth-form__bg-image--left {
-    right: calc(100% - 20px);
-    bottom: 30%;
+    width: 352px;
+    height: 174px;
   }
 
   .auth-form__bg-image--right {
-    left: calc(100% - 20px);
-    bottom: 30%;
-  }
-}
-
-@media (min-width: 1440px) {
-  .auth-form__bg-image--left {
-    right: calc(100% - 8px);
-    bottom: 28%;
-    width: 348px;
-    height: 173px;
-  }
-
-  .auth-form__bg-image--right {
-    left: calc(100% - 26px);
-    bottom: 28%;
-    width: 350px;
-    height: 173px;
+    width: 342px;
+    height: 175px; /* fixes subpixel bottom line */
   }
 }
