@@ -2,13 +2,18 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 import HomePage from './HomePage';
 
-const homeRoutes = [
+export const homeRoutes = [
   {
     path: '/',
-    label: 'Home',
-    icon: faHome,
+    breadcrumb: 'Home',
     component: HomePage,
   },
 ];
 
-export default homeRoutes;
+export const homeSidebarRoutes = [
+  {
+    path: '/',
+    label: 'Home',
+    icon: faHome,
+  },
+];

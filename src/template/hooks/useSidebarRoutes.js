@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 
-export function useRoutes(initialRoutes, location) {
+export function useSidebarRoutes(initialRoutes, location) {
   const [routes, setRoutes] = useState(adaptRoutesByLocation(initialRoutes, location));
 
   useEffect(() => {
-    setRoutes(adaptRoutesByLocation(routes, location));
+    setRoutes((prevRoutesState) => adaptRoutesByLocation(prevRoutesState, location));
   }, [location]);
 
   return routes;
@@ -14,8 +14,8 @@ function adaptRoutesByLocation(routes = [], location) {
   return routes.map((route) => ({
     ...route,
     isActive: isRouteActive(route.path, location),
-    isNestedItemsCollapsed: getItemCollapsedState(route.nestedItems, location),
-    nestedItems: adaptRoutesByLocation(route.nestedItems, location),
+    isNestedRoutesCollapsed: getItemCollapsedState(route.routes, location),
+    routes: adaptRoutesByLocation(route.routes, location),
   }));
 }
 
@@ -23,6 +23,6 @@ function isRouteActive(routePath, location) {
   return location.pathname.endsWith(routePath) || location.pathname.includes(`${routePath}/`);
 }
 
-function getItemCollapsedState(nestedItems = [], location) {
-  return !nestedItems.some((item) => location.pathname.includes(item.path));
+function getItemCollapsedState(nestedRoutes = [], location) {
+  return !nestedRoutes.some((item) => location.pathname.includes(item.path));
 }

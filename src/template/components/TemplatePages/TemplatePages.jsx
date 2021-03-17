@@ -5,31 +5,14 @@ export default function TemplatePages({
 }) {
   return (
     <Switch>
-      {flattenRoutes(routes)}
-    </Switch>
-  );
-}
-
-function flattenRoutes(routes) {
-  return routes
-    .map((route) => {
-      const nestedRoutes = route.nestedItems && route.nestedItems.length
-        ? flattenRoutes(route.nestedItems)
-        : [];
-
-      return [
-        ...nestedRoutes,
+      {routes.map((route) => (
         <Route
           key={route.id || route.path}
-          exact
           path={route.path}
-          render={(props) => (
-            <route.component
-              {...props}
-            />
-          )}
-        />,
-      ];
-    })
-    .flat();
+          exact
+          render={(props) => <route.component {...props} />}
+        />
+      ))}
+    </Switch>
+  );
 }

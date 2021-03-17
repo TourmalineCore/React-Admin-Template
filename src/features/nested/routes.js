@@ -6,21 +6,30 @@ import {
 import NestedPagesRoot from './NestedPagesRoot';
 import CardPage from './components/CardPage';
 
-const nestedPagesRoutes = [
+export const nestedPagesRoutes = [
+  {
+    path: '/nested',
+    breadcrumb: 'Nested Pages',
+    component: NestedPagesRoot,
+  },
+  {
+    path: '/nested/card-page',
+    breadcrumb: 'Card Page',
+    component: CardPage,
+  },
+];
+
+export const nestedPagesSidebarRoutes = [
   {
     path: '/nested',
     label: 'Nested Pages',
     icon: faNetworkWired,
-    component: NestedPagesRoot,
-    nestedItems: [
+    routes: [
       {
         path: '/nested/card-page',
         label: 'Card Page',
         iconMini: faClipboard,
-        component: CardPage,
       },
     ],
   },
 ];
-
-export default nestedPagesRoutes;

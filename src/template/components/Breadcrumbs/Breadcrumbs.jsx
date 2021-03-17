@@ -5,17 +5,19 @@ import './Breadcrumbs.css';
 export default function Breadcrumbs({
   list = [],
 }) {
-  return (
-    <ul className="breadcrumbs">
-      {list.map(({ path, label }, i) => (
-        <li key={path} className="breadcrumbs__item">
-          {
+  return !list.length
+    ? 'Homepage'
+    : (
+      <ul className="breadcrumbs">
+        {list.map(({ breadcrumb, key }, i) => (
+          <li key={key} className="breadcrumbs__item">
+            {
             i !== list.length - 1
-              ? <Link className="breadcrumbs__link" to={path}>{label}</Link>
-              : label
+              ? <Link className="breadcrumbs__link" to={key}>{breadcrumb}</Link>
+              : breadcrumb
           }
-        </li>
-      ))}
-    </ul>
-  );
+          </li>
+        ))}
+      </ul>
+    );
 }

@@ -2,13 +2,18 @@ import { faTable } from '@fortawesome/free-solid-svg-icons';
 
 import TablePage from './TablePage';
 
-const tableRoutes = [
+export const tableRoutes = [
   {
     path: '/table',
-    label: 'Table',
-    icon: faTable,
+    breadcrumb: 'Table',
     component: TablePage,
   },
 ];
 
-export default tableRoutes;
+export const tableSidebarRoutes = [
+  {
+    path: '/table',
+    label: 'Table',
+    icon: faTable,
+  },
+];

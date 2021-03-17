@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import useBreadcrumbs from 'use-react-router-breadcrumbs';
 import clsx from 'clsx';
 
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
@@ -10,17 +11,17 @@ import MobileControlsPanel from './components/MobileControlsPanel/MobileControls
 import Copyright from './components/Copyright/Copyright';
 import TemplatePages from './components/TemplatePages/TemplatePages';
 
-import { useRoutes } from './hooks/useRoutes';
-import { useBreadcrumbs } from './hooks/useBreadcrumbs';
-import { adminRoutes } from '../routes/adminRoutes';
+import { useSidebarRoutes } from './hooks/useSidebarRoutes';
+
+import { adminRoutes, sidebarRoutes } from '../routes/adminRoutes';
 
 import './Template.css';
 
 export default function Template({
   location,
 }) {
-  const routes = useRoutes(adminRoutes, location);
-  const breadcrumbs = useBreadcrumbs(routes, location.pathname);
+  const parsedSidebarRoutes = useSidebarRoutes(sidebarRoutes, location);
+  const breadcrumbs = useBreadcrumbs(adminRoutes, { excludePaths: ['/'] });
 
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const [isMobileSidebarOpened, setIsMobileSidebarOpened] = useState(false);
@@ -37,11 +38,12 @@ export default function Template({
         <div className="template__sidebar">
           <Sidebar
             infoBoxData={{}}
-            menuData={routes}
+            menuData={parsedSidebarRoutes}
             defaultIsCollapsed={isSidebarCollapsed}
             isMobileOpened={isMobileSidebarOpened}
             onCollapseToggle={(isCollapsed) => setIsSidebarCollapsed(isCollapsed)}
             onOverlayClick={() => setIsMobileSidebarOpened(!isMobileSidebarOpened)}
+            onMenuLinkClick={() => setIsMobileSidebarOpened(!isMobileSidebarOpened)}
             renderBottomComponent={() => (
               <SidebarItem
                 icon={faSignOutAlt}
@@ -58,7 +60,7 @@ export default function Template({
           </div>
 
           <div className="template__content">
-            <TemplatePages routes={routes} />
+            <TemplatePages routes={adminRoutes} />
           </div>
 
           <div className="template__panel template__panel--bottom">

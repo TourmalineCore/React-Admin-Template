@@ -1,8 +1,8 @@
-import homeRoutes from '../features/home/routes';
-import nestedPagesRoutes from '../features/nested/routes';
-import inputsRoutes from '../features/inputs/routes';
-import tableRoutes from '../features/table/routes';
-import modalRoutes from '../features/modal/routes';
+import { homeRoutes, homeSidebarRoutes } from '../features/home/routes';
+import { nestedPagesRoutes, nestedPagesSidebarRoutes } from '../features/nested/routes';
+import { inputsRoutes, inputsSidebarRoutes } from '../features/inputs/routes';
+import { tableRoutes, tableSidebarRoutes } from '../features/table/routes';
+import { modalRoutes, modalSidebarRoutes } from '../features/modal/routes';
 
 export const adminRoutes = [
   ...homeRoutes,
@@ -10,4 +10,12 @@ export const adminRoutes = [
   ...inputsRoutes,
   ...tableRoutes,
   ...modalRoutes,
+];
+
+export const sidebarRoutes = [
+  ...homeSidebarRoutes,
+  ...nestedPagesSidebarRoutes,
+  ...inputsSidebarRoutes,
+  ...tableSidebarRoutes,
+  ...modalSidebarRoutes,
 ];
