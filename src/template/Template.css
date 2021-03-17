@@ -20,7 +20,7 @@
   display: flex;
   flex-direction: column;
   padding: 10px;
-  min-height: calc(100vh - 50px);
+  min-height: calc(100vh - 50px); /* ie11 fallback */
   min-height: calc(var(--vh, 1vh) * 100 - 50px);
 }
 
@@ -94,7 +94,8 @@
 
   .template__main {
     padding: 16px 16px 16px 20px;
-    min-height: 100vh;
+    min-height: 100vh; /* ie11 fallback */
+    min-height: calc(var(--vh, 1vh) * 100);
   }
 
   .template__panel--bottom {
