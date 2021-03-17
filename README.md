@@ -5,7 +5,7 @@
 
 ## Getting Started
 ```
-npm ci
+npm install
 npm start
 ```
 
