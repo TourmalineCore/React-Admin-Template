@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.4](https://github.com/TourmalineCore/React-Admin-Template/compare/v0.2.3...v0.2.4) (2021-03-17)
+
+
+### Features
+
+* update routing, add mobile sidebar closing on navigate ([70a16c4](https://github.com/TourmalineCore/React-Admin-Template/commit/70a16c4c0a3c36fef441bfc7322cde68c152bc95))
+
+
+### Bug Fixes
+
+* fix template mobile height ([8048b81](https://github.com/TourmalineCore/React-Admin-Template/commit/8048b81c52b534f8769e064f2eaa036f26d3c5f1))
+
 ### [0.2.3](https://github.com/TourmalineCore/React-Admin-Template/compare/v0.2.2...v0.2.3) (2021-03-16)
 
 
