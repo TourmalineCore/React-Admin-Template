@@ -41,9 +41,9 @@ export default function Template({
           <Sidebar
             infoBoxData={{}}
             menuData={parsedSidebarRoutes}
-            defaultIsCollapsed={isSidebarCollapsed}
+            isCollapsed={isSidebarCollapsed}
             isMobileOpened={isMobileSidebarOpened}
-            onCollapseToggle={(isCollapsed) => setIsSidebarCollapsed(isCollapsed)}
+            onCollapseToggle={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
             onOverlayClick={() => setIsMobileSidebarOpened(!isMobileSidebarOpened)}
             onMenuLinkClick={() => setIsMobileSidebarOpened(!isMobileSidebarOpened)}
             renderBottomComponent={() => (

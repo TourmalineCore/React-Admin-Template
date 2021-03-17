@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import clsx from 'clsx';
 
 import { faAngleDoubleRight, faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
@@ -14,7 +14,7 @@ export default function BexSidebar({
   style = {},
   className,
   isMobileOpened = false,
-  defaultIsCollapsed = false,
+  isCollapsed = false,
   menuData = [],
   infoBoxData,
   renderBottomComponent,
@@ -23,7 +23,6 @@ export default function BexSidebar({
   onOverlayClick = () => {},
   onMenuLinkClick = () => {},
 }) {
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(defaultIsCollapsed);
   const sidebarNodeRef = useRef(null);
 
   useEffect(() => {
@@ -35,7 +34,7 @@ export default function BexSidebar({
       ref={sidebarNodeRef}
       style={style}
       className={clsx('sidebar', className, {
-        'sidebar--collapsed': sidebarCollapsed,
+        'sidebar--collapsed': isCollapsed,
         'sidebar--mobile-opened': isMobileOpened,
       })}
     >
@@ -60,7 +59,7 @@ export default function BexSidebar({
           >
             <SidebarItem
               label="Collapse menu"
-              icon={sidebarCollapsed ? faAngleDoubleRight : faAngleDoubleLeft}
+              icon={isCollapsed ? faAngleDoubleRight : faAngleDoubleLeft}
             />
           </button>
         </div>
@@ -81,9 +80,7 @@ export default function BexSidebar({
   );
 
   function handleCollapseToggleClick(e) {
-    setSidebarCollapsed(!sidebarCollapsed);
-    onCollapseToggle(!sidebarCollapsed);
-
+    onCollapseToggle();
     e.currentTarget.blur();
   }
 
