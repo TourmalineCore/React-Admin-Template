@@ -27,7 +27,7 @@ function getProfileAvailableActionButtons({
     availableActions.push({
       key: 'EDIT',
       icon: <FontAwesomeIcon className="fa-icon" icon={faEdit} />,
-      text: `edit ${profileTab.tabLabel}`,
+      text: `Edit ${profileTab.tabLabel}`,
       onClick: setEditMode,
     });
   }
@@ -36,14 +36,14 @@ function getProfileAvailableActionButtons({
     availableActions.push({
       key: 'CANCEL',
       icon: <FontAwesomeIcon className="fa-icon" icon={faTimes} color="#ec250d" />,
-      text: 'cancel',
+      text: 'Cancel',
       onClick: exitWithoutSave,
     });
 
     availableActions.push({
       key: 'SUBMIT',
       icon: <FontAwesomeIcon className="fa-icon" icon={faCheck} color="#00bf9a" />,
-      text: 'save',
+      text: 'Save',
       onClick: saveDataAndExit,
       disabled: saveDisabled,
     });

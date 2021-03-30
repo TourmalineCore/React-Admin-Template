@@ -6,30 +6,33 @@
   flex-direction: column;
 }
 
-.actions-block__actions-button {
+.actions-block__toggler {
   position: relative;
-  margin-top: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
   margin-left: auto;
-  border: none;
+  border: 1px solid currentColor;
   border-radius: 30px;
-  padding-top: 4px;
+  padding: 0;
   width: 56px;
   height: 56px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.34);
+  box-shadow: 1px 4px 12px -2px rgba(0, 0, 0, 0.3);
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
-  background: linear-gradient(229.34deg, #344675 8.35%, #263148 92.02%);
+  color: currentColor;
+  background-color: #fff;
 }
 
-.actions-block__actions-button:hover,
-.actions-block__actions-button:focus {
+.actions-block__toggler:hover,
+.actions-block__toggler:focus {
   outline: none;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.24)), linear-gradient(205.29deg, #344675 8.35%, #263148 92.02%);
   cursor: pointer;
 }
 
-.actions-block__actions-button-text {
+.actions-block__toggler-text {
   display: none;
 }
 
@@ -39,9 +42,7 @@
   flex-direction: column;
   list-style: none;
   margin: 0;
-  padding: 0;
-  padding-right: 10px;
-  padding-left: 10px;
+  padding: 0 6px 0 0;
   animation-name: slideUp;
   animation-duration: 0.5s;
   animation-timing-function: ease-in-out;
@@ -54,13 +55,17 @@
 }
 
 .actions-block__item + .actions-block__item {
-  margin-top: 34px;
+  margin-top: 24px;
 }
 
 .actions-block__action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid transparent;
-  border-radius: 16px;
-  padding: 8px 10px;
+  border-radius: 30px;
+  padding: 0 20px;
+  height: 42px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.34);
   font-family: inherit;
   font-size: inherit;
@@ -71,13 +76,13 @@
 
 .actions-block__action-button--wide {
   margin-right: 16px;
-  padding: 6px 12px;
 }
 
 .actions-block__action-button--round {
   position: relative;
   flex-shrink: 0;
-  border-radius: 30px;
+  border-radius: 50%;
+  padding: 0;
   width: 42px;
   height: 42px;
 }
@@ -113,11 +118,6 @@
   font-size: 14px;
 }
 
-.actions-block__icon {
-  font-size: x-large;
-  color: #fff;
-}
-
 .actions-block__icon--desktop {
   display: none;
 }
@@ -129,6 +129,16 @@
   max-width: 230px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.34);
   background: #fff;
+}
+
+.actions-block-overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2000;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 @media (min-width: 768px) {
@@ -145,27 +155,44 @@
     bottom: auto;
   }
 
-  .actions-block__actions-button {
+  .actions-block__toggler {
     display: flex;
     align-items: center;
     order: 1;
     margin-top: 0;
-    margin-bottom: 23px;
-    padding: 20px;
+    margin-bottom: 24px;
+    border: none;
+    padding: 0 20px;
     width: auto;
   }
 
-  .actions-block__actions-button-text {
+  .actions-block__toggler::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border: 1px solid currentColor;
+    border-radius: 30px;
+  }
+
+  .actions-block__toggler:hover::before,
+  .actions-block__toggler:focus::before {
+    border-width: 2px;
+  }
+
+  .actions-block__toggler-text {
     display: block;
     margin-left: 12px;
     font-weight: 500;
     font-size: 14px;
     line-height: 1;
-    color: #fff;
   }
 
   .actions-block__list {
     order: 2;
+    padding: 0;
     animation-name: slideDown;
     animation-duration: 0.5s;
     animation-timing-function: ease-in-out;

@@ -1,8 +1,8 @@
 import React, { useEffect, useCallback } from 'react';
 
-import './Overlay.css';
+const BODY_CLASSNAME = 'is-actions-overlay-opened';
 
-const Overlay = ({
+const ActionsBlockOverlay = ({
   onClose,
 }) => {
   const escFunction = useCallback((event) => {
@@ -12,16 +12,18 @@ const Overlay = ({
   }, []);
 
   useEffect(() => {
+    document.documentElement.classList.add(BODY_CLASSNAME);
     document.addEventListener('keydown', escFunction, false);
 
     return () => {
+      document.documentElement.classList.remove(BODY_CLASSNAME);
       document.removeEventListener('keydown', escFunction, false);
     };
   }, []);
 
   return (
     <div
-      className="overlay"
+      className="actions-block-overlay"
       onClick={onClose}
       onKeyPress={onClose}
       role="button"
@@ -30,4 +32,4 @@ const Overlay = ({
   );
 };
 
-export default Overlay;
+export default ActionsBlockOverlay;

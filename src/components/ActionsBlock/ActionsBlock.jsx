@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+
 import { faEllipsisV, faChevronDown, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Overlay from '../Overlay/Overlay';
+
+import ActionsBlockOverlay from './ActionsBlockOverlay';
 
 import './ActionsBlock.css';
 
@@ -18,7 +20,7 @@ const ActionsBlock = (props) => {
     <>
       {
         showActions && (
-          <Overlay onClose={toggleShowActions} />
+          <ActionsBlockOverlay onClose={toggleShowActions} />
         )
       }
       <div
@@ -81,7 +83,7 @@ const ActionsBlock = (props) => {
         }
         <button
           type="button"
-          className="actions-block__actions-button"
+          className="actions-block__toggler"
           onClick={toggleShowActions}
         >
           {
@@ -105,7 +107,7 @@ const ActionsBlock = (props) => {
                 </>
               )
             }
-          <span className="actions-block__actions-button-text">Actions</span>
+          <span className="actions-block__toggler-text">Actions</span>
         </button>
       </div>
     </>

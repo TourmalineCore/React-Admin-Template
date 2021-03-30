@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import ContentCard from '../../components/ContentCard/ContentCard';
 import ActionsBlock from '../../components/ActionsBlock/ActionsBlock';
 
@@ -11,6 +13,8 @@ import { profileSections, profileTabs } from './profileTabs';
 export default function ProfilePage({
   match,
 }) {
+  const [profileMode, setProfileMode] = useState(profileModes.VIEW);
+
   const activeTabKey = match.params.tabId || profileSections.SUMMARY;
   const ActiveTab = profileTabs[activeTabKey].component;
 
@@ -20,7 +24,7 @@ export default function ProfilePage({
       headerContent={(
         <ProfileHeader>
           <ProfileNav
-            profileMode={profileModes.VIEW}
+            profileMode={profileMode}
             tabs={
               Object.entries(profileTabs)
                 .filter(([, profileTab]) => !profileTab.isHidden)
@@ -41,10 +45,10 @@ export default function ProfilePage({
               isLoading={false}
               availableActions={getProfileAvailableActionButtons({
                 profileTab: profileTabs[activeTabKey],
-                profileMode: profileModes.VIEW,
-                setEditMode: () => {},
-                exitWithoutSave: () => {},
-                saveDataAndExit: () => {},
+                profileMode,
+                setEditMode: () => setProfileMode(profileModes.EDIT),
+                exitWithoutSave: () => setProfileMode(profileModes.VIEW),
+                saveDataAndExit: () => setProfileMode(profileModes.VIEW),
                 saveDisabled: false,
               })}
             />
@@ -52,13 +56,13 @@ export default function ProfilePage({
         </ProfileHeader>
       )}
     >
-      <div style={{
-        height: 2000,
-        backgroundColor: '#91d370',
-        backgroundImage: 'linear-gradient(to bottom, #91d370 0%, #bca0ff 37%, #f2cd54 100%)',
-      }}
-      >
+      <div style={{ height: 2000, backgroundColor: '#f8fcff' }}>
+        <br />
         <ActiveTab />
+        <br />
+        mode:
+        {' '}
+        {profileMode}
       </div>
     </ContentCard>
   );
