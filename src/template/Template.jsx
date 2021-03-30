@@ -44,8 +44,8 @@ export default function Template({
             isCollapsed={isSidebarCollapsed}
             isMobileOpened={isMobileSidebarOpened}
             onCollapseToggle={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
-            onOverlayClick={() => setIsMobileSidebarOpened(!isMobileSidebarOpened)}
-            onMenuLinkClick={() => setIsMobileSidebarOpened(!isMobileSidebarOpened)}
+            onOverlayClick={() => setIsMobileSidebarOpened(false)}
+            onMenuLinkClick={() => setIsMobileSidebarOpened(false)}
             renderBottomComponent={() => (
               <SidebarItem
                 icon={faSignOutAlt}
