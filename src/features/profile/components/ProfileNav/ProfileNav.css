@@ -1,32 +1,33 @@
-.user-profile__nav {
+.profile-nav {
   position: relative;
+  border-bottom: 1px solid rgba(43, 53, 83, 0.18);
 }
 
-.user-profile__nav-list {
+.profile-nav__list {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   list-style: none;
-  margin: 0 0 10px;
+  margin: 0;
   padding: 0;
   background-color: #fff;
 }
 
-.user-profile__nav-icon {
+.profile-nav__icon {
   display: block;
   font-size: 21px;
   line-height: 1;
 }
 
-.user-profile__nav-icon .fa-icon {
+.profile-nav__icon .fa-icon {
   display: block;
   margin: 0 auto;
 }
 
-.user-profile__nav-button {
+.profile-nav__button {
   display: block;
   border: none;
-  padding: 18px;
+  padding: 8px 16px;
   font-weight: 400;
   text-align: center;
   text-decoration: none;
@@ -35,17 +36,17 @@
   transition: all 0.3s linear;
 }
 
-.user-profile__nav-button:hover,
-.user-profile__nav-button:focus {
+.profile-nav__button:hover,
+.profile-nav__button:focus {
   color: #2b3553;
 }
 
-.user-profile__nav-button--active {
+.profile-nav__button--active {
   position: relative;
   color: #2b3553;
 }
 
-.user-profile__nav-button--active::after {
+.profile-nav__button--active::after {
   content: "";
   position: absolute;
   left: 0;
@@ -56,44 +57,36 @@
   background-color: #00c9d7;
 }
 
-.user-profile__nav-button:focus {
+.profile-nav__button:focus {
   outline: none;
 }
 
-.user-profile__nav-button-text {
+.profile-nav__button-text {
   font-size: 10px;
   text-transform: uppercase;
 }
 
 @media (min-width: 768px) {
-  .user-profile__nav-button {
-    padding-bottom: 11px;
-  }
-
-  .user-profile__nav-button--active::after {
+  .profile-nav__button--active::after {
     left: 17px;
     right: 17px;
     bottom: -2px;
   }
 
-  .user-profile__nav-button-text {
+  .profile-nav__button-text {
     margin-top: 4px;
-  }
-
-  .user-profile__nav-list {
-    margin-bottom: 0;
-  }
-
-  .user-profile__nav {
-    border-bottom: 1px solid rgba(43, 53, 83, 0.18);
   }
 }
 
 @media (min-width: 1024px) {
-  .user-profile__nav {
+  .profile-nav {
     flex-grow: 1;
     padding-right: 20px;
     padding-left: 20px;
     width: auto;
+  }
+
+  .profile-nav__button {
+    padding: 20px 20px 9px;
   }
 }

@@ -6,8 +6,8 @@ import './ProfileNav.css';
 const ProfileNav = ({
   tabs,
 }) => (
-  <div className="user-profile__nav">
-    <ul className="user-profile__nav-list">
+  <div className="profile-nav">
+    <ul className="profile-nav__list">
       {
         tabs.map((tab) => (
           <ProfileNavItem {...tab} />
@@ -28,22 +28,22 @@ function ProfileNavItem({
   return (
     <li
       className={clsx(
-        'user-profile__nav-item', {
+        'profilenav__item', {
           'hide-if-desktop': mobileOnly,
         },
       )}
     >
       <Link
         to={href}
-        className={clsx('user-profile__nav-button', {
-          'user-profile__nav-button--active': active,
+        className={clsx('profile-nav__button', {
+          'profile-nav__button--active': active,
         })}
         onClick={onClick}
       >
-        <span className="user-profile__nav-icon">
+        <span className="profile-nav__icon">
           {icon}
         </span>
-        <span className="user-profile__nav-button-text show-if-tablet">
+        <span className="profile-nav__button-text show-if-tablet">
           {text}
         </span>
       </Link>

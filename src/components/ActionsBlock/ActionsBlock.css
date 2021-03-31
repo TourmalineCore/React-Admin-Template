@@ -132,7 +132,7 @@
   .actions-block {
     position: absolute;
     right: 20px;
-    top: 42px;
+    top: calc(100% - 28px);
     bottom: auto;
   }
 
