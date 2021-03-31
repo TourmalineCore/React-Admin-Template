@@ -6,6 +6,7 @@ import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 import Sidebar from './components/Sidebar/Sidebar';
 import SidebarItem from './components/Sidebar/SidebarItem/SidebarItem';
+import SidebarSettingsControl from './components/Sidebar/SidebarSettings/SidebarSettingsControl';
 import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs';
 import MobileControlsPanel from './components/MobileControlsPanel/MobileControlsPanel';
 import Copyright from './components/Copyright/Copyright';
@@ -46,12 +47,16 @@ export default function Template({
             onCollapseToggle={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
             onOverlayClick={() => setIsMobileSidebarOpened(!isMobileSidebarOpened)}
             onMenuLinkClick={() => setIsMobileSidebarOpened(!isMobileSidebarOpened)}
-            renderBottomComponent={() => (
-              <SidebarItem
-                icon={faSignOutAlt}
-                path="/logout"
-                label="Sign Out"
-              />
+            renderBottomComponent={(props) => (
+              <>
+                <SidebarSettingsControl portalTarget={props.portalTarget} />
+
+                <SidebarItem
+                  icon={faSignOutAlt}
+                  path="/logout"
+                  label="Sign Out"
+                />
+              </>
             )}
           />
         </div>

@@ -9,6 +9,7 @@ import './SidebarItem.css';
 
 export default function SidebarItem({
   tagName = 'div',
+  itemRef,
   className,
   icon,
   iconMini,
@@ -33,6 +34,7 @@ export default function SidebarItem({
   return (
     <>
       <TagName
+        ref={itemRef}
         className={clsx('sidebar-item', className, {
           'sidebar-item--has-nested': hasNestedElements,
           'sidebar-item--active': isActive,
