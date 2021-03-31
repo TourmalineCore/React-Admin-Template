@@ -95,7 +95,12 @@ export default function BexSidebar({
   function renderMenuItem(item) {
     return (
       <li key={item.id || item.path} className="sidebar__navitem">
-        <SidebarItem {...item} onItemClick={onMenuLinkClick} />
+        <SidebarItem
+          {...item}
+          sidebarNodeRef={sidebarNodeRef}
+          isSidebarCollapsed={isCollapsed}
+          onItemClick={onMenuLinkClick}
+        />
       </li>
     );
   }
