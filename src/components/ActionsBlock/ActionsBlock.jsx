@@ -46,7 +46,7 @@ const ActionsBlock = (props) => {
                 return (
                   <li key={`actions-block__item-${key}`} className="actions-block__item">
                     <button
-                      className="actions-block__action-button actions-block__action-button--wide"
+                      className="actions-block__action-button"
                       type="button"
                       disabled={disabled}
                       onClick={() => onActionClick(onClick)}
@@ -54,17 +54,8 @@ const ActionsBlock = (props) => {
                       <span className="actions-block__action-title">
                         {text}
                       </span>
+                      {icon && <span className="actions-block__action-icon">{icon}</span>}
                     </button>
-                    {icon && (
-                    <button
-                      className="actions-block__action-button actions-block__action-button--round"
-                      type="button"
-                      disabled={disabled}
-                      onClick={() => onActionClick(onClick)}
-                    >
-                      {icon}
-                    </button>
-                    )}
                   </li>
                 );
               })

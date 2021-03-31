@@ -42,7 +42,7 @@
   flex-direction: column;
   list-style: none;
   margin: 0;
-  padding: 0 6px 0 0;
+  padding: 0;
   animation-name: slideUp;
   animation-duration: 0.5s;
   animation-timing-function: ease-in-out;
@@ -74,29 +74,6 @@
   transition: transform 0.3s;
 }
 
-.actions-block__action-button--wide {
-  margin-right: 16px;
-}
-
-.actions-block__action-button--round {
-  position: relative;
-  flex-shrink: 0;
-  border-radius: 50%;
-  padding: 0;
-  width: 42px;
-  height: 42px;
-}
-
-.actions-block__action-button--round svg {
-  width: 18px;
-  height: 18px;
-}
-
-.actions-block__action-button--round .fa-icon {
-  height: 100%;
-  font-size: 18px;
-}
-
 .actions-block__action-button:hover,
 .actions-block__action-button:focus {
   outline: none;
@@ -116,6 +93,10 @@
 
 .actions-block__action-title {
   font-size: 14px;
+}
+
+.actions-block__action-icon {
+  margin-left: 16px;
 }
 
 .actions-block__icon--desktop {
@@ -175,6 +156,7 @@
     bottom: 0;
     border: 1px solid currentColor;
     border-radius: 30px;
+    pointer-events: none;
   }
 
   .actions-block__toggler:hover::before,
@@ -209,52 +191,52 @@
 
 @keyframes slideUp {
   0% {
-    transform: translateY(100%);
+    transform: translateY(40px);
   }
 
   50% {
-    transform: translateY(-6%);
+    transform: translateY(-8px);
   }
 
   65% {
-    transform: translateY(3%);
+    transform: translateY(4px);
   }
 
   80% {
-    transform: translateY(-3%);
+    transform: translateY(-3px);
   }
 
   95% {
-    transform: translateY(1%);
+    transform: translateY(1px);
   }
 
   100% {
-    transform: translateY(0%);
+    transform: translateY(0);
   }
 }
 
 @keyframes slideDown {
   0% {
-    transform: translateY(-35%);
+    transform: translateY(-24px);
   }
 
   50% {
-    transform: translateY(6%);
+    transform: translateY(8px);
   }
 
   65% {
-    transform: translateY(-3%);
+    transform: translateY(-4px);
   }
 
   80% {
-    transform: translateY(3%);
+    transform: translateY(3px);
   }
 
   95% {
-    transform: translateY(-1%);
+    transform: translateY(1px);
   }
 
   100% {
-    transform: translateY(0%);
+    transform: translateY(0);
   }
 }
