@@ -8,18 +8,23 @@ import '@tourmalinecore/react-tc-modal/es/index.css';
 import '@tourmalinecore/react-table-responsive/es/index.css';
 
 import './index.css';
+import './theme/themeVariables.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 
 import App from './App';
+
 import { AuthProvider } from './routes/authStateProvider/authContext';
+import { ThemeProvider } from './theme/themeContext';
 
 ReactDOM.render(
   <React.StrictMode>
     <AuthProvider>
-      <App />
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
     </AuthProvider>
   </React.StrictMode>,
   document.getElementById('root'),

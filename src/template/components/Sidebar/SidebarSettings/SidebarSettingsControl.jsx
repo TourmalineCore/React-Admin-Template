@@ -1,4 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import './SidebarSettingsControl.css';
+
+import { useState, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 
 import { faCog } from '@fortawesome/free-solid-svg-icons';
@@ -6,12 +8,8 @@ import { faCog } from '@fortawesome/free-solid-svg-icons';
 import SidebarItem from '../SidebarItem/SidebarItem';
 import SidebarSettingsMenu from './SidebarSettingsMenu/SidebarSettingsMenu';
 
-import './SidebarSettingsControl.css';
-
 export default function SettingsControl({
   portalTarget,
-  activeColor,
-  handleColorClick,
 }) {
   const [isMenuOpened, setMenuOpened] = useState(false);
 
@@ -59,8 +57,6 @@ export default function SettingsControl({
       {isMenuOpened && ReactDOM.createPortal(
         <div ref={dropdownRef} className="sidebar-settings-control__dropdown">
           <SidebarSettingsMenu
-            activeColor={activeColor}
-            handleColorClick={handleColorClick}
             portalTarget={portalTarget}
           />
         </div>,

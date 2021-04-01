@@ -1,23 +1,13 @@
-import React from 'react';
-
-// import { Link } from 'react-router-dom';
-
 import './SidebarSettingsMenu.css';
 
-export default function SettingsMenu({
-  activeColor,
-  handleColorClick,
-}) {
-  console.log(activeColor, handleColorClick);
+import TemplateColorPicker from '../../../../../components/TemplateColorPicker/TemplateColorPicker';
 
+export default function SettingsMenu() {
   return (
     <div className="sidebar-settings-menu">
       <div className="sidebar-settings-menu__item">
         <div className="sidebar-settings-menu__title">Colors</div>
-      </div>
-
-      <div className="sidebar-settings-menu__item">
-        <div className="sidebar-settings-menu__title">Language</div>
+        <TemplateColorPicker />
       </div>
     </div>
   );
