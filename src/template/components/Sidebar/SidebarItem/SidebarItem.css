@@ -95,7 +95,7 @@
 .sidebar-item__nested .sidebar-item {
   padding-left: 52px;
   min-height: 18px;
-  font-size: 0.88em;
+  font-size: 14px;
   transition: padding-left 0.3s ease, background-color 0.15s ease-out;
   will-change: padding-left;
 }
@@ -137,6 +137,10 @@
 @media (min-width: 768px) {
   .sidebar-item {
     font-size: 18px;
+  }
+
+  .sidebar-item__nested .sidebar-item {
+    font-size: 16px;
   }
 }
 
