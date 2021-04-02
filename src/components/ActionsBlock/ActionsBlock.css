@@ -1,0 +1,242 @@
+.actions-block {
+  position: fixed;
+  right: 10px;
+  bottom: 64px;
+  display: flex;
+  flex-direction: column;
+}
+
+.actions-block__toggler {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  margin-left: auto;
+  border: 1px solid currentColor;
+  border-radius: 30px;
+  padding: 0;
+  width: 56px;
+  height: 56px;
+  box-shadow: 1px 4px 12px -2px rgba(0, 0, 0, 0.3);
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: currentColor;
+  background-color: #fff;
+}
+
+.actions-block__toggler:hover,
+.actions-block__toggler:focus {
+  outline: none;
+  cursor: pointer;
+}
+
+.actions-block__toggler-text {
+  display: none;
+}
+
+.actions-block__list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  animation-name: slideUp;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+}
+
+.actions-block__item {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.actions-block__item + .actions-block__item {
+  margin-top: 24px;
+}
+
+.actions-block__action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  padding: 0 20px;
+  height: 42px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.34);
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  background-color: #fff;
+  transition: transform 0.3s;
+}
+
+.actions-block__action-button:hover,
+.actions-block__action-button:focus {
+  outline: none;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.actions-block__action-button:disabled:hover,
+.actions-block__action-button:disabled:focus {
+  cursor: initial;
+  transform: none;
+}
+
+.actions-block__action-button:disabled > * {
+  opacity: 0.4;
+}
+
+.actions-block__action-title {
+  font-size: 14px;
+}
+
+.actions-block__action-icon {
+  margin-left: 16px;
+}
+
+.actions-block__icon--desktop {
+  display: none;
+}
+
+.actions-block__no-actions {
+  border: 1px solid transparent;
+  border-radius: 16px;
+  padding: 12px 16px;
+  max-width: 230px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.34);
+  background: #fff;
+}
+
+.actions-block-overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2000;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+@media (min-width: 768px) {
+  .actions-block {
+    right: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .actions-block {
+    position: absolute;
+    right: 20px;
+    top: calc(100% - 28px);
+    bottom: auto;
+  }
+
+  .actions-block__toggler {
+    display: flex;
+    align-items: center;
+    order: 1;
+    margin-top: 0;
+    margin-bottom: 24px;
+    border: none;
+    padding: 0 20px;
+    width: auto;
+  }
+
+  .actions-block__toggler::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border: 1px solid currentColor;
+    border-radius: 30px;
+    pointer-events: none;
+  }
+
+  .actions-block__toggler:hover::before,
+  .actions-block__toggler:focus::before {
+    border-width: 2px;
+  }
+
+  .actions-block__toggler-text {
+    display: block;
+    margin-left: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  .actions-block__list {
+    order: 2;
+    padding: 0;
+    animation-name: slideDown;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+  }
+
+  .actions-block__icon--mobile {
+    display: none;
+  }
+
+  .actions-block__icon--desktop {
+    display: block;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(40px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  65% {
+    transform: translateY(4px);
+  }
+
+  80% {
+    transform: translateY(-3px);
+  }
+
+  95% {
+    transform: translateY(1px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-24px);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
+
+  65% {
+    transform: translateY(-4px);
+  }
+
+  80% {
+    transform: translateY(3px);
+  }
+
+  95% {
+    transform: translateY(1px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
