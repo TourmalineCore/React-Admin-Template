@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.7](https://github.com/TourmalineCore/React-Admin-Template/compare/v0.2.6...v0.2.7) (2021-04-02)
+
+
+### Features
+
+* add profile page with actions block ([b4915c2](https://github.com/TourmalineCore/React-Admin-Template/commit/b4915c29942853d65785ce4c41cf625ecdfdd314))
+* add sidebar menu and color switcher ([98c9dcd](https://github.com/TourmalineCore/React-Admin-Template/commit/98c9dcdd9cabf9e206bef2b8e7b36fe585d2aee7))
+* add sidebar nav items tooltips ([444adae](https://github.com/TourmalineCore/React-Admin-Template/commit/444adae6f2d02d0a7fcaf982f7198424ee30f33a))
+* add theme switch ([0cf6541](https://github.com/TourmalineCore/React-Admin-Template/commit/0cf6541b7caf5b8623162e692dddf0eb7c33c152))
+
 ### [0.2.6](https://github.com/TourmalineCore/React-Admin-Template/compare/v0.2.5...v0.2.6) (2021-03-17)
 
 
