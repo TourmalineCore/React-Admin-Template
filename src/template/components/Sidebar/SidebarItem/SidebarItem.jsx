@@ -14,6 +14,7 @@ import './SidebarItem.css';
 export default function SidebarItem({
   tagName = 'div',
   itemRef,
+  sidebarContainerRef,
   className,
   icon,
   iconMini,
@@ -23,14 +24,13 @@ export default function SidebarItem({
   counter,
   routes = [],
   isNestedRoutesCollapsed = true,
-  sidebarNodeRef,
   isSidebarCollapsed,
   onItemClick = () => {},
   onNestedBlockCollapseToggle = () => {},
 }) {
   const hasNestedElements = routes && !!routes.length;
 
-  const itemRef = useRef();
+  const currentItemRef = itemRef || useRef();
 
   const [nestedBlockCollapsed, setNestedBlockCollapsed] = useState(isNestedRoutesCollapsed);
   const [isHovered, setIsHovered] = useState(false);
@@ -43,7 +43,7 @@ export default function SidebarItem({
   return (
     <>
       <TagName
-        ref={itemRef}
+        ref={currentItemRef}
         className={clsx('sidebar-item', className, {
           'sidebar-item--has-nested': hasNestedElements,
           'sidebar-item--active': isActive,
@@ -88,7 +88,7 @@ export default function SidebarItem({
             <SidebarItem
               {...nestedRouteProps}
               key={nestedRouteProps.id || nestedRouteProps.path}
-              sidebarNodeRef={sidebarNodeRef}
+              sidebarContainerRef={sidebarContainerRef}
               isSidebarCollapsed={isSidebarCollapsed}
               onItemClick={onItemClick}
             />
@@ -96,14 +96,14 @@ export default function SidebarItem({
         </div>
       )}
 
-      {isSidebarCollapsed && isHovered && !!sidebarNodeRef && (
+      {isSidebarCollapsed && isHovered && !!sidebarContainerRef && (
         ReactDOM.createPortal(
           <SidebarTooltip
-            itemRef={itemRef}
-            sidebarNodeRef={sidebarNodeRef}
+            sidebarItemRef={currentItemRef}
+            sidebarContainerRef={sidebarContainerRef}
             content={label}
           />,
-          sidebarNodeRef.current,
+          sidebarContainerRef.current,
         )
       )}
     </>

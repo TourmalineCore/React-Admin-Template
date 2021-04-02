@@ -13,7 +13,7 @@
 
 .theme-color-green {
   --color-text: #172f3d;
-  --color-accent-first: #cbf3bd;
+  --color-accent-first: #8aad7e;
   --color-accent-last: #c5c1fe;
   --color-link: var(--color-accent-first);
   --color-copyright-link: var(--color-accent-last);

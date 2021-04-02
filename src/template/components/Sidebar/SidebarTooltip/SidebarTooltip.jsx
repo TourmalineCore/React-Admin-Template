@@ -1,12 +1,12 @@
 import './SidebarTooltip.css';
 
 export default function SidebarTooltip({
-  itemRef,
-  sidebarNodeRef,
+  sidebarItemRef,
+  sidebarContainerRef,
   content,
 }) {
-  const sidebarRect = sidebarNodeRef.current.getBoundingClientRect();
-  const itemRect = itemRef.current.getBoundingClientRect();
+  const sidebarRect = sidebarContainerRef.current.getBoundingClientRect();
+  const itemRect = sidebarItemRef.current.getBoundingClientRect();
 
   const top = itemRect.top - sidebarRect.top;
   const { height } = itemRect;
