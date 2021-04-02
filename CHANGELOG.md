@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.8](https://github.com/TourmalineCore/React-Admin-Template/compare/v0.2.7...v0.2.8) (2021-04-02)
+
+
+### Bug Fixes
+
+* minor mobile actions buttons position fix ([c96ca20](https://github.com/TourmalineCore/React-Admin-Template/commit/c96ca206deb11f7eb567148f1c1e87f1c21c10fc))
+* update initial theme color, ([39073c2](https://github.com/TourmalineCore/React-Admin-Template/commit/39073c23599b98c633b9d86b44d114ed6ab2305d))
+
 ### [0.2.7](https://github.com/TourmalineCore/React-Admin-Template/compare/v0.2.6...v0.2.7) (2021-04-02)
 
 
