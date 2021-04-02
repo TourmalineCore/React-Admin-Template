@@ -1,0 +1,23 @@
+.sidebar-settings-control__dropdown {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 110px;
+  z-index: 50;
+}
+
+@media (min-width: 768px) {
+  .sidebar-settings-control__dropdown {
+    left: 100%;
+    right: auto;
+    bottom: 10px;
+    padding: 0 6px;
+    width: 250px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .sidebar-settings-control__dropdown {
+    bottom: 0;
+  }
+}

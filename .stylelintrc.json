@@ -48,6 +48,7 @@
 		"function-url-quotes": "always",
 		"indentation": 2,
 		"no-empty-source": null,
+		"value-keyword-case": null,
 		"string-quotes": "double",
 		"value-keyword-case": null,
 		"scss/at-else-closing-brace-newline-after": "always-last-in-chain",

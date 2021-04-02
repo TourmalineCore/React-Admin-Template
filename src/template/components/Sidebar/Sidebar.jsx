@@ -23,7 +23,7 @@ export default function BexSidebar({
   onOverlayClick = () => {},
   onMenuLinkClick = () => {},
 }) {
-  const sidebarNodeRef = useRef(null);
+  const sidebarContainerRef = useRef(null);
 
   useEffect(() => {
     toggleDocumentClassnameOnOpen(isMobileOpened);
@@ -31,7 +31,7 @@ export default function BexSidebar({
 
   return (
     <div
-      ref={sidebarNodeRef}
+      ref={sidebarContainerRef}
       style={style}
       className={clsx('sidebar', className, {
         'sidebar--collapsed': isCollapsed,
@@ -71,7 +71,7 @@ export default function BexSidebar({
         {renderBottomComponent && (
           <div className="sidebar__bottom">
             {renderBottomComponent({
-              portalTarget: sidebarNodeRef.current,
+              portalTarget: sidebarContainerRef.current,
             })}
           </div>
         )}
@@ -97,7 +97,7 @@ export default function BexSidebar({
       <li key={item.id || item.path} className="sidebar__navitem">
         <SidebarItem
           {...item}
-          sidebarNodeRef={sidebarNodeRef}
+          sidebarContainerRef={sidebarContainerRef}
           isSidebarCollapsed={isCollapsed}
           onItemClick={onMenuLinkClick}
         />
