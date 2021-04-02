@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import ReactDOM from 'react-dom';
+
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+
+import SidebarTooltip from '../SidebarTooltip/SidebarTooltip';
 
 import './SidebarItem.css';
 
@@ -18,12 +22,17 @@ export default function SidebarItem({
   counter,
   routes = [],
   isNestedRoutesCollapsed = true,
+  sidebarNodeRef,
+  isSidebarCollapsed,
   onItemClick = () => {},
   onNestedBlockCollapseToggle = () => {},
 }) {
   const hasNestedElements = routes && !!routes.length;
 
+  const itemRef = useRef();
+
   const [nestedBlockCollapsed, setNestedBlockCollapsed] = useState(isNestedRoutesCollapsed);
+  const [isHovered, setIsHovered] = useState(false);
 
   const TagName = getProperTagName();
   const linkProps = {
@@ -33,12 +42,14 @@ export default function SidebarItem({
   return (
     <>
       <TagName
+        ref={itemRef}
         className={clsx('sidebar-item', className, {
           'sidebar-item--has-nested': hasNestedElements,
           'sidebar-item--active': isActive,
         })}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         onClick={handleClick}
-        title={label}
         {...linkProps}
       >
         {icon && (
@@ -76,10 +87,23 @@ export default function SidebarItem({
             <SidebarItem
               {...nestedRouteProps}
               key={nestedRouteProps.id || nestedRouteProps.path}
+              sidebarNodeRef={sidebarNodeRef}
+              isSidebarCollapsed={isSidebarCollapsed}
               onItemClick={onItemClick}
             />
           ))}
         </div>
+      )}
+
+      {isSidebarCollapsed && isHovered && !!sidebarNodeRef && (
+        ReactDOM.createPortal(
+          <SidebarTooltip
+            itemRef={itemRef}
+            sidebarNodeRef={sidebarNodeRef}
+            content={label}
+          />,
+          sidebarNodeRef.current,
+        )
       )}
     </>
   );
@@ -95,6 +119,14 @@ export default function SidebarItem({
     }
 
     onItemClick();
+  }
+
+  function handleMouseEnter() {
+    setIsHovered(true);
+  }
+
+  function handleMouseLeave() {
+    setIsHovered(false);
   }
 
   function getProperTagName() {
