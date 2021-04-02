@@ -23,16 +23,9 @@ function ProfileNavItem({
   href,
   onClick,
   active,
-  mobileOnly,
 }) {
   return (
-    <li
-      className={clsx(
-        'profilenav__item', {
-          'hide-if-desktop': mobileOnly,
-        },
-      )}
-    >
+    <li className="profilenav__item">
       <Link
         to={href}
         className={clsx('profile-nav__button', {
@@ -43,7 +36,7 @@ function ProfileNavItem({
         <span className="profile-nav__icon">
           {icon}
         </span>
-        <span className="profile-nav__button-text show-if-tablet">
+        <span className="profile-nav__button-text">
           {text}
         </span>
       </Link>

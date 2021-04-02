@@ -35,7 +35,6 @@ export default function ProfilePage({
                   icon: profileTab.tabIcon,
                   active: profileTab.id === activeTabKey,
                   onClick: () => {},
-                  mobileOnly: profileTab.mobileOnly,
                 }))
             }
           />
