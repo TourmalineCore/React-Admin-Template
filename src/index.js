@@ -22,7 +22,7 @@ import { ThemeProvider } from './theme/themeContext';
 ReactDOM.render(
   <React.StrictMode>
     <AuthProvider>
-      <ThemeProvider initialColor="green">
+      <ThemeProvider>
         <App />
       </ThemeProvider>
     </AuthProvider>

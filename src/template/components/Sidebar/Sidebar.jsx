@@ -6,6 +6,8 @@ import { faAngleDoubleRight, faAngleDoubleLeft } from '@fortawesome/free-solid-s
 import SidebarInfoBox from './SidebarInfoBox/SidebarInfoBox';
 import SidebarItem from './SidebarItem/SidebarItem';
 
+import { useSidebarSwipe } from '../../hooks/useSidebarSwipe';
+
 import './Sidebar.css';
 
 const OPENED_DOCUMENT_CLASSNAME = 'is-sidebar-mobile-opened';
@@ -28,6 +30,12 @@ export default function BexSidebar({
   useEffect(() => {
     toggleDocumentClassnameOnOpen(isMobileOpened);
   }, [isMobileOpened]);
+
+  useSidebarSwipe({
+    sidebarContainerRef,
+    isMobileOpened,
+    onClose: onOverlayClick,
+  });
 
   return (
     <div
