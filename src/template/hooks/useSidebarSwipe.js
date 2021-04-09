@@ -23,8 +23,6 @@ export function useSidebarSwipe({
     };
   }, [isMobileOpened]);
 
-  return null;
-
   function addOrRemoveEventListeners(shouldAdd) {
     const eventsData = [
       {
