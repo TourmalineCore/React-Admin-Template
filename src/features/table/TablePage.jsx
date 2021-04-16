@@ -38,6 +38,7 @@ export default function TablePage() {
           renderMobileTitle={(row) => row.original.employee}
           enableTableStatePersistance
           maxStillMobileBreakpoint={1200}
+          isStriped
           actions={actions}
           columns={[
             {
