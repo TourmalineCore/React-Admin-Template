@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.10](https://github.com/TourmalineCore/React-Admin-Template/compare/v0.2.9...v0.2.10) (2021-04-16)
+
+
+### Features
+
+* add mobile sidebar close on swipe ([3c03713](https://github.com/TourmalineCore/React-Admin-Template/commit/3c0371317d44f74d42cbabec9def6e1848b2c449))
+
+
+### Bug Fixes
+
+* set initial color to pink ([e98c5aa](https://github.com/TourmalineCore/React-Admin-Template/commit/e98c5aa5961feb42b7ed2036ba76972c0860055c))
+* update packages, add table striped rows ([f5f97b4](https://github.com/TourmalineCore/React-Admin-Template/commit/f5f97b4221b607eaca407cc8a28402807ff17070))
+
 ### [0.2.9](https://github.com/TourmalineCore/React-Admin-Template/compare/v0.2.8...v0.2.9) (2021-04-02)
 
 
