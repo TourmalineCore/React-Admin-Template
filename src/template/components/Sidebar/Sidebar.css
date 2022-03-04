@@ -183,10 +183,6 @@ html.is-sidebar-mobile-opened {
     display: none;
   }
 
-  .sidebar__inner {
-    box-shadow: 1px 2px 10px rgba(34, 49, 59, 0.1);
-  }
-
   .sidebar__toggler {
     display: block;
   }
