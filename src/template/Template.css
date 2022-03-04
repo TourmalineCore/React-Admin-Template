@@ -1,5 +1,4 @@
 .template {
-  padding-bottom: 50px;
   font-size: 16px;
   line-height: 1.17;
   color: var(--color-text);
@@ -12,14 +11,13 @@
   top: 0;
   bottom: 0;
   z-index: 90;
-  padding: 0 0 50px;
+  padding: 0;
   width: 0;
 }
 
 .template__main {
   display: flex;
   flex-direction: column;
-  padding: 10px;
   min-height: calc(100vh - 50px); /* ie11 fallback */
   min-height: calc(var(--vh, 1vh) * 100 - 50px);
 }
@@ -31,7 +29,6 @@
 
 .template__panel {
   margin: 10px 0;
-  border-radius: 5px;
   padding: 16px 10px;
   width: 100%;
   min-height: 50px;
@@ -54,10 +51,6 @@
     font-size: 18px;
   }
 
-  .template__main {
-    padding: 16px;
-  }
-
   .template__panel {
     margin: 20px 0;
     padding: 22px 20px;
@@ -76,24 +69,22 @@
 @media (min-width: 1200px) {
   .template {
     padding-bottom: 0;
-    padding-left: 336px; /* ie11 fallback */
-    padding-left: calc(var(--sidebar-width) + 16px);
+    padding-left: 320px; /* ie11 fallback */
+    padding-left: calc(var(--sidebar-width));
     transition: padding-left 0.3s ease;
     will-change: padding-left;
   }
 
   .template--sidebar-collapsed {
-    padding-left: 102px; /* ie11 fallback */
-    padding-left: calc(var(--sidebar-collapsed-width) + 16px);
+    padding-left: 86px; /* ie11 fallback */
+    padding-left: calc(var(--sidebar-collapsed-width));
   }
 
   .template__sidebar {
-    padding: 16px 0 16px 16px;
     width: auto;
   }
 
   .template__main {
-    padding: 16px 16px 16px 20px;
     min-height: 100vh; /* ie11 fallback */
     min-height: calc(var(--vh, 1vh) * 100);
   }
