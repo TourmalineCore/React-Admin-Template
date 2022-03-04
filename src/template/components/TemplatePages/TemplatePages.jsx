@@ -1,10 +1,10 @@
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 export default function TemplatePages({
   routes = [],
 }) {
   return (
-    <Switch>
+    <Routes>
       {routes.map((route) => (
         <Route
           key={route.id || route.path}
@@ -13,6 +13,6 @@ export default function TemplatePages({
           render={(props) => <route.component {...props} />}
         />
       ))}
-    </Switch>
+    </Routes>
   );
 }

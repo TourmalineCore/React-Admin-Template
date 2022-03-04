@@ -1,23 +1,22 @@
 import React, { useContext, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 import { AuthContext } from './authContext';
 
-export default function withPrivateRoute(ComposedComponent) {
-  return function RequireAuthentication(props) {
-    const { isAuthenticated } = useContext(AuthContext);
-    const history = useHistory();
+export default function WithPrivateRoute({ ComposedComponent }) {
+  const { isAuthenticated } = useContext(AuthContext);
+  const history = useNavigate();
+  const location = useLocation();
 
-    useEffect(() => {
-      if (!isAuthenticated) {
-        history.push(getAuthPathWithFromProperty(history.location.pathname));
-      }
-    }, [isAuthenticated]);
+  useEffect(() => {
+    if (!isAuthenticated) {
+      history(getAuthPathWithFromProperty(location.pathname));
+    }
+  }, [isAuthenticated]);
 
-    return isAuthenticated ? <ComposedComponent {...props} /> : null;
-  };
+  return isAuthenticated ? <ComposedComponent location={location} /> : null;
 
   function getAuthPathWithFromProperty(from) {
-    return `/auth/login${from !== '/' && from ? `?from=${from}` : ''}`;
+    return `/auth${from !== '/' && from ? `?from=${from}` : ''}`;
   }
 }

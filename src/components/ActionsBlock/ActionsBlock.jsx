@@ -7,7 +7,7 @@ import ActionsBlockOverlay from './ActionsBlockOverlay';
 
 import './ActionsBlock.css';
 
-const ActionsBlock = (props) => {
+function ActionsBlock(props) {
   const [showActions, setShowActions] = useState(false);
 
   const {
@@ -112,6 +112,6 @@ const ActionsBlock = (props) => {
   function toggleShowActions() {
     setShowActions(!showActions);
   }
-};
+}
 
 export default ActionsBlock;
