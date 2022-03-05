@@ -1,6 +1,6 @@
 .profile-nav {
   position: relative;
-  border-bottom: 1px solid rgba(43, 53, 83, 0.18);
+  border-bottom: 1px solid rgb(43 53 83 / 18%);
 }
 
 .profile-nav__list {
@@ -31,7 +31,7 @@
   font-weight: 400;
   text-align: center;
   text-decoration: none;
-  color: rgba(43, 53, 83, 0.34);
+  color: rgb(43 53 83 / 34%);
   background: none;
   transition: all 0.3s linear;
 }
