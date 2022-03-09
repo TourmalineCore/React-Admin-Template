@@ -10,10 +10,10 @@
   font-size: 14px;
   white-space: nowrap;
   background-color: #fff;
-  animation: sidebarTooltipSlide 0.15s ease-out;
+  animation: sidebar-tooltip-slide 0.15s ease-out;
 }
 
-@keyframes sidebarTooltipSlide {
+@keyframes sidebar-tooltip-slide {
   0% {
     opacity: 0;
     transform: translate3d(-6px, 0, 0);

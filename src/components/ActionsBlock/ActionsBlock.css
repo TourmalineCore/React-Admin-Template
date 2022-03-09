@@ -43,7 +43,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  animation-name: slideUp;
+  animation-name: slide-up;
   animation-duration: 0.5s;
   animation-timing-function: ease-in-out;
 }
@@ -175,7 +175,7 @@
   .actions-block__list {
     order: 2;
     padding: 0;
-    animation-name: slideDown;
+    animation-name: slide-down;
     animation-duration: 0.5s;
     animation-timing-function: ease-in-out;
   }
@@ -189,7 +189,7 @@
   }
 }
 
-@keyframes slideUp {
+@keyframes slide-up {
   0% {
     transform: translateY(40px);
   }
@@ -215,7 +215,7 @@
   }
 }
 
-@keyframes slideDown {
+@keyframes slide-down {
   0% {
     transform: translateY(-24px);
   }

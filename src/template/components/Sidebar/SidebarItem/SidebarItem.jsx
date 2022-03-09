@@ -39,7 +39,6 @@ export default function SidebarItem({
   const linkProps = {
     to: path,
   };
-
   return (
     <>
       <TagName
@@ -53,6 +52,7 @@ export default function SidebarItem({
         onClick={handleClick}
         {...linkProps}
       >
+        123
         {icon && (
           <span className="sidebar-item__icon-container">
             <FontAwesomeIcon icon={icon} fixedWidth className="sidebar-item__icon" />

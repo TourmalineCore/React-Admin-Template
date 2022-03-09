@@ -154,10 +154,10 @@ html.is-sidebar-mobile-opened {
 
 .sidebar--mobile-opened .sidebar__overlay {
   display: block;
-  animation: showOverlay 0.2s ease-out 0.5s forwards;
+  animation: show-overlay 0.2s ease-out 0.5s forwards;
 }
 
-@keyframes showOverlay {
+@keyframes show-overlay {
   100% {
     opacity: 1;
   }

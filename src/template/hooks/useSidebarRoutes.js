@@ -15,7 +15,7 @@ function adaptRoutesByLocation({ routes = [], location }) {
     ...route,
     isActive: isRouteActive(route.path, location),
     isNestedRoutesCollapsed: getItemCollapsedState({ nestedRoutes: route.routes, location }),
-    routes: adaptRoutesByLocation({ nestedRoutes: route.routes, location }),
+    routes: adaptRoutesByLocation({ routes: route.routes, location }),
   }));
 }
 

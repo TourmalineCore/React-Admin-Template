@@ -1,5 +1,5 @@
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Routes,
   Route,
 } from 'react-router-dom';
@@ -13,12 +13,12 @@ import WithPrivateRoute from './routes/authStateProvider/withPrivateRoute';
 
 export default function App() {
   return (
-    <Router basename="/">
+    <BrowserRouter>
       <Routes>
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/logout" element={<LogoutPage />} />
         <Route path="/" element={<WithPrivateRoute ComposedComponent={Template} />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
