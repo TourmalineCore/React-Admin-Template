@@ -17,7 +17,14 @@ export default function App() {
       <Routes>
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/logout" element={<LogoutPage />} />
-        <Route path="/" element={<WithPrivateRoute ComposedComponent={Template} />} />
+        <Route
+          path="/*"
+          element={(
+            <WithPrivateRoute>
+              <Template />
+            </WithPrivateRoute>
+          )}
+        />
       </Routes>
     </BrowserRouter>
   );

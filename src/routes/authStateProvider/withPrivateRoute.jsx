@@ -1,22 +1,14 @@
-import React, { useContext, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useContext } from 'react';
+import { Navigate } from 'react-router-dom';
 
 import { AuthContext } from './authContext';
 
-export default function WithPrivateRoute({ ComposedComponent }) {
+export default function WithPrivateRoute({ children }) {
   const { isAuthenticated } = useContext(AuthContext);
-  const history = useNavigate();
-  const location = useLocation();
 
-  useEffect(() => {
-    if (!isAuthenticated) {
-      history(getAuthPathWithFromProperty(location.pathname));
-    }
-  }, [isAuthenticated]);
-
-  return isAuthenticated ? <ComposedComponent location={location} /> : null;
-
-  function getAuthPathWithFromProperty(from) {
-    return `/auth${from !== '/' && from ? `?from=${from}` : ''}`;
-  }
+  return (
+    isAuthenticated
+      ? children
+      : <Navigate to="/auth" />
+  );
 }

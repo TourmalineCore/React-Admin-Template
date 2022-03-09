@@ -10,7 +10,7 @@ export default function TemplatePages({
           key={route.id || route.path}
           path={route.path}
           exact
-          render={(props) => <route.component {...props} />}
+          element={<route.component {...route.props} />}
         />
       ))}
     </Routes>

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import { useParams } from 'react-router-dom';
 import ContentCard from '../../components/ContentCard/ContentCard';
 import ActionsBlock from '../../components/ActionsBlock/ActionsBlock';
 
@@ -10,12 +11,12 @@ import getProfileAvailableActionButtons from './profileActionsFactory';
 import { profileModes } from './profileModes';
 import { profileSections, profileTabs } from './profileTabs';
 
-export default function ProfilePage({
-  match,
-}) {
+export default function ProfilePage() {
   const [profileMode, setProfileMode] = useState(profileModes.VIEW);
 
-  const activeTabKey = match.params.tabId || profileSections.SUMMARY;
+  const params = useParams();
+
+  const activeTabKey = params.tabId || profileSections.SUMMARY;
   const ActiveTab = profileTabs[activeTabKey].component;
 
   return (
