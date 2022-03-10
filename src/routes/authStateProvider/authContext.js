@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useMemo } from 'react';
 
 const AuthContext = createContext();
 
@@ -7,12 +7,14 @@ function AuthProvider({
 }) {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
 
+  const value = useMemo(() => ({
+    isAuthenticated,
+    setIsAuthenticated,
+  }));
+
   return (
     <AuthContext.Provider
-      value={{
-        isAuthenticated,
-        setIsAuthenticated,
-      }}
+      value={value}
     >
       {children}
     </AuthContext.Provider>

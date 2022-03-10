@@ -39,7 +39,6 @@ export default function SidebarItem({
   const linkProps = {
     to: path,
   };
-
   return (
     <>
       <TagName

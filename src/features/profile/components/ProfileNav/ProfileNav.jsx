@@ -3,19 +3,21 @@ import clsx from 'clsx';
 
 import './ProfileNav.css';
 
-const ProfileNav = ({
+function ProfileNav({
   tabs,
-}) => (
-  <div className="profile-nav">
-    <ul className="profile-nav__list">
-      {
+}) {
+  return (
+    <div className="profile-nav">
+      <ul className="profile-nav__list">
+        {
         tabs.map((tab) => (
           <ProfileNavItem {...tab} />
         ))
       }
-    </ul>
-  </div>
-);
+      </ul>
+    </div>
+  );
+}
 
 function ProfileNavItem({
   text,

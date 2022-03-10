@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useMemo } from 'react';
 
 import { themeColors } from './themeColors';
 
@@ -10,13 +10,15 @@ function ThemeProvider({
 }) {
   const [themeColor, setThemeColor] = useState(initialColor);
 
+  const value = useMemo(() => ({
+    themeColor,
+    themeColors,
+    setThemeColor,
+  }));
+
   return (
     <ThemeContext.Provider
-      value={{
-        themeColor,
-        themeColors,
-        setThemeColor,
-      }}
+      value={value}
     >
       <div className={`theme-color-${themeColor}`}>
         {children}

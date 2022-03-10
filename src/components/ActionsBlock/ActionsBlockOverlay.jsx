@@ -2,9 +2,9 @@ import React, { useEffect, useCallback } from 'react';
 
 const BODY_CLASSNAME = 'is-actions-overlay-opened';
 
-const ActionsBlockOverlay = ({
+function ActionsBlockOverlay({
   onClose,
-}) => {
+}) {
   const escFunction = useCallback((event) => {
     if (event.keyCode === 27) {
       onClose();
@@ -30,6 +30,6 @@ const ActionsBlockOverlay = ({
       tabIndex="0"
     />
   );
-};
+}
 
 export default ActionsBlockOverlay;

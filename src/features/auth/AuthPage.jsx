@@ -1,3 +1,5 @@
+import './AuthPage.css';
+
 import { useContext, useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
@@ -5,8 +7,6 @@ import { Input } from '@tourmalinecore/react-tc-ui-kit';
 import AuthForm from './components/AuthForm/AuthForm';
 
 import { AuthContext } from '../../routes/authStateProvider/authContext';
-
-import './AuthPage.css';
 
 export default function AuthPage() {
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);

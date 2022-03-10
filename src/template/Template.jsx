@@ -1,9 +1,11 @@
+import './Template.css';
 import { useState } from 'react';
 import useBreadcrumbs from 'use-react-router-breadcrumbs';
 import clsx from 'clsx';
 
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
+import { useHistory } from 'react-router';
 import Sidebar from './components/Sidebar/Sidebar';
 import SidebarItem from './components/Sidebar/SidebarItem/SidebarItem';
 import SidebarSettingsControl from './components/Sidebar/SidebarSettings/SidebarSettingsControl';
@@ -16,11 +18,8 @@ import { useSidebarRoutes } from './hooks/useSidebarRoutes';
 
 import { adminRoutes, sidebarRoutes } from '../routes/adminRoutes';
 
-import './Template.css';
-
-export default function Template({
-  location,
-}) {
+export default function Template() {
+  const { location } = useHistory();
   const parsedSidebarRoutes = useSidebarRoutes(sidebarRoutes, location);
   const breadcrumbs = useBreadcrumbs(adminRoutes, { excludePaths: ['/'] });
 
