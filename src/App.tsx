@@ -4,26 +4,22 @@ import {
   Route,
 } from 'react-router-dom';
 
-import React from 'react';
-import AuthPage from './features/auth/AuthPage';
+import LoginPage from './features/auth/LoginPage';
 import LogoutPage from './features/logout/LogoutPage';
 import Template from './template/Template';
+import withPrivateRoute from './routes/authStateProvider/withPrivateRoute';
 
-import WithPrivateRoute from './routes/authStateProvider/withPrivateRoute';
+const WithPrivateRoute = withPrivateRoute(Template);
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/auth" element={<AuthPage />} />
+        <Route path="/auth" element={<LoginPage />} />
         <Route path="/logout" element={<LogoutPage />} />
         <Route
           path="/*"
-          element={(
-            <WithPrivateRoute>
-              <Template />
-            </WithPrivateRoute>
-          )}
+          element={<WithPrivateRoute />}
         />
       </Routes>
     </BrowserRouter>
