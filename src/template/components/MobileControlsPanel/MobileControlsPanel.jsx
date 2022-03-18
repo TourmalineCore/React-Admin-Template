@@ -1,11 +1,11 @@
+import './MobileControlsPanel.css';
+
 import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faArrowLeft, faHome, faBars, faTimes,
 } from '@fortawesome/free-solid-svg-icons';
-
-import './MobileControlsPanel.css';
 
 export default function MobileControlsPanel({
   prevPath,

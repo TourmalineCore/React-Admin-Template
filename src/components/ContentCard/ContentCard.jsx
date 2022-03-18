@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import clsx from 'clsx';
 
 import { useStickyHeader } from './hooks/useStickyHeader';

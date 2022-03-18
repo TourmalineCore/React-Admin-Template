@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react';
+import { useEffect, useCallback } from 'react';
 
 const BODY_CLASSNAME = 'is-actions-overlay-opened';
 
