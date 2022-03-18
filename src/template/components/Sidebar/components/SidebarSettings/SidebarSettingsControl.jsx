@@ -8,7 +8,7 @@ import { faCog } from '@fortawesome/free-solid-svg-icons';
 import SidebarItem from '../SidebarItem/SidebarItem';
 import SidebarSettingsMenu from './SidebarSettingsMenu/SidebarSettingsMenu';
 
-export default function SettingsControl({
+export default function SidebarSettingsControl({
   portalTarget,
 }) {
   const [isMenuOpened, setMenuOpened] = useState(false);
