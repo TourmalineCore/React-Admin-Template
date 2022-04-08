@@ -1,16 +1,16 @@
+import './LoginPage.css';
+
 import { useContext, useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { Input } from '@tourmalinecore/react-tc-ui-kit';
-import AuthForm from './components/AuthForm/AuthForm';
+import LoginForm from './components/LoginForm/LoginForm';
 
 import { AuthContext } from '../../routes/authStateProvider/authContext';
 
-import './AuthPage.css';
-
-export default function AuthPage() {
+export default function LoginPage() {
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
-  const history = useHistory();
+  const history = useNavigate();
 
   const [formData, setFormData] = useState({
     email: '',
@@ -20,13 +20,13 @@ export default function AuthPage() {
 
   useEffect(() => {
     if (isAuthenticated) {
-      history.push('/');
+      history('/');
     }
   }, [isAuthenticated]);
 
   return (
     <div className="auth-page">
-      <AuthForm
+      <LoginForm
         onSubmit={handleFormSubmit}
       >
         <Input
@@ -52,7 +52,7 @@ export default function AuthPage() {
           isMessagesAbsolute
           onChange={(e) => setFormData({ ...formData, password: e.target.value })}
         />
-      </AuthForm>
+      </LoginForm>
     </div>
   );
 

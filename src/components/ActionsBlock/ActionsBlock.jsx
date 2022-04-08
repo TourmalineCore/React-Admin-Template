@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { faEllipsisV, faChevronDown, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,7 +7,7 @@ import ActionsBlockOverlay from './ActionsBlockOverlay';
 
 import './ActionsBlock.css';
 
-const ActionsBlock = (props) => {
+function ActionsBlock(props) {
   const [showActions, setShowActions] = useState(false);
 
   const {
@@ -112,6 +112,6 @@ const ActionsBlock = (props) => {
   function toggleShowActions() {
     setShowActions(!showActions);
   }
-};
+}
 
 export default ActionsBlock;

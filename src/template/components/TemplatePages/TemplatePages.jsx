@@ -1,18 +1,18 @@
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 export default function TemplatePages({
   routes = [],
 }) {
   return (
-    <Switch>
+    <Routes>
       {routes.map((route) => (
         <Route
           key={route.id || route.path}
           path={route.path}
           exact
-          render={(props) => <route.component {...props} />}
+          element={<route.component {...route.props} />}
         />
       ))}
-    </Switch>
+    </Routes>
   );
 }

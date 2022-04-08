@@ -39,16 +39,21 @@ export function useSidebarSwipe({
       },
     ];
 
-    if (shouldAdd) {
-      eventsData.forEach((x) => sidebarContainerRef.current.addEventListener(
-        x.eventName,
-        x.onEventAction,
+    if (!shouldAdd) {
+      if (sidebarContainerRef.current !== null) {
+        eventsData.forEach(
+          (eventData) => sidebarContainerRef.current.removeEventListener(
+            eventData.eventName,
+            eventData.onEventAction,
+          ),
+        );
+      }
+    } else {
+      eventsData.forEach((eventData) => sidebarContainerRef.current.addEventListener(
+        eventData.eventName,
+        eventData.onEventAction,
         { passive: true },
       ));
-    } else {
-      eventsData.forEach(
-        (x) => sidebarContainerRef.current.removeEventListener(x.eventName, x.onEventAction),
-      );
     }
   }
 

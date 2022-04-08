@@ -97,7 +97,7 @@ export default function TablePage() {
               minWidth: 140,
               id: 'newSlider',
               accessor: 'targetAchivementPercent',
-              Cell: () => (<input type="range" min={0} max={100} defaultValue={79} />),
+              Cell: () => inputComponent(),
               twoRowsMobileLayout: true,
               noFooterColumn: true,
             },
@@ -125,4 +125,15 @@ export default function TablePage() {
       </div>
     </ContentCard>
   );
+
+  function inputComponent() {
+    return (
+      <input
+        type="range"
+        min={0}
+        max={100}
+        defaultValue={79}
+      />
+    );
+  }
 }

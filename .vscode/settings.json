@@ -1,15 +1,19 @@
 {
   "eslint.alwaysShowStatus": true,
   "eslint.options": {
-    "extensions": [ ".jsx" ]
+    "extensions": [ ".jsx, .ts, .tsx" ]
   },
   "eslint.validate": [
-    "javascript"
+    "javascript",
+    "typescript", 
+    "typescriptreact",
   ],
   "[javascript]": {
     "editor.formatOnSave": false
   },
   "files.eol": "\n",
+  "editor.tabSize": 2,
+  "stylelint.validate": ["css", "scss"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
     "source.fixAll.stylelint": true

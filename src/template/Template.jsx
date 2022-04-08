@@ -1,12 +1,15 @@
+import './Template.css';
+
 import { useState } from 'react';
 import useBreadcrumbs from 'use-react-router-breadcrumbs';
 import clsx from 'clsx';
 
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
+import { useLocation } from 'react-router-dom';
 import Sidebar from './components/Sidebar/Sidebar';
-import SidebarItem from './components/Sidebar/SidebarItem/SidebarItem';
-import SidebarSettingsControl from './components/Sidebar/SidebarSettings/SidebarSettingsControl';
+import SidebarItem from './components/Sidebar/components/SidebarItem/SidebarItem';
+import SidebarSettingsControl from './components/Sidebar/components/SidebarSettings/SidebarSettingsControl';
 import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs';
 import MobileControlsPanel from './components/MobileControlsPanel/MobileControlsPanel';
 import Copyright from './components/Copyright/Copyright';
@@ -16,11 +19,9 @@ import { useSidebarRoutes } from './hooks/useSidebarRoutes';
 
 import { adminRoutes, sidebarRoutes } from '../routes/adminRoutes';
 
-import './Template.css';
+export default function Template() {
+  const location = useLocation();
 
-export default function Template({
-  location,
-}) {
   const parsedSidebarRoutes = useSidebarRoutes(sidebarRoutes, location);
   const breadcrumbs = useBreadcrumbs(adminRoutes, { excludePaths: ['/'] });
 

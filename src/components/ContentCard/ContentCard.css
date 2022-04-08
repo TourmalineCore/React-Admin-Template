@@ -1,6 +1,6 @@
 .content-card {
   border-radius: 5px;
-  box-shadow: 1px -1px 10px rgba(38, 50, 58, 0.1);
+  box-shadow: 1px -1px 10px rgb(38 50 58 / 10%);
   background-color: #fff;
 }
 

@@ -1,18 +1,18 @@
-import React, { useRef, useEffect } from 'react';
+import './Sidebar.css';
+
+import { useRef, useEffect } from 'react';
 import clsx from 'clsx';
 
 import { faAngleDoubleRight, faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
 
-import SidebarInfoBox from './SidebarInfoBox/SidebarInfoBox';
-import SidebarItem from './SidebarItem/SidebarItem';
+import SidebarInfoBox from './components/SidebarInfoBox/SidebarInfoBox';
+import SidebarItem from './components/SidebarItem/SidebarItem';
 
 import { useSidebarSwipe } from '../../hooks/useSidebarSwipe';
 
-import './Sidebar.css';
-
 const OPENED_DOCUMENT_CLASSNAME = 'is-sidebar-mobile-opened';
 
-export default function BexSidebar({
+export default function Sidebar({
   style = {},
   className,
   isMobileOpened = false,

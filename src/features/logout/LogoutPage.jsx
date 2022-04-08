@@ -1,15 +1,15 @@
 import { useContext, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { AuthContext } from '../../routes/authStateProvider/authContext';
 
 export default function LogoutPage() {
   const { setIsAuthenticated } = useContext(AuthContext);
-  const history = useHistory();
+  const history = useNavigate();
 
   useEffect(() => {
     setIsAuthenticated(false);
-    history.push('/auth');
+    history('/auth');
   }, []);
 
   return (
