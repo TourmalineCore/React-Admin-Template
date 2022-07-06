@@ -1,9 +1,14 @@
+import { ReactNode } from 'react';
 import './CustomHeading.css';
 
-export default function CustomHeading({
+function CustomHeading({
   children,
+}: {
+  children: ReactNode;
 }) {
   return (
     <div className="custom-heading">{children}</div>
   );
 }
+
+export default CustomHeading;
