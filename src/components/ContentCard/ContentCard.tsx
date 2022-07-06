@@ -1,23 +1,29 @@
-import { useRef } from 'react';
+import { CSSProperties, ReactNode, useRef } from 'react';
 import clsx from 'clsx';
 
 import { useStickyHeader } from './hooks/useStickyHeader';
 
 import './ContentCard.css';
 
-const isIE = window.MSInputMethodContext && document.documentMode;
+const isIE = window.MSInputMethodContext && document.DOCUMENT_NODE;
 
-export default function ContentCard({
-  style,
+function ContentCard({
+  style = {},
   className = '',
   isStickyHead,
   headerContent,
   children,
+}: {
+  style?: CSSProperties;
+  className?: string;
+  isStickyHead?: boolean;
+  headerContent?: ReactNode,
+  children?: ReactNode;
 }) {
-  const topSentinelRef = useRef();
-  const bottomSentinelRef = useRef();
+  const topSentinelRef = useRef<HTMLDivElement>(null);
+  const bottomSentinelRef = useRef<HTMLDivElement>(null);
 
-  const isHeaderStuck = isStickyHead && !isIE ? useStickyHeader(topSentinelRef, bottomSentinelRef) : false;
+  const isHeaderStuck = isStickyHead && !isIE ? useStickyHeader(topSentinelRef) : false;
 
   return (
     <div
@@ -49,3 +55,5 @@ export default function ContentCard({
     </div>
   );
 }
+
+export default ContentCard;

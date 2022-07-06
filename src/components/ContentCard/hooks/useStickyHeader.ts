@@ -1,6 +1,9 @@
-import { useEffect, useState } from 'react';
+import {
+  MutableRefObject,
+  useEffect, useState,
+} from 'react';
 
-export const useStickyHeader = (topSentinelRef) => {
+export const useStickyHeader = (topSentinelRef: MutableRefObject<HTMLElement | null>) => {
   const [isHeaderStuck, setIsHeaderStuck] = useState(false);
 
   useEffect(() => {
@@ -25,7 +28,7 @@ export const useStickyHeader = (topSentinelRef) => {
       }
     }, { threshold: [0], root: null });
 
-    topObserver.observe(topSentinelRef.current);
+    topObserver.observe(topSentinelRef.current!);
 
     return () => {
       topObserver.disconnect();
