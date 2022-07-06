@@ -4,8 +4,10 @@ const BODY_CLASSNAME = 'is-actions-overlay-opened';
 
 function ActionsBlockOverlay({
   onClose,
+}: {
+  onClose: () => void;
 }) {
-  const escFunction = useCallback((event) => {
+  const escFunction = useCallback((event: KeyboardEvent) => {
     if (event.keyCode === 27) {
       onClose();
     }
@@ -27,7 +29,7 @@ function ActionsBlockOverlay({
       onClick={onClose}
       onKeyPress={onClose}
       role="button"
-      tabIndex="0"
+      tabIndex={0}
     />
   );
 }
