@@ -6,7 +6,7 @@ export const tableRoutes = [
   {
     path: '/table',
     breadcrumb: 'Table',
-    component: TablePage,
+    Component: TablePage,
   },
 ];
 

@@ -1,21 +1,38 @@
-const someTypes = {
+type DataProps = {
+  actualSales: number;
+  employee: string;
+  calculatedBonus: number;
+  plannedSales: number;
+  previousSales: number;
+  targetAchivementPercent: number;
+  weight: number;
+  someType: string;
+};
+
+const someTypes: {
+  [key: string]: string;
+} = {
   firstType: 'firstType',
   secondType: 'secondType',
 };
 
-export const someTypesStrings = {
+export const someTypesStrings: {
+  [key: string]: string;
+} = {
   firstType: 'First Type',
   secondType: 'Second Type',
 };
 
-export const all = {
+export const all: {
+  [key: string]: string;
+} = {
   label: 'All',
   value: '',
 };
 
-export const someTypesOptions = Object.keys(someTypes).map((x) => ({ label: someTypesStrings[x], value: x }));
+export const someTypesOptions = Object.keys(someTypes).map((x: string) => ({ label: someTypesStrings[x], value: x }));
 
-export const data = [
+export const data: DataProps[] = [
   {
     actualSales: 5096606.9,
     employee: 'Employee 1',

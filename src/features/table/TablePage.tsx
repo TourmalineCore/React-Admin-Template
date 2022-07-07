@@ -10,7 +10,11 @@ import {
   all, someTypesOptions, data, someTypesStrings,
 } from './tableData';
 
-export default function TablePage() {
+type Row<Type> = {
+  original: Type
+};
+
+function TablePage() {
   const actions = [
     {
       name: 'edit-row-action',
@@ -35,7 +39,7 @@ export default function TablePage() {
             id: 'weightForSorting',
             desc: true,
           }}
-          renderMobileTitle={(row) => row.original.employee}
+          renderMobileTitle={(row : Row<{ employee: string }>) => row.original.employee}
           enableTableStatePersistance
           maxStillMobileBreakpoint={1200}
           isStriped
@@ -46,7 +50,6 @@ export default function TablePage() {
               accessor: 'employee',
               // Use our custom `fuzzyText` filter on this column
               filter: 'fuzzyText',
-              Cell: ({ row }) => row.original.employee,
               Footer: () => 'Total',
               nonMobileColumn: true,
               principalFilterableColumn: true,
@@ -106,8 +109,8 @@ export default function TablePage() {
               id: 'calculatedBonus',
               disableSortBy: true,
               disableFilters: true,
-              accessor: (row) => row.forcastedBonus || row.calculatedBonus,
-              Cell: (row) => row.value,
+              accessor: ({ forcastedBonus, calculatedBonus }: { forcastedBonus: number; calculatedBonus: number }) => forcastedBonus || calculatedBonus,
+              Cell: ({ value }: { value: number }) => value,
               noFooterColumn: true,
             },
             {
@@ -115,7 +118,7 @@ export default function TablePage() {
               accessor: 'someType',
               minWidth: 200,
               maxWidth: 400,
-              Cell: (cell) => someTypesStrings[cell.value],
+              Cell: ({ value }: { value: string }) => someTypesStrings[value],
               Filter: SelectColumnFilter,
               selectFilterOptions: [all, ...someTypesOptions],
               noFooterColumn: true,
@@ -137,3 +140,5 @@ export default function TablePage() {
     );
   }
 }
+
+export default TablePage;
