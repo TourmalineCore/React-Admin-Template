@@ -6,7 +6,7 @@ export const homeRoutes = [
   {
     path: '/',
     breadcrumb: 'Home',
-    component: HomePage,
+    Component: HomePage,
   },
 ];
 
