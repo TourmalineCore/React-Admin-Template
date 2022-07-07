@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import {
   Button, Input, NativeSelect, CheckField,
 } from '@tourmalinecore/react-tc-ui-kit';
@@ -12,11 +12,11 @@ const checkFieldsData = {
   2: 'label-2',
 };
 
-export default function InputsPage() {
+function InputsPage() {
   const [inputValue, setInputValue] = useState('');
-  const [selectedValue, setSelectedValue] = useState();
+  const [selectedValue, setSelectedValue] = useState(0);
   const [selectedCheckboxes, setSelectedCheckboxes] = useState(new Set());
-  const [selectedRadio, setSelectedRadio] = useState();
+  const [selectedRadio, setSelectedRadio] = useState('');
 
   return (
     <ContentCard
@@ -72,7 +72,7 @@ export default function InputsPage() {
         style={{ maxWidth: 300 }}
         label="Input label"
         value={inputValue}
-        onChange={(e) => {
+        onChange={(e: ChangeEvent<HTMLInputElement>) => {
           setInputValue(e.target.value);
         }}
       />
@@ -83,7 +83,7 @@ export default function InputsPage() {
         style={{ maxWidth: 300 }}
         value={selectedValue}
         options={[{ label: 'option1', value: 1 }, { label: 'option2', value: 2 }]}
-        onChange={(option) => {
+        onChange={(option: { label: string; value: number }) => {
           setSelectedValue(option.value);
         }}
       />
@@ -128,3 +128,5 @@ export default function InputsPage() {
     </ContentCard>
   );
 }
+
+export default InputsPage;

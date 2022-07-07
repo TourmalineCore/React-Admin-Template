@@ -6,7 +6,7 @@ export const inputsRoutes = [
   {
     path: '/inputs',
     breadcrumb: 'Inputs',
-    component: InputsPage,
+    Component: InputsPage,
   },
 ];
 
@@ -15,6 +15,5 @@ export const inputsSidebarRoutes = [
     path: '/inputs',
     label: 'Inputs',
     icon: faKeyboard,
-    component: InputsPage,
   },
 ];
