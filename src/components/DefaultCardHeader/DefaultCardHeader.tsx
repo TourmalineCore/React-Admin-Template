@@ -1,9 +1,14 @@
+import { ReactNode } from 'react';
 import './DefaultCardHeader.css';
 
-export default function DefaultCardHeader({
+function DefaultCardHeader({
   children,
+}: {
+  children: ReactNode;
 }) {
   return (
     <div className="default-card-header">{children}</div>
   );
 }
+
+export default DefaultCardHeader;
