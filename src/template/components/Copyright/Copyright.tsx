@@ -1,6 +1,6 @@
 import './Copyright.css';
 
-export default function Copyright() {
+function Copyright() {
   return (
     <div className="copyright">
       made by
@@ -18,3 +18,5 @@ export default function Copyright() {
     </div>
   );
 }
+
+export default Copyright;
