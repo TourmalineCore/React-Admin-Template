@@ -1,14 +1,20 @@
 import { Button } from '@tourmalinecore/react-tc-ui-kit';
+import { FormEventHandler, ReactNode } from 'react';
 
 import { ReactComponent as BgLeft } from '../../../../assets/img/auth-bg-left.svg';
 import { ReactComponent as BgRight } from '../../../../assets/img/auth-bg-right.svg';
 
 import './LoginForm.css';
 
-export default function LoginForm({
+function LoginForm({
   children,
   errorMessages = [],
   onSubmit = () => {},
+}: {
+  children: ReactNode;
+  errorMessages?: string[];
+  onSubmit: FormEventHandler<HTMLFormElement>
+  ;
 }) {
   return (
     <div className="auth-form">
@@ -37,3 +43,5 @@ export default function LoginForm({
     </div>
   );
 }
+
+export default LoginForm;

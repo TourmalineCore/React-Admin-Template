@@ -1,6 +1,6 @@
-import './LoginPage.css';
-
-import { useContext, useState, useEffect } from 'react';
+import {
+  useContext, useState, useEffect, ChangeEvent, FormEvent,
+} from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Input } from '@tourmalinecore/react-tc-ui-kit';
@@ -8,8 +8,10 @@ import LoginForm from './components/LoginForm/LoginForm';
 
 import { AuthContext } from '../../routes/authStateProvider/authContext';
 
-export default function LoginPage() {
-  const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
+import './LoginPage.css';
+
+function LoginPage() {
+  const createAuthContext = useContext(AuthContext);
   const history = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -19,10 +21,10 @@ export default function LoginPage() {
   const [triedToSubmit, setTriedToSubmit] = useState(false);
 
   useEffect(() => {
-    if (isAuthenticated) {
+    if (createAuthContext!.isAuthenticated) {
       history('/');
     }
-  }, [isAuthenticated]);
+  }, [createAuthContext!.isAuthenticated]);
 
   return (
     <div className="auth-page">
@@ -38,7 +40,7 @@ export default function LoginPage() {
           isInvalid={!formData.email && triedToSubmit}
           validationMessages={['Login should be filled']}
           isMessagesAbsolute
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+          onChange={(event: ChangeEvent<HTMLInputElement>) => setFormData({ ...formData, email: event.target.value })}
         />
 
         <Input
@@ -50,24 +52,26 @@ export default function LoginPage() {
           isInvalid={!formData.password && triedToSubmit}
           validationMessages={['Password should be filled']}
           isMessagesAbsolute
-          onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+          onChange={(event: ChangeEvent<HTMLInputElement>) => setFormData({ ...formData, password: event.target.value })}
         />
       </LoginForm>
     </div>
   );
 
-  function handleFormSubmit(e) {
+  function handleFormSubmit(event: FormEvent<HTMLFormElement>) {
     const {
       email,
       password,
     } = formData;
 
-    e.preventDefault();
+    event.preventDefault();
 
     setTriedToSubmit(true);
 
     if (email && password) {
-      setIsAuthenticated(true);
+      createAuthContext!.setIsAuthenticated(true);
     }
   }
 }
+
+export default LoginPage;
