@@ -10,12 +10,12 @@ export const nestedPagesRoutes = [
   {
     path: '/nested',
     breadcrumb: 'Nested Pages',
-    component: NestedPagesRoot,
+    Component: NestedPagesRoot,
   },
   {
     path: '/nested/card-page',
     breadcrumb: 'Card Page',
-    component: CardPage,
+    Component: CardPage,
   },
 ];
 

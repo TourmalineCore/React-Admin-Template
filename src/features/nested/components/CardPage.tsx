@@ -1,7 +1,7 @@
 import ContentCard from '../../../components/ContentCard/ContentCard';
 import DefaultCardHeader from '../../../components/DefaultCardHeader/DefaultCardHeader';
 
-export default function CardPage() {
+function CardPage() {
   return (
     <ContentCard
       isStickyHead
@@ -13,3 +13,5 @@ export default function CardPage() {
     </ContentCard>
   );
 }
+
+export default CardPage;
