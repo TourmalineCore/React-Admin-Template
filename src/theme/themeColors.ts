@@ -1,4 +1,7 @@
-export const themeColors = [
+export const themeColors: {
+  key: string;
+  pickerBtnColor: string;
+}[] = [
   {
     key: 'pink',
     pickerBtnColor: '#f53893',
