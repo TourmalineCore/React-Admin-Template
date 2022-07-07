@@ -9,7 +9,7 @@ import { faFlag } from '@fortawesome/free-solid-svg-icons';
 import ContentCard from '../../components/ContentCard/ContentCard';
 import DefaultCardHeader from '../../components/DefaultCardHeader/DefaultCardHeader';
 
-export default function ModalPage() {
+function ModalPage() {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   return (
@@ -44,3 +44,5 @@ export default function ModalPage() {
     </ContentCard>
   );
 }
+
+export default ModalPage;

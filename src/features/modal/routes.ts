@@ -6,7 +6,7 @@ export const modalRoutes = [
   {
     path: '/modal',
     breadcrumb: 'Modal',
-    component: ModalPage,
+    Component: ModalPage,
   },
 ];
 
