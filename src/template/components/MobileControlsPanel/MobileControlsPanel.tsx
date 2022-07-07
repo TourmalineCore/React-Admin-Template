@@ -7,11 +7,16 @@ import {
   faArrowLeft, faHome, faBars, faTimes,
 } from '@fortawesome/free-solid-svg-icons';
 
-export default function MobileControlsPanel({
+function MobileControlsPanel({
   prevPath,
   homePath = '/',
   isToggled,
   onToggleClick = () => {},
+}: {
+  prevPath?: string | null;
+  homePath?: string;
+  isToggled: boolean;
+  onToggleClick?: () => unknown;
 }) {
   return (
     <div className="mobile-controls-panel">
@@ -40,3 +45,5 @@ export default function MobileControlsPanel({
     </div>
   );
 }
+
+export default MobileControlsPanel;
