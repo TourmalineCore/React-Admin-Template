@@ -1,9 +1,13 @@
 import './SidebarInfoBox.css';
 
-export default function SidebarInfoBox({
+function SidebarInfoBox({
   photoUrl,
   name = 'Nameless User',
   email = 'email@email.com',
+}: {
+  photoUrl?: string;
+  name?: string;
+  email?: string;
 }) {
   return (
     <div className="sidebar-infobox">
@@ -21,3 +25,5 @@ export default function SidebarInfoBox({
     </div>
   );
 }
+
+export default SidebarInfoBox;

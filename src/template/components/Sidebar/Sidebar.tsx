@@ -1,18 +1,36 @@
-import './Sidebar.css';
-
-import { useRef, useEffect } from 'react';
+import {
+  useRef, useEffect, CSSProperties, ReactNode, MouseEvent,
+} from 'react';
 import clsx from 'clsx';
 
 import { faAngleDoubleRight, faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
 
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import SidebarInfoBox from './components/SidebarInfoBox/SidebarInfoBox';
 import SidebarItem from './components/SidebarItem/SidebarItem';
 
 import { useSidebarSwipe } from '../../hooks/useSidebarSwipe';
 
+import './Sidebar.css';
+
 const OPENED_DOCUMENT_CLASSNAME = 'is-sidebar-mobile-opened';
 
-export default function Sidebar({
+type MenuDataProps = {
+  iconMini: IconProp;
+  isActive?: boolean;
+  isNestedRoutesCollapsed?: boolean;
+  label: string;
+  path: string;
+  routes?: {
+    iconMini: IconProp;
+    isActive: boolean;
+    isNestedRoutesCollapsed: boolean;
+    label: string;
+    path: string;
+  }[],
+};
+
+function Sidebar({
   style = {},
   className,
   isMobileOpened = false,
@@ -24,8 +42,24 @@ export default function Sidebar({
   onCollapseToggle = () => {},
   onOverlayClick = () => {},
   onMenuLinkClick = () => {},
+}: {
+  style?: CSSProperties;
+  className?: string;
+  isMobileOpened?: boolean;
+  isCollapsed?: boolean;
+  menuData: MenuDataProps[];
+  infoBoxData: {
+    photoUrl?: string;
+    name?: string;
+    email?: string;
+  };
+  renderBottomComponent?: ({ portalTarget }: { portalTarget: HTMLDivElement | null }) => JSX.Element;
+  renderTopComponent?: ReactNode;
+  onCollapseToggle?: () => unknown;
+  onOverlayClick?: () => unknown;
+  onMenuLinkClick?: () => unknown;
 }) {
-  const sidebarContainerRef = useRef(null);
+  const sidebarContainerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     toggleDocumentClassnameOnOpen(isMobileOpened);
@@ -56,7 +90,7 @@ export default function Sidebar({
 
           {renderTopComponent && (
             <div className="sidebar__top-component">
-              {renderTopComponent()}
+              {renderTopComponent}
             </div>
           )}
 
@@ -87,9 +121,9 @@ export default function Sidebar({
     </div>
   );
 
-  function handleCollapseToggleClick(e) {
+  function handleCollapseToggleClick(event: MouseEvent<HTMLButtonElement>) {
     onCollapseToggle();
-    e.currentTarget.blur();
+    event.currentTarget.blur();
   }
 
   function renderMenu() {
@@ -100,9 +134,9 @@ export default function Sidebar({
     );
   }
 
-  function renderMenuItem(item) {
+  function renderMenuItem(item: MenuDataProps) {
     return (
-      <li key={item.id || item.path} className="sidebar__navitem">
+      <li key={item.path} className="sidebar__navitem">
         <SidebarItem
           {...item}
           sidebarContainerRef={sidebarContainerRef}
@@ -113,7 +147,7 @@ export default function Sidebar({
     );
   }
 
-  function toggleDocumentClassnameOnOpen(isOpened) {
+  function toggleDocumentClassnameOnOpen(isOpened: boolean) {
     if (isOpened) {
       document.documentElement.classList.add(OPENED_DOCUMENT_CLASSNAME);
     } else {
@@ -121,3 +155,5 @@ export default function Sidebar({
     }
   }
 }
+
+export default Sidebar;

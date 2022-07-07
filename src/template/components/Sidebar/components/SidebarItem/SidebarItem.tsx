@@ -1,6 +1,8 @@
 import './SidebarItem.css';
 
-import { useState, useRef } from 'react';
+import {
+  useState, useRef, MutableRefObject, ChangeEvent, ElementType,
+} from 'react';
 import ReactDOM from 'react-dom';
 
 import { Link } from 'react-router-dom';
@@ -9,9 +11,25 @@ import clsx from 'clsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import SidebarTooltip from './components/SidebarTooltip/SidebarTooltip';
 
-export default function SidebarItem({
+type SidebarItemRouterProps = {
+  iconMini: IconProp;
+  isActive: boolean;
+  isNestedRoutesCollapsed: boolean;
+  label: string;
+  path: string;
+  routes?: {
+    iconMini: IconProp;
+    isActive: boolean;
+    isNestedRoutesCollapsed: boolean;
+    label: string;
+    path: string;
+  }[],
+};
+
+function SidebarItem({
   tagName = 'div',
   itemRef,
   sidebarContainerRef,
@@ -27,10 +45,26 @@ export default function SidebarItem({
   isSidebarCollapsed,
   onItemClick = () => {},
   onNestedBlockCollapseToggle = () => {},
+}: {
+  tagName?: ElementType;
+  itemRef?: MutableRefObject<HTMLElement | null>;
+  sidebarContainerRef?: MutableRefObject<HTMLElement | null>;
+  className?: string;
+  icon?: IconProp;
+  iconMini?: IconProp;
+  label?: string;
+  path?: string;
+  isActive?: boolean;
+  counter?: string,
+  routes?: SidebarItemRouterProps[],
+  isNestedRoutesCollapsed?: boolean,
+  isSidebarCollapsed?: boolean,
+  onItemClick?: () => unknown,
+  onNestedBlockCollapseToggle?: () => unknown,
 }) {
   const hasNestedElements = routes && !!routes.length;
 
-  const currentItemRef = itemRef || useRef();
+  const currentItemRef = itemRef || useRef<HTMLElement>(null);
 
   const [nestedBlockCollapsed, setNestedBlockCollapsed] = useState(isNestedRoutesCollapsed);
   const [isHovered, setIsHovered] = useState(false);
@@ -39,6 +73,7 @@ export default function SidebarItem({
   const linkProps = {
     to: path,
   };
+
   return (
     <>
       <TagName
@@ -86,7 +121,8 @@ export default function SidebarItem({
           {routes.map((nestedRouteProps) => (
             <SidebarItem
               {...nestedRouteProps}
-              key={nestedRouteProps.id || nestedRouteProps.path}
+              key={nestedRouteProps.path}
+              itemRef={itemRef}
               sidebarContainerRef={sidebarContainerRef}
               isSidebarCollapsed={isSidebarCollapsed}
               onItemClick={onItemClick}
@@ -102,18 +138,18 @@ export default function SidebarItem({
             sidebarContainerRef={sidebarContainerRef}
             content={label}
           />,
-          sidebarContainerRef.current,
+          sidebarContainerRef.current!,
         )
       )}
     </>
   );
 
-  function handleClick(e) {
+  function handleClick(event: ChangeEvent<HTMLElement>) {
     if (hasNestedElements) {
       setNestedBlockCollapsed(!nestedBlockCollapsed);
       onNestedBlockCollapseToggle();
 
-      e.preventDefault();
+      event.preventDefault();
 
       return;
     }
@@ -143,3 +179,5 @@ export default function SidebarItem({
     return resultTagName;
   }
 }
+
+export default SidebarItem;

@@ -1,6 +1,8 @@
 import './SidebarSettingsControl.css';
 
-import { useState, useEffect, useRef } from 'react';
+import {
+  useState, useEffect, useRef,
+} from 'react';
 import ReactDOM from 'react-dom';
 
 import { faCog } from '@fortawesome/free-solid-svg-icons';
@@ -8,22 +10,24 @@ import { faCog } from '@fortawesome/free-solid-svg-icons';
 import SidebarItem from '../SidebarItem/SidebarItem';
 import SidebarSettingsMenu from './SidebarSettingsMenu/SidebarSettingsMenu';
 
-export default function SidebarSettingsControl({
+function SidebarSettingsControl({
   portalTarget,
+}: {
+  portalTarget: HTMLDivElement | null;
 }) {
   const [isMenuOpened, setMenuOpened] = useState(false);
 
-  const containerRef = useRef();
-  const dropdownRef = useRef();
+  const containerRef = useRef<HTMLElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(
     () => {
-      const listener = (event) => {
+      const listener = (event: MouseEvent | TouchEvent) => {
         if (
           !containerRef.current
           || !dropdownRef.current
-          || containerRef.current.contains(event.target)
-          || dropdownRef.current.contains(event.target)
+          || containerRef.current!.contains(event.target as Node)
+          || dropdownRef.current!.contains(event.target as Node)
         ) {
           return;
         }
@@ -48,7 +52,6 @@ export default function SidebarSettingsControl({
         itemRef={containerRef}
         tagName="button"
         className="sidebar-settings-control"
-        type="button"
         icon={faCog}
         label="Settings"
         onItemClick={() => setMenuOpened(!isMenuOpened)}
@@ -56,12 +59,12 @@ export default function SidebarSettingsControl({
 
       {isMenuOpened && ReactDOM.createPortal(
         <div ref={dropdownRef} className="sidebar-settings-control__dropdown">
-          <SidebarSettingsMenu
-            portalTarget={portalTarget}
-          />
+          <SidebarSettingsMenu />
         </div>,
-        portalTarget,
+        portalTarget!,
       )}
     </>
   );
 }
+
+export default SidebarSettingsControl;
