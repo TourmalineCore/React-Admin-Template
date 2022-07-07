@@ -1,12 +1,16 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, MutableRefObject } from 'react';
 
 export function useSidebarSwipe({
   sidebarContainerRef,
   isMobileOpened = false,
   onClose,
+}: {
+  sidebarContainerRef: MutableRefObject<HTMLElement | null>,
+  isMobileOpened: boolean,
+  onClose: () => unknown;
 }) {
-  const touchStartX = useRef(null);
-  const touchEndX = useRef(null);
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
 
   useEffect(() => {
     touchStartX.current = null;
@@ -23,7 +27,7 @@ export function useSidebarSwipe({
     };
   }, [isMobileOpened]);
 
-  function addOrRemoveEventListeners(shouldAdd) {
+  function addOrRemoveEventListeners(shouldAdd: boolean) {
     const eventsData = [
       {
         eventName: 'touchstart',
@@ -42,14 +46,14 @@ export function useSidebarSwipe({
     if (!shouldAdd) {
       if (sidebarContainerRef.current !== null) {
         eventsData.forEach(
-          (eventData) => sidebarContainerRef.current.removeEventListener(
+          (eventData) => sidebarContainerRef.current!.removeEventListener(
             eventData.eventName,
             eventData.onEventAction,
           ),
         );
       }
     } else {
-      eventsData.forEach((eventData) => sidebarContainerRef.current.addEventListener(
+      eventsData.forEach((eventData) => sidebarContainerRef.current!.addEventListener(
         eventData.eventName,
         eventData.onEventAction,
         { passive: true },
@@ -57,12 +61,16 @@ export function useSidebarSwipe({
     }
   }
 
-  function handleTouchStart(e) {
-    touchStartX.current = e.targetTouches[0].clientX;
+  function handleTouchStart(event: TouchEventInit) {
+    if (event.targetTouches) {
+      touchStartX.current = event.targetTouches[0].clientX;
+    }
   }
 
-  function handleTouchMove(e) {
-    touchEndX.current = e.targetTouches[0].clientX;
+  function handleTouchMove(event: TouchEventInit) {
+    if (event.targetTouches) {
+      touchEndX.current = event.targetTouches[0].clientX;
+    }
   }
 
   function handleTouchEnd() {
