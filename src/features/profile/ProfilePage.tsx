@@ -11,12 +11,13 @@ import getProfileAvailableActionButtons from './profileActionsFactory';
 import { profileModes } from './profileModes';
 import { profileSections, profileTabs } from './profileTabs';
 
-export default function ProfilePage() {
+function ProfilePage() {
   const [profileMode, setProfileMode] = useState(profileModes.VIEW);
 
   const params = useParams();
 
   const activeTabKey = params.tabId || profileSections.SUMMARY;
+
   const ActiveTab = profileTabs[activeTabKey].component;
 
   return (
@@ -25,10 +26,8 @@ export default function ProfilePage() {
       headerContent={(
         <ProfileHeader>
           <ProfileNav
-            profileMode={profileMode}
             tabs={
               Object.entries(profileTabs)
-                .filter(([, profileTab]) => !profileTab.isHidden)
                 .map(([profileTabKey, profileTab]) => ({
                   key: profileTabKey,
                   href: profileTab.link,
@@ -42,7 +41,6 @@ export default function ProfilePage() {
 
           {profileTabs[activeTabKey].showActions && (
             <ActionsBlock
-              isLoading={false}
               availableActions={getProfileAvailableActionButtons({
                 profileTab: profileTabs[activeTabKey],
                 profileMode,
@@ -67,3 +65,5 @@ export default function ProfilePage() {
     </ContentCard>
   );
 }
+
+export default ProfilePage;

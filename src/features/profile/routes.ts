@@ -1,4 +1,5 @@
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { BreadcrumbComponentProps } from 'use-react-router-breadcrumbs';
 
 import ProfilePage from './ProfilePage';
 
@@ -6,12 +7,12 @@ export const profileRoutes = [
   {
     path: '/profile',
     breadcrumb: 'Profile',
-    component: ProfilePage,
+    Component: ProfilePage,
   },
   {
     path: '/profile/:tabId',
-    breadcrumb: (props) => props.match.params.tabId,
-    component: ProfilePage,
+    breadcrumb: (props: BreadcrumbComponentProps) => props.match.params.tabId,
+    Component: ProfilePage,
   },
 ];
 

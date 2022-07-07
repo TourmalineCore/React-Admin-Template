@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 
@@ -5,15 +6,23 @@ import './ProfileNav.css';
 
 function ProfileNav({
   tabs,
+}: {
+  tabs: {
+    text?: string;
+    icon?: ReactNode;
+    href: string;
+    onClick?: () => unknown;
+    active?: boolean;
+  }[];
 }) {
   return (
     <div className="profile-nav">
       <ul className="profile-nav__list">
         {
-        tabs.map((tab) => (
-          <ProfileNavItem {...tab} />
-        ))
-      }
+          tabs.map((tab) => (
+            <ProfileNavItem {...tab} />
+          ))
+        }
       </ul>
     </div>
   );
@@ -25,6 +34,12 @@ function ProfileNavItem({
   href,
   onClick,
   active,
+}: {
+  text?: string;
+  icon?: ReactNode;
+  href: string;
+  onClick?: () => unknown;
+  active?: boolean;
 }) {
   return (
     <li className="profilenav__item">

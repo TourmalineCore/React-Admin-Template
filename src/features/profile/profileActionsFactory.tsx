@@ -1,11 +1,27 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faEdit,
-  faTimes,
-  faCheck,
-} from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faTimes, faCheck } from '@fortawesome/free-solid-svg-icons';
 
+import { ReactNode } from 'react';
 import { profileModes } from './profileModes';
+
+type AvailableActionsProps = {
+  key?: string;
+  text?: string;
+  tabLabel?: string;
+  icon?: ReactNode;
+  onClick?: () => unknown,
+  disabled?: boolean;
+};
+
+type ProfileTabsProps = {
+  id?: string;
+  link?: string;
+  tabLabel?: string;
+  tabIcon?: ReactNode;
+  component: () => JSX.Element,
+  editable?: boolean;
+  showActions?: boolean,
+};
 
 function getProfileAvailableActionButtons({
   profileTab,
@@ -14,8 +30,15 @@ function getProfileAvailableActionButtons({
   exitWithoutSave,
   saveDataAndExit,
   saveDisabled,
+}: {
+  profileTab: ProfileTabsProps;
+  profileMode: string;
+  setEditMode: () => unknown;
+  exitWithoutSave: () => unknown;
+  saveDataAndExit: () => unknown;
+  saveDisabled: boolean;
 }) {
-  const availableActions = [];
+  const availableActions: AvailableActionsProps[] = [];
 
   if (!profileTab.editable) {
     return availableActions;
