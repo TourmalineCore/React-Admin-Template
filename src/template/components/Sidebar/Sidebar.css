@@ -130,7 +130,7 @@ html.is-sidebar-mobile-opened {
 
 .sidebar__bottom {
   position: relative;
-  padding: 12px 20px;
+  padding: 12px 20px 70px;
   width: 100%;
 }
 
@@ -189,5 +189,11 @@ html.is-sidebar-mobile-opened {
 
   .sidebar--collapsed {
     width: var(--sidebar-collapsed-width);
+  }
+
+  .sidebar__bottom {
+    position: relative;
+    padding: 12px 20px;
+    width: 100%;
   }
 }
