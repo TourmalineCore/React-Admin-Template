@@ -17,7 +17,7 @@ function ContentCard({
   style?: CSSProperties;
   className?: string;
   isStickyHead?: boolean;
-  headerContent?: ReactNode,
+  headerContent?: ReactNode;
   children?: ReactNode;
 }) {
   const topSentinelRef = useRef<HTMLDivElement>(null);

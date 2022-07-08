@@ -14,7 +14,7 @@ function ActionsBlock({
     key?: string;
     text?: string;
     icon?: ReactNode;
-    onClick?: () => unknown,
+    onClick?: () => unknown;
     disabled?: boolean;
   }[]
 }) {
@@ -30,7 +30,6 @@ function ActionsBlock({
       <div
         className="actions-block"
         style={{
-          // stylelint-disable-next-line
           zIndex: showActions ? 3000 : 1029,
         }}
       >

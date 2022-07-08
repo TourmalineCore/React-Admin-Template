@@ -22,7 +22,10 @@ import { adminRoutes, sidebarRoutes } from '../routes/adminRoutes';
 function Template() {
   const location = useLocation();
 
+  console.log('sidebarRoutes', sidebarRoutes);
+
   const parsedSidebarRoutes = useSidebarRoutes(sidebarRoutes, location);
+  console.log('parsedSidebarRoutes', parsedSidebarRoutes);
 
   const breadcrumbs = useBreadcrumbs(adminRoutes, { excludePaths: ['/'] });
 
@@ -60,7 +63,6 @@ function Template() {
                 />
               </>
             )}
-            renderTopComponent={undefined}
           />
         </div>
 

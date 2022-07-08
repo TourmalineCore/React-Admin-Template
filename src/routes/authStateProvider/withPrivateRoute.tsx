@@ -1,12 +1,13 @@
 import {
-  FunctionComponent, useContext, useEffect,
+  ElementType,
+  useContext, useEffect,
 } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { AuthContext } from './authContext';
 
-export default function withPrivateRoute(ComposedComponent: FunctionComponent<JSX.Element>) {
-  return function RequireAuthentication(props: any) {
+export default function withPrivateRoute(ComposedComponent: ElementType) {
+  return function RequireAuthentication() {
     const createAuthContext = useContext(AuthContext);
     const navigation = useNavigate();
     const location = useLocation();
@@ -17,7 +18,7 @@ export default function withPrivateRoute(ComposedComponent: FunctionComponent<JS
       }
     }, [createAuthContext!.isAuthenticated]);
 
-    return createAuthContext!.isAuthenticated ? <ComposedComponent {...props} /> : null;
+    return createAuthContext!.isAuthenticated ? <ComposedComponent /> : null;
   };
 
   function getAuthPathWithFromProperty(from: string) {

@@ -9,7 +9,7 @@ type AvailableActionsProps = {
   text?: string;
   tabLabel?: string;
   icon?: ReactNode;
-  onClick?: () => unknown,
+  onClick?: () => unknown;
   disabled?: boolean;
 };
 
@@ -18,9 +18,9 @@ type ProfileTabsProps = {
   link?: string;
   tabLabel?: string;
   tabIcon?: ReactNode;
-  component: () => JSX.Element,
+  component: () => JSX.Element;
   editable?: boolean;
-  showActions?: boolean,
+  showActions?: boolean;
 };
 
 function getProfileAvailableActionButtons({

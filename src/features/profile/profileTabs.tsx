@@ -15,9 +15,9 @@ export const profileTabs: {
     link: string;
     tabLabel?: string;
     tabIcon?: ReactNode;
-    component: () => JSX.Element,
+    component: () => JSX.Element;
     editable?: boolean;
-    showActions?: boolean,
+    showActions?: boolean;
   };
 } = {
   [profileSections.SUMMARY]: {

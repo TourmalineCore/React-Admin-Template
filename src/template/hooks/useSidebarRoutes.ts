@@ -1,12 +1,12 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { Location } from 'history';
 import { useState, useEffect } from 'react';
+import { SidebarRoutes } from '../../routes/types/SidebarRoutes';
 
-type SidebarItemProps = {
-  icon: IconProp;
+type MenuDataProps = {
   iconMini: IconProp;
-  isActive: boolean;
-  isNestedRoutesCollapsed: boolean;
+  isActive?: boolean;
+  isNestedRoutesCollapsed?: boolean;
   label: string;
   path: string;
   routes?: {
@@ -18,19 +18,7 @@ type SidebarItemProps = {
   }[],
 };
 
-type InitialRouteProps = {
-  icon?: IconProp;
-  label: string;
-  path: string;
-  iconMini?: IconProp;
-  routes?: {
-    iconMini: IconProp;
-    label: string;
-    path: string;
-  }[];
-};
-
-export function useSidebarRoutes(initialRoutes: InitialRouteProps[], location: Location) {
+export function useSidebarRoutes(initialRoutes: SidebarRoutes[], location: Location) {
   const [routes, setRoutes] = useState(adaptRoutesByLocation({ routes: initialRoutes, location }));
 
   useEffect(() => {
@@ -40,7 +28,7 @@ export function useSidebarRoutes(initialRoutes: InitialRouteProps[], location: L
   return routes;
 }
 
-function adaptRoutesByLocation({ routes = [], location }: { routes: any[], location: Location }): SidebarItemProps[] {
+function adaptRoutesByLocation({ routes = [], location }: { routes: any[] | SidebarRoutes[], location: Location }): MenuDataProps[] {
   return routes.map((route) => ({
     ...route,
     isActive: isRouteActive(route.path, location),
@@ -53,6 +41,6 @@ function isRouteActive(routePath: string, location: Location) {
   return location.pathname.endsWith(routePath) || location.pathname.includes(`${routePath}/`);
 }
 
-function getItemCollapsedState({ nestedRoutes = [], location }: { nestedRoutes: InitialRouteProps[], location: Location }) {
+function getItemCollapsedState({ nestedRoutes = [], location }: { nestedRoutes: SidebarRoutes[], location: Location }) {
   return !nestedRoutes.some((item) => location.pathname.includes(item.path));
 }

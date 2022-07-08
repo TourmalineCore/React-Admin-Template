@@ -6,7 +6,7 @@ import { BreadcrumbData } from 'use-react-router-breadcrumbs';
 function Breadcrumbs({
   list = [],
 }: {
-  list: BreadcrumbData[],
+  list: BreadcrumbData[];
 }) {
   return !list.length
     ? <span>Homepage</span>

@@ -8,7 +8,7 @@ function ThemeColorPicker() {
 
   return (
     <div className="theme-color-picker">
-      {themeState!.themeColors.map((color: {
+      {themeState && themeState!.themeColors.map((color: {
         key: string;
         pickerBtnColor: string;
       }) => (

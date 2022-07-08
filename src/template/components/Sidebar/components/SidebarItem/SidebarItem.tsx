@@ -55,12 +55,12 @@ function SidebarItem({
   label?: string;
   path?: string;
   isActive?: boolean;
-  counter?: string,
-  routes?: SidebarItemRouterProps[],
-  isNestedRoutesCollapsed?: boolean,
-  isSidebarCollapsed?: boolean,
-  onItemClick?: () => unknown,
-  onNestedBlockCollapseToggle?: () => unknown,
+  counter?: string;
+  routes?: SidebarItemRouterProps[];
+  isNestedRoutesCollapsed?: boolean;
+  isSidebarCollapsed?: boolean;
+  onItemClick?: () => unknown;
+  onNestedBlockCollapseToggle?: () => unknown;
 }) {
   const hasNestedElements = routes && !!routes.length;
 

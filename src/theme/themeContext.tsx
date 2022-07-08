@@ -6,10 +6,7 @@ import { themeColors } from './themeColors';
 
 type ThemProviderStateProps = {
   themeColor: string
-  themeColors: {
-    key: string;
-    pickerBtnColor: string;
-  }[];
+  themeColors: ThemeElement[];
   setThemeColor: Dispatch<SetStateAction<string>>;
 };
 
@@ -28,7 +25,7 @@ function ThemeProvider({
     themeColor,
     themeColors,
     setThemeColor,
-  }), []);
+  }), [themeColor, themeColors, setThemeColor]);
 
   return (
     <ThemeContext.Provider

@@ -5,8 +5,8 @@ export function useSidebarSwipe({
   isMobileOpened = false,
   onClose,
 }: {
-  sidebarContainerRef: MutableRefObject<HTMLElement | null>,
-  isMobileOpened: boolean,
+  sidebarContainerRef: MutableRefObject<HTMLElement | null>;
+  isMobileOpened: boolean;
   onClose: () => unknown;
 }) {
   const touchStartX = useRef<number | null>(null);

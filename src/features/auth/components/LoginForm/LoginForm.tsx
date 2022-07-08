@@ -13,8 +13,7 @@ function LoginForm({
 }: {
   children: ReactNode;
   errorMessages?: string[];
-  onSubmit: FormEventHandler<HTMLFormElement>
-  ;
+  onSubmit: FormEventHandler<HTMLFormElement>;
 }) {
   return (
     <div className="auth-form">

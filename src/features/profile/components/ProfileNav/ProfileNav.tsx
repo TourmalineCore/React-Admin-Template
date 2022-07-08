@@ -1,19 +1,13 @@
-import { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
+import { ProfileNavItems } from '../../types/Profile';
 
 import './ProfileNav.css';
 
 function ProfileNav({
   tabs,
 }: {
-  tabs: {
-    text?: string;
-    icon?: ReactNode;
-    href: string;
-    onClick?: () => unknown;
-    active?: boolean;
-  }[];
+  tabs: ProfileNavItems[];
 }) {
   return (
     <div className="profile-nav">
@@ -34,13 +28,7 @@ function ProfileNavItem({
   href,
   onClick,
   active,
-}: {
-  text?: string;
-  icon?: ReactNode;
-  href: string;
-  onClick?: () => unknown;
-  active?: boolean;
-}) {
+}: ProfileNavItems) {
   return (
     <li className="profilenav__item">
       <Link
