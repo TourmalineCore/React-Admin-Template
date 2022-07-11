@@ -1,6 +1,6 @@
-import './Breadcrumbs.css';
-
 import { Link } from 'react-router-dom';
+
+import './Breadcrumbs.scss';
 
 export default function Breadcrumbs({
   list = [],
