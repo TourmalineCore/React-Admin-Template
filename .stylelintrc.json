@@ -1,5 +1,6 @@
 {
 	"extends": "stylelint-config-standard",
+	"customSyntax": "postcss-scss",
 	"plugins": [
 		"stylelint-scss",
 		"stylelint-order"
@@ -10,6 +11,8 @@
     "**/node_modules/**/*"
   ],
 	"rules": {
+		"keyframes-name-pattern": null,
+		"selector-class-pattern": null,
 		"declaration-block-no-duplicate-properties": [
 			true,
 			{
@@ -43,14 +46,13 @@
 				]
 			}
 		],
-		"selector-class-pattern": "^[a-z]([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}$|^Mui.*$",
 		"block-no-empty": null,
 		"color-named": "never",
 		"function-url-quotes": "always",
 		"indentation": 2,
 		"no-empty-source": null,
-		"value-keyword-case": null,
 		"string-quotes": "double",
+		"value-keyword-case": null,
 		"scss/at-else-closing-brace-newline-after": "always-last-in-chain",
 		"scss/at-else-closing-brace-space-after": "always-intermediate",
 		"scss/at-if-closing-brace-newline-after": "always-last-in-chain",
