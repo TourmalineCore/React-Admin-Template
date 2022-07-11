@@ -1,7 +1,7 @@
 import './Template.css';
 
 import { useState } from 'react';
-import useBreadcrumbs from 'use-react-router-breadcrumbs';
+import useBreadcrumbs, { BreadcrumbsRoute } from 'use-react-router-breadcrumbs';
 import clsx from 'clsx';
 
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
@@ -22,12 +22,9 @@ import { adminRoutes, sidebarRoutes } from '../routes/adminRoutes';
 function Template() {
   const location = useLocation();
 
-  console.log('sidebarRoutes', sidebarRoutes);
-
   const parsedSidebarRoutes = useSidebarRoutes(sidebarRoutes, location);
-  console.log('parsedSidebarRoutes', parsedSidebarRoutes);
 
-  const breadcrumbs = useBreadcrumbs(adminRoutes, { excludePaths: ['/'] });
+  const breadcrumbs = useBreadcrumbs(adminRoutes as BreadcrumbsRoute<string>[], { excludePaths: ['/'] });
 
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const [isMobileSidebarOpened, setIsMobileSidebarOpened] = useState(false);
