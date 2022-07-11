@@ -192,8 +192,6 @@ html.is-sidebar-mobile-opened {
   }
 
   .sidebar__bottom {
-    position: relative;
     padding: 12px 20px;
-    width: 100%;
   }
 }
