@@ -1,3 +1,5 @@
+@import "src/styles/media";
+
 .auth-page {
   display: flex;
   overflow-x: hidden;
@@ -13,10 +15,14 @@
       var(--accent-gradient-color-2) 52%,
       var(--accent-gradient-color-3) 100%
     );
-}
 
-.auth-page__input {
-  margin-bottom: 30px;
+  &__input {
+    margin-bottom: 30px;
+  }
+
+  @include tablet-xl {
+    background-image: none;
+  }
 }
 
 .svg-fill-accent-first {
@@ -33,10 +39,4 @@
 
 .svg-stroke-accent-last {
   stroke: var(--auth-bg-accent-color-last);
-}
-
-@media (min-width: 768px) {
-  .auth-page {
-    background-image: none;
-  }
 }
