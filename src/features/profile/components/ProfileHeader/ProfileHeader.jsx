@@ -1,4 +1,4 @@
-import './ProfileHeader.css';
+import './ProfileHeader.scss';
 
 export default function ProfileHeader({
   children,
