@@ -1,5 +1,3 @@
-import './SidebarItem.css';
-
 import { useState, useRef } from 'react';
 import ReactDOM from 'react-dom';
 
@@ -10,6 +8,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 import SidebarTooltip from './components/SidebarTooltip/SidebarTooltip';
+
+import './SidebarItem.scss';
 
 export default function SidebarItem({
   tagName = 'div',

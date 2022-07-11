@@ -1,5 +1,3 @@
-import './SidebarSettingsControl.css';
-
 import { useState, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 
@@ -7,6 +5,8 @@ import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 import SidebarItem from '../SidebarItem/SidebarItem';
 import SidebarSettingsMenu from './SidebarSettingsMenu/SidebarSettingsMenu';
+
+import './SidebarSettingsControl.css';
 
 export default function SidebarSettingsControl({
   portalTarget,

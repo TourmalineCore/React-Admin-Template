@@ -1,4 +1,4 @@
-import './SidebarInfoBox.css';
+import './SidebarInfoBox.scss';
 
 export default function SidebarInfoBox({
   photoUrl,

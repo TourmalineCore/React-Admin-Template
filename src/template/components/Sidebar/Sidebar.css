@@ -190,4 +190,9 @@ html.is-sidebar-mobile-opened {
   .sidebar--collapsed {
     width: var(--sidebar-collapsed-width);
   }
+
+  .sidebar--collapsed .sidebar-infobox__col {
+    opacity: 0;
+    transform: translate3d(-20px, 0, 0);
+  }
 }

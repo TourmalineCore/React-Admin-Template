@@ -1,5 +1,3 @@
-import './Sidebar.css';
-
 import { useRef, useEffect } from 'react';
 import clsx from 'clsx';
 
@@ -9,6 +7,8 @@ import SidebarInfoBox from './components/SidebarInfoBox/SidebarInfoBox';
 import SidebarItem from './components/SidebarItem/SidebarItem';
 
 import { useSidebarSwipe } from '../../hooks/useSidebarSwipe';
+
+import './Sidebar.css';
 
 const OPENED_DOCUMENT_CLASSNAME = 'is-sidebar-mobile-opened';
 
