@@ -1,4 +1,4 @@
-import './Copyright.css';
+import './Copyright.scss';
 
 export default function Copyright() {
   return (
