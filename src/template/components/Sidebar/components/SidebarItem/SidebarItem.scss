@@ -1,5 +1,3 @@
-@import "src/styles/media";
-
 .sidebar-item {
   $this: &;
 
@@ -146,25 +144,33 @@
   }
 }
 
-@media (min-width: 1200px) {
-  .sidebar--collapsed .sidebar-item__mini-container {
+.sidebar--collapsed .sidebar-item__mini-container {
+  @include desktop {
     display: block;
   }
+}
 
-  .sidebar--collapsed .sidebar-item__box {
+.sidebar--collapsed .sidebar-item__box {
+  @include desktop {
     opacity: 0;
     transform: translate3d(-16px, 0, 0);
   }
+}
 
-  .sidebar--collapsed .sidebar-item__mini-container + .sidebar-item__box {
+.sidebar--collapsed .sidebar-item__mini-container + .sidebar-item__box {
+  @include desktop {
     display: none;
   }
+}
 
-  .sidebar--collapsed .sidebar-item__nested .sidebar-item {
+.sidebar--collapsed .sidebar-item__nested .sidebar-item {
+  @include desktop {
     padding-left: 10px;
   }
+}
 
-  .sidebar--collapsed .sidebar-item__nested .bex-sidebar-item {
+.sidebar--collapsed .sidebar-item__nested .bex-sidebar-item {
+  @include desktop {
     padding-left: 0;
   }
 }
