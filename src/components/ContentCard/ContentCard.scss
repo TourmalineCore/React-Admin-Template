@@ -1,0 +1,46 @@
+.content-card {
+  border-radius: 5px;
+  box-shadow: 1px -1px 10px rgb(38 50 58 / 10%);
+  background-color: #fff;
+
+  &__header {
+    z-index: 20;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #fff;
+
+    &--sticky {
+      position: sticky;
+      top: 0;
+    }
+
+    &--sticky-stuck {
+      border-radius: 0;
+    }
+
+    @include desktop {
+      &--sticky {
+        top: 16px;
+      }
+
+      &--sticky-stuck {
+        box-shadow: 0 -16px 0 4px #fafafa;
+      }
+    }
+  }
+
+  &__sentinel--top {
+    @include desktop {
+      position: relative;
+      top: -16px;
+    }
+  }
+
+  &__body {
+    padding: 0 10px 20px;
+
+    @include tablet {
+      padding: 0 20px 20px;
+    }
+  }
+}
