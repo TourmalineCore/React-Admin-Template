@@ -1,5 +1,3 @@
-import './SidebarInfoBox.scss';
-
 export default function SidebarInfoBox({
   photoUrl,
   name = 'Nameless User',

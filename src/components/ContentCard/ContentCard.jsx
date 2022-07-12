@@ -3,8 +3,6 @@ import clsx from 'clsx';
 
 import { useStickyHeader } from './hooks/useStickyHeader';
 
-import './ContentCard.css';
-
 const isIE = window.MSInputMethodContext && document.documentMode;
 
 export default function ContentCard({

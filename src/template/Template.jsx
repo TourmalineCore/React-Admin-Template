@@ -1,5 +1,3 @@
-import './Template.css';
-
 import { useState } from 'react';
 import useBreadcrumbs from 'use-react-router-breadcrumbs';
 import clsx from 'clsx';

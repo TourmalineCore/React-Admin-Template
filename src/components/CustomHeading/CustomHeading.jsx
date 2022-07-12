@@ -1,5 +1,3 @@
-import './CustomHeading.css';
-
 export default function CustomHeading({
   children,
 }) {

@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 
-import './ProfileNav.scss';
-
 function ProfileNav({
   tabs,
 }) {

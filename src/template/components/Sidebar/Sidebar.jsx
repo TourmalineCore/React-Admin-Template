@@ -8,8 +8,6 @@ import SidebarItem from './components/SidebarItem/SidebarItem';
 
 import { useSidebarSwipe } from '../../hooks/useSidebarSwipe';
 
-import './Sidebar.css';
-
 const OPENED_DOCUMENT_CLASSNAME = 'is-sidebar-mobile-opened';
 
 export default function Sidebar({

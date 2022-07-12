@@ -1,5 +1,3 @@
-import './ThemeColorPicker.css';
-
 import { useContext } from 'react';
 
 import { ThemeContext } from '../../theme/themeContext';

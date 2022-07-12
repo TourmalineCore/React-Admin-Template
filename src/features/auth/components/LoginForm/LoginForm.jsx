@@ -3,8 +3,6 @@ import { Button } from '@tourmalinecore/react-tc-ui-kit';
 import { ReactComponent as BgLeft } from '../../../../assets/img/auth-bg-left.svg';
 import { ReactComponent as BgRight } from '../../../../assets/img/auth-bg-right.svg';
 
-import './LoginForm.scss';
-
 export default function LoginForm({
   children,
   errorMessages = [],

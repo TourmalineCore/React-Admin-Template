@@ -1,5 +1,3 @@
-import './SidebarTooltip.css';
-
 export default function SidebarTooltip({
   sidebarItemRef,
   sidebarContainerRef,

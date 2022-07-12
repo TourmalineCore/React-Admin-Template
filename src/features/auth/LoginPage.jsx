@@ -1,5 +1,3 @@
-import './LoginPage.scss';
-
 import { useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 

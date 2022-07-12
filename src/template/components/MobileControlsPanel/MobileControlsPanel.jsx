@@ -5,8 +5,6 @@ import {
   faArrowLeft, faHome, faBars, faTimes,
 } from '@fortawesome/free-solid-svg-icons';
 
-import './MobileControlsPanel.scss';
-
 export default function MobileControlsPanel({
   prevPath,
   homePath = '/',

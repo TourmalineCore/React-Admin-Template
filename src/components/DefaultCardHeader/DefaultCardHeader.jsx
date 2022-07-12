@@ -1,5 +1,3 @@
-import './DefaultCardHeader.css';
-
 export default function DefaultCardHeader({
   children,
 }) {

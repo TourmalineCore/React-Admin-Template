@@ -1,7 +1,5 @@
 import ThemeColorPicker from '../../../../../../components/ThemeColorPicker/ThemeColorPicker';
 
-import './SidebarSettingsMenu.css';
-
 export default function SidebarSettingsMenu() {
   return (
     <div className="sidebar-settings-menu">

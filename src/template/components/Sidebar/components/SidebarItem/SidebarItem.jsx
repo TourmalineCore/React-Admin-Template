@@ -9,8 +9,6 @@ import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 import SidebarTooltip from './components/SidebarTooltip/SidebarTooltip';
 
-import './SidebarItem.scss';
-
 export default function SidebarItem({
   tagName = 'div',
   itemRef,

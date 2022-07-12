@@ -5,8 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import ActionsBlockOverlay from './ActionsBlockOverlay';
 
-import './ActionsBlock.css';
-
 function ActionsBlock(props) {
   const [showActions, setShowActions] = useState(false);
 

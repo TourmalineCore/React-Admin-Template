@@ -6,8 +6,6 @@ import { faCog } from '@fortawesome/free-solid-svg-icons';
 import SidebarItem from '../SidebarItem/SidebarItem';
 import SidebarSettingsMenu from './SidebarSettingsMenu/SidebarSettingsMenu';
 
-import './SidebarSettingsControl.css';
-
 export default function SidebarSettingsControl({
   portalTarget,
 }) {
