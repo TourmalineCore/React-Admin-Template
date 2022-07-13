@@ -5,7 +5,7 @@ import { nestedPagesRoutes, nestedPagesSidebarRoutes } from '../features/nested/
 import { inputsRoutes, inputsSidebarRoutes } from '../features/inputs/routes';
 import { tableRoutes, tableSidebarRoutes } from '../features/table/routes';
 import { modalRoutes, modalSidebarRoutes } from '../features/modal/routes';
-import { SidebarRoutes } from './types/SidebarRoutes';
+import { SidebarRoutesProps } from '../types';
 
 export const adminRoutes: {
   path: string;
@@ -20,7 +20,7 @@ export const adminRoutes: {
   ...modalRoutes,
 ];
 
-export const sidebarRoutes: SidebarRoutes[] = [
+export const sidebarRoutes: SidebarRoutesProps[] = [
   ...homeSidebarRoutes,
   ...profileSidebarRoutes,
   ...nestedPagesSidebarRoutes,

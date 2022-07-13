@@ -5,30 +5,15 @@ import clsx from 'clsx';
 
 import { faAngleDoubleRight, faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
 
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import SidebarInfoBox from './components/SidebarInfoBox/SidebarInfoBox';
 import SidebarItem from './components/SidebarItem/SidebarItem';
 
 import { useSidebarSwipe } from '../../hooks/useSidebarSwipe';
 
 import './Sidebar.css';
+import { SidebarProps } from '../../types/Template';
 
 const OPENED_DOCUMENT_CLASSNAME = 'is-sidebar-mobile-opened';
-
-type MenuDataProps = {
-  iconMini: IconProp;
-  isActive?: boolean;
-  isNestedRoutesCollapsed?: boolean;
-  label: string;
-  path: string;
-  routes?: {
-    iconMini: IconProp;
-    isActive: boolean;
-    isNestedRoutesCollapsed: boolean;
-    label: string;
-    path: string;
-  }[],
-};
 
 function Sidebar({
   style = {},
@@ -47,7 +32,7 @@ function Sidebar({
   className?: string;
   isMobileOpened?: boolean;
   isCollapsed?: boolean;
-  menuData: MenuDataProps[];
+  menuData: SidebarProps[];
   infoBoxData: {
     photoUrl?: string;
     name?: string;
@@ -134,7 +119,7 @@ function Sidebar({
     );
   }
 
-  function renderMenuItem(item: MenuDataProps) {
+  function renderMenuItem(item: SidebarProps) {
     return (
       <li key={item.path} className="sidebar__navitem">
         <SidebarItem

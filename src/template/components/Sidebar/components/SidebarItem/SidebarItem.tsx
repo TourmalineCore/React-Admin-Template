@@ -13,21 +13,7 @@ import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import SidebarTooltip from './components/SidebarTooltip/SidebarTooltip';
-
-type SidebarItemRouterProps = {
-  iconMini: IconProp;
-  isActive: boolean;
-  isNestedRoutesCollapsed: boolean;
-  label: string;
-  path: string;
-  routes?: {
-    iconMini: IconProp;
-    isActive: boolean;
-    isNestedRoutesCollapsed: boolean;
-    label: string;
-    path: string;
-  }[],
-};
+import { SidebarProps } from '../../../../types/Template';
 
 function SidebarItem({
   tagName = 'div',
@@ -52,11 +38,11 @@ function SidebarItem({
   className?: string;
   icon?: IconProp;
   iconMini?: IconProp;
-  label?: string;
+  label: string;
   path?: string;
   isActive?: boolean;
   counter?: string;
-  routes?: SidebarItemRouterProps[];
+  routes?: SidebarProps[];
   isNestedRoutesCollapsed?: boolean;
   isSidebarCollapsed?: boolean;
   onItemClick?: () => unknown;

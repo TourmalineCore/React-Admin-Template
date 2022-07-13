@@ -1,6 +1,6 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
-type SidebarRoutes = {
+interface SidebarRoutesProps {
   path: string;
   label: string;
   icon: IconProp;
@@ -9,4 +9,4 @@ type SidebarRoutes = {
     label: string;
     iconMini: IconProp;
   }[];
-};
+}
