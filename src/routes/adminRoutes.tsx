@@ -7,15 +7,11 @@ import { tableRoutes, tableSidebarRoutes } from '../features/table/routes';
 import { modalRoutes, modalSidebarRoutes } from '../features/modal/routes';
 import { SidebarRoutes } from './types/SidebarRoutes';
 
-export const adminRoutes: ({
+export const adminRoutes: {
   path: string;
-  breadcrumb: string;
+  breadcrumb: string | ((props: BreadcrumbComponentProps) => string | undefined);
   Component: () => JSX.Element;
-} | {
-  path: string;
-  breadcrumb:(props: BreadcrumbComponentProps) => string | undefined;
-  Component: () => JSX.Element;
-})[] = [
+}[] = [
   ...homeRoutes,
   ...profileRoutes,
   ...nestedPagesRoutes,

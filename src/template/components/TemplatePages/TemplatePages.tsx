@@ -4,15 +4,11 @@ import { BreadcrumbComponentProps } from 'use-react-router-breadcrumbs';
 function TemplatePages({
   routes = [],
 }: {
-  routes: ({
+  routes: {
     path: string;
-    breadcrumb: string;
+    breadcrumb: string | ((props: BreadcrumbComponentProps) => string | undefined);
     Component: () => JSX.Element;
-  } | {
-    path: string;
-    breadcrumb:(props: BreadcrumbComponentProps) => string | undefined;
-    Component: () => JSX.Element;
-  })[];
+  }[];
 }) {
   return (
     <Routes>
