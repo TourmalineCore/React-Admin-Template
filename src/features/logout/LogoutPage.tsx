@@ -4,12 +4,12 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../routes/authStateProvider/authContext';
 
 function LogoutPage() {
-  const createAuthContext = useContext(AuthContext);
+  const { setIsAuthenticated } = useContext(AuthContext);
 
   const history = useNavigate();
 
   useEffect(() => {
-    createAuthContext!.setIsAuthenticated(false);
+    setIsAuthenticated(false);
     history('/auth');
   }, []);
 

@@ -10,7 +10,11 @@ type ThemProviderStateProps = {
   setThemeColor: Dispatch<SetStateAction<string>>;
 };
 
-const ThemeContext = createContext<ThemProviderStateProps | null>(null);
+const ThemeContext = createContext<ThemProviderStateProps>({
+  themeColor: '',
+  themeColors: [],
+  setThemeColor: () => '',
+});
 
 function ThemeProvider({
   initialColor = themeColors[0].key,

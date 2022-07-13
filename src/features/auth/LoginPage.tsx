@@ -11,7 +11,7 @@ import { AuthContext } from '../../routes/authStateProvider/authContext';
 import './LoginPage.css';
 
 function LoginPage() {
-  const createAuthContext = useContext(AuthContext);
+  const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
   const history = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -21,10 +21,10 @@ function LoginPage() {
   const [triedToSubmit, setTriedToSubmit] = useState(false);
 
   useEffect(() => {
-    if (createAuthContext!.isAuthenticated) {
+    if (isAuthenticated) {
       history('/');
     }
-  }, [createAuthContext!.isAuthenticated]);
+  }, [isAuthenticated]);
 
   return (
     <div className="auth-page">
@@ -69,7 +69,7 @@ function LoginPage() {
     setTriedToSubmit(true);
 
     if (email && password) {
-      createAuthContext!.setIsAuthenticated(true);
+      setIsAuthenticated(true);
     }
   }
 }

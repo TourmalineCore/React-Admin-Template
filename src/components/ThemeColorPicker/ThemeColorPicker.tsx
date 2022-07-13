@@ -4,11 +4,11 @@ import { ThemeContext } from '../../theme/themeContext';
 import './ThemeColorPicker.css';
 
 function ThemeColorPicker() {
-  const themeState = useContext(ThemeContext);
+  const { setThemeColor, themeColors } = useContext(ThemeContext);
 
   return (
     <div className="theme-color-picker">
-      {themeState && themeState!.themeColors.map((color: {
+      {themeColors.map((color: {
         key: string;
         pickerBtnColor: string;
       }) => (
@@ -19,7 +19,7 @@ function ThemeColorPicker() {
           style={{
             backgroundColor: color.pickerBtnColor,
           }}
-          onClick={() => themeState!.setThemeColor(color.key)}
+          onClick={() => setThemeColor(color.key)}
         />
       ))}
     </div>

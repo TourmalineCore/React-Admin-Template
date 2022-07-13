@@ -7,7 +7,10 @@ type AuthProviderProps = {
   setIsAuthenticated: Dispatch<SetStateAction<boolean>>;
 };
 
-const AuthContext = createContext<AuthProviderProps | null>(null);
+const AuthContext = createContext<AuthProviderProps>({
+  isAuthenticated: true,
+  setIsAuthenticated: () => false,
+});
 
 function AuthProvider({
   children,
