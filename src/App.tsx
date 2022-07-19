@@ -6,8 +6,8 @@ import {
 
 import LoginPage from './features/auth/LoginPage';
 import LogoutPage from './features/logout/LogoutPage';
+import { withPrivateRoute } from './routes/authStateProvider/withPrivateRoute';
 import Template from './template/Template';
-import withPrivateRoute from './routes/authStateProvider/withPrivateRoute';
 
 const WithPrivateRoute = withPrivateRoute(Template);
 
