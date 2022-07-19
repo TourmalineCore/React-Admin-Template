@@ -1,6 +1,7 @@
 :root {
   --sidebar-width: 320px;
   --sidebar-collapsed-width: 86px;
+  --color-white: #fff;
   --color-text: #172f3d;
   --color-accent-first: #0c8bb4;
   --color-accent-last: #f53893;
@@ -23,6 +24,7 @@ html {
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
   padding: 0;
@@ -31,4 +33,11 @@ body {
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }

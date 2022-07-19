@@ -1,5 +1,3 @@
-import './Copyright.css';
-
 function Copyright() {
   return (
     <div className="copyright">

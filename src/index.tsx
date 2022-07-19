@@ -7,8 +7,7 @@ import '@tourmalinecore/react-tc-ui-kit/es/index.css';
 import '@tourmalinecore/react-tc-modal/es/index.css';
 import '@tourmalinecore/react-table-responsive/es/index.css';
 
-import './index.css';
-import './theme/themeVariables.css';
+import './styles/index.scss';
 
 import React from 'react';
 import ReactDOM from 'react-dom';

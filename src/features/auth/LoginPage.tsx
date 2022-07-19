@@ -8,8 +8,6 @@ import LoginForm from './components/LoginForm/LoginForm';
 
 import { AuthContext } from '../../routes/authStateProvider/authContext';
 
-import './LoginPage.css';
-
 function LoginPage() {
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
   const history = useNavigate();

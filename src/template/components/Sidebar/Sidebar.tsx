@@ -10,7 +10,6 @@ import SidebarItem from './components/SidebarItem/SidebarItem';
 
 import { useSidebarSwipe } from '../../hooks/useSidebarSwipe';
 
-import './Sidebar.css';
 import { SidebarProps } from '../../types/Template';
 
 const OPENED_DOCUMENT_CLASSNAME = 'is-sidebar-mobile-opened';

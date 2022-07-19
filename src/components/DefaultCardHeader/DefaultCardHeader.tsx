@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-import './DefaultCardHeader.css';
 
 function DefaultCardHeader({
   children,

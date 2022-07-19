@@ -1,5 +1,3 @@
-import './SidebarItem.css';
-
 import {
   useState, useRef, MutableRefObject, ChangeEvent, ElementType,
 } from 'react';

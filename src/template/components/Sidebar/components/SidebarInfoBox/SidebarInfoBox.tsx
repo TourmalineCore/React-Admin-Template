@@ -1,5 +1,3 @@
-import './SidebarInfoBox.css';
-
 function SidebarInfoBox({
   photoUrl,
   name = 'Nameless User',

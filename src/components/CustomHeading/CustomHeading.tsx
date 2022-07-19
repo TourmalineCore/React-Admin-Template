@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-import './CustomHeading.css';
 
 function CustomHeading({
   children,

@@ -1,8 +1,6 @@
 import { useContext } from 'react';
 import { ThemeContext } from '../../theme/themeContext';
 
-import './ThemeColorPicker.css';
-
 function ThemeColorPicker() {
   const { setThemeColor, themeColors } = useContext(ThemeContext);
 

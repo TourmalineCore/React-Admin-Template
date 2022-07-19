@@ -1,7 +1,5 @@
 import { ReactNode } from 'react';
 
-import './ProfileHeader.css';
-
 function ProfileHeader({
   children,
 }: {

@@ -4,8 +4,6 @@ import { FormEventHandler, ReactNode } from 'react';
 import { ReactComponent as BgLeft } from '../../../../assets/img/auth-bg-left.svg';
 import { ReactComponent as BgRight } from '../../../../assets/img/auth-bg-right.svg';
 
-import './LoginForm.css';
-
 function LoginForm({
   children,
   errorMessages = [],

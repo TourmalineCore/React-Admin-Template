@@ -1,5 +1,3 @@
-import './SidebarSettingsControl.css';
-
 import {
   useState, useEffect, useRef,
 } from 'react';
