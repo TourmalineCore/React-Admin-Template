@@ -6,7 +6,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    background-color: #fff;
+    background-color: var(--color-white);
   }
 
   &__icon {
@@ -50,7 +50,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        z-index: 1;
+        z-index: $profile-nav;
         height: 3px;
         background-color: #00c9d7;
 

@@ -1,13 +1,13 @@
 .content-card {
   border-radius: 5px;
   box-shadow: 1px -1px 10px rgb(38 50 58 / 10%);
-  background-color: #fff;
+  background-color: var(--color-white);
 
   &__header {
-    z-index: 20;
+    z-index: $content-card;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    background-color: #fff;
+    background-color: var(--color-white);
 
     &--sticky {
       position: sticky;
@@ -24,15 +24,17 @@
       }
 
       &--sticky-stuck {
-        box-shadow: 0 -16px 0 4px #fafafa;
+        box-shadow: 0 -16px 0 4px $color-light-grey;
       }
     }
   }
 
-  &__sentinel--top {
+  &__sentinel {
     @include desktop {
-      position: relative;
-      top: -16px;
+      &--top {
+        position: relative;
+        top: -16px;
+      }
     }
   }
 

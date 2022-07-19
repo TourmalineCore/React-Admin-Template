@@ -1,8 +1,10 @@
-@import "media.scss";
-@import "globals.scss";
+@import "media";
+@import "globals";
+@import "variables";
 
 // Components
 @import "../components/ActionsBlock/ActionsBlock";
+@import "../components/ActionsBlock/ActionsBlockOverlay";
 @import "../components/ContentCard/ContentCard";
 @import "../components/CustomHeading/CustomHeading";
 @import "../components/DefaultCardHeader/DefaultCardHeader";

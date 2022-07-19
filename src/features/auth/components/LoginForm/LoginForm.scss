@@ -7,60 +7,60 @@
 
   &__bg-image {
     color: var(--color-text);
-  }
 
-  &__bg-image--left {
-    display: none;
+    &--left {
+      display: none;
 
-    @include tablet-xl {
-      position: absolute;
-      right: 100%;
-      top: 128px;
-      display: block;
-      width: 319px;
-      height: 162px;
-    }
+      @include tablet-xl {
+        position: absolute;
+        right: 100%;
+        top: 128px;
+        display: block;
+        width: 319px;
+        height: 162px;
+      }
 
-    @include desktop {
-      width: 352px;
-      height: 174px;
-    }
-  }
-
-  &__bg-image--right {
-    position: absolute;
-    left: 50%;
-    bottom: calc(100% - 4px);
-    width: 147px;
-    height: 85px;
-    transform: translateX(-50%);
-
-    @include tablet {
-      width: 340px;
-      height: 173px;
-
-      @media (max-height: 800px) {
-        display: none;
+      @include desktop {
+        width: 352px;
+        height: 174px;
       }
     }
 
-    @include tablet-xl {
+    &--right {
       position: absolute;
-      left: 100%;
-      top: 128px;
-      display: block;
-      width: 319px;
-      height: 162px;
-      transform: none;
-    }
+      left: 50%;
+      bottom: calc(100% - 4px);
+      width: 147px;
+      height: 85px;
+      transform: translateX(-50%);
 
-    @include desktop {
-      width: 342px;
-      height: 175px; /* fixes subpixel bottom line */
-    }
+      @include tablet {
+        width: 340px;
+        height: 173px;
 
-    @media (max-height: 560px) {
-      display: none;
+        @media (max-height: 800px) {
+          display: none;
+        }
+      }
+
+      @include tablet-xl {
+        position: absolute;
+        left: 100%;
+        top: 128px;
+        display: block;
+        width: 319px;
+        height: 162px;
+        transform: none;
+      }
+
+      @include desktop {
+        width: 342px;
+        height: 175px; /* fixes subpixel bottom line */
+      }
+
+      @media (max-height: 560px) {
+        display: none;
+      }
     }
   }
 
@@ -71,7 +71,7 @@
     padding: 26px 34px 60px;
     width: 100%;
     box-shadow: 1px 4px 25px rgb(95 108 114 / 20%);
-    background-color: #fff;
+    background-color: var(--color-white);
 
     @include tablet {
       padding: 30px 62px 76px;

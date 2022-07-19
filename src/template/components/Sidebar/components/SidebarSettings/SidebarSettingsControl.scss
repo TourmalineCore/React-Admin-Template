@@ -3,7 +3,7 @@
   left: 20px;
   right: 20px;
   bottom: 110px;
-  z-index: 50;
+  z-index: $sidebar-setting-control;
 
   @include tablet {
     left: 100%;

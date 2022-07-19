@@ -23,7 +23,7 @@ html.is-sidebar-mobile-opened {
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 1;
+    z-index: $sidebar-overlay;
     display: none;
     width: 100vw;
     height: 100%;
@@ -33,10 +33,6 @@ html.is-sidebar-mobile-opened {
     @include desktop {
       display: none;
     }
-  }
-
-  * {
-    box-sizing: inherit;
   }
 
   &__toggler {
@@ -62,7 +58,7 @@ html.is-sidebar-mobile-opened {
 
   &__inner {
     position: relative;
-    z-index: 10;
+    z-index: $sidebar-inner;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -76,7 +72,7 @@ html.is-sidebar-mobile-opened {
         var(--accent-gradient-color-2) 52%,
         var(--accent-gradient-color-3) 100%
       );
-    background-color: #fff;
+    background-color: var(--colo);
   }
 
   &__top {
@@ -115,8 +111,6 @@ html.is-sidebar-mobile-opened {
 
   &__navsection {
     position: relative;
-    list-style: none;
-    margin: 0;
     padding: 16px 20px;
     width: 100%;
 

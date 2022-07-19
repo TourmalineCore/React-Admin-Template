@@ -2,14 +2,14 @@
   font-size: 16px;
   line-height: 1.17;
   color: var(--color-text);
-  background-color: #fafafa;
+  background-color: $color-light-grey;
 
   &__sidebar {
     position: fixed;
     left: 0;
     top: 0;
     bottom: 0;
-    z-index: 90;
+    z-index: $template-sidebar;
     padding: 0;
     width: 0;
 
@@ -41,7 +41,7 @@
     width: 100%;
     min-height: 50px;
     box-shadow: 1px 2px 10px rgb(34 49 59 / 10%);
-    background-color: #fff;
+    background-color: var(--color-white);
 
     &--top {
       margin-top: 0;
@@ -96,6 +96,6 @@
 .is-actions-overlay-opened .template__main {
   @include desktop {
     position: relative;
-    z-index: 100;
+    z-index: $template-main;
   }
 }

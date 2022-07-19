@@ -41,7 +41,7 @@
     position: absolute;
     right: -4px;
     top: -2px;
-    z-index: 2;
+    z-index: $sidebar-item;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,7 +52,7 @@
     box-shadow: none;
     font-size: 12px;
     line-height: 1;
-    color: #fff;
+    color: var(--color-white);
     background-color: #fd5d93;
   }
 
@@ -112,7 +112,7 @@
   &:hover,
   &:focus {
     outline: none;
-    background-color: #fff;
+    background-color: var(--color-white);
   }
 
   &:active {
@@ -125,7 +125,7 @@
 
   &--active {
     position: relative;
-    background-color: #fff;
+    background-color: var(--color-white);
 
     &::before {
       content: "";

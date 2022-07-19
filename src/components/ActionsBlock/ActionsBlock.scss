@@ -24,7 +24,7 @@
     font-size: inherit;
     line-height: inherit;
     color: currentColor;
-    background-color: #fff;
+    background-color: var(--color-white);
 
     &::before {
       @include desktop {
@@ -81,9 +81,6 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    list-style: none;
-    margin: 0;
-    padding: 0;
     animation-name: slide-up;
     animation-duration: 0.5s;
     animation-timing-function: ease-in-out;
@@ -119,7 +116,7 @@
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
-    background-color: #fff;
+    background-color: var(--color-white);
     transition: transform 0.3s;
 
     &:disabled > * {
@@ -148,17 +145,19 @@
     margin-left: 16px;
   }
 
-  &__icon--mobile {
-    @include desktop {
+  &__icon {
+    &--desktop {
       display: none;
     }
-  }
-
-  &__icon--desktop {
-    display: none;
 
     @include desktop {
-      display: block;
+      &--mobile {
+        display: none;
+      }
+
+      &--desktop {
+        display: block;
+      }
     }
   }
 
@@ -168,17 +167,7 @@
     padding: 12px 16px;
     max-width: 230px;
     box-shadow: 0 2px 4px rgb(0 0 0 / 34%);
-    background: #fff;
-  }
-
-  &-overlay {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 2000;
-    background-color: rgb(189 196 198 / 40%);
+    background: var(--color-white);
   }
 
   @include tablet {
