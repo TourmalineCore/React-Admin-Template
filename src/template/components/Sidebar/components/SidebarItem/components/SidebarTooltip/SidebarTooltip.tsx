@@ -2,7 +2,6 @@ import {
   MutableRefObject,
   ReactNode,
 } from 'react';
-import './SidebarTooltip.css';
 
 function SidebarTooltip({
   sidebarItemRef,

@@ -1,5 +1,3 @@
-import './Breadcrumbs.css';
-
 import { Link } from 'react-router-dom';
 import { BreadcrumbData } from 'use-react-router-breadcrumbs';
 
