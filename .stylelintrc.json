@@ -1,5 +1,6 @@
 {
 	"extends": "stylelint-config-standard",
+	"customSyntax": "postcss-scss",
 	"plugins": [
 		"stylelint-scss",
 		"stylelint-order"
@@ -10,6 +11,8 @@
     "**/node_modules/**/*"
   ],
 	"rules": {
+		"keyframes-name-pattern": null,
+		"selector-class-pattern": null,
 		"declaration-block-no-duplicate-properties": [
 			true,
 			{
@@ -48,7 +51,6 @@
 		"function-url-quotes": "always",
 		"indentation": 2,
 		"no-empty-source": null,
-		"value-keyword-case": null,
 		"string-quotes": "double",
 		"value-keyword-case": null,
 		"scss/at-else-closing-brace-newline-after": "always-last-in-chain",
