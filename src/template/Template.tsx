@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import useBreadcrumbs, { BreadcrumbsRoute } from 'use-react-router-breadcrumbs';
 import clsx from 'clsx';
 
@@ -16,9 +16,6 @@ import TemplatePages from './components/TemplatePages/TemplatePages';
 import { useSidebarRoutes } from './hooks/useSidebarRoutes';
 
 import { adminRoutes, sidebarRoutes } from '../routes/adminRoutes';
-import { getLSItem, setLSItem } from '../common/utils/localStorageHelpers';
-
-const IS_SIDEBAR_COLLAPSED_LS_KEY = 'is-sidebar-collapsed';
 
 function Template() {
   const location = useLocation();
@@ -29,14 +26,6 @@ function Template() {
 
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const [isMobileSidebarOpened, setIsMobileSidebarOpened] = useState(false);
-
-  useEffect(() => {
-    const isSidebarCollapsedLS = getLSItem(IS_SIDEBAR_COLLAPSED_LS_KEY);
-
-    if (isSidebarCollapsedLS) {
-      setIsSidebarCollapsed(isSidebarCollapsedLS);
-    }
-  }, []);
 
   const prevBreadcrumbPath = breadcrumbs.length > 1
     ? breadcrumbs[breadcrumbs.length - 2].key
@@ -55,13 +44,10 @@ function Template() {
             menuData={parsedSidebarRoutes}
             isCollapsed={isSidebarCollapsed}
             isMobileOpened={isMobileSidebarOpened}
-            onCollapseToggle={() => {
-              setIsSidebarCollapsed(!isSidebarCollapsed);
-              setLSItem(IS_SIDEBAR_COLLAPSED_LS_KEY, !isSidebarCollapsed);
-            }}
+            onCollapseToggle={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
             onOverlayClick={() => setIsMobileSidebarOpened(false)}
             onMenuLinkClick={() => setIsMobileSidebarOpened(false)}
-            renderBottomComponent={(props: { portalTarget: HTMLDivElement | null }) => (
+            renderBottomComponent={(props : { portalTarget: HTMLDivElement | null }) => (
               <>
                 <SidebarSettingsControl portalTarget={props.portalTarget} />
 
